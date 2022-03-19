@@ -110,6 +110,21 @@ country_event = {
 				}
 				319 = { OWNER = { hidden_effect = { country_event = { id = DOM_1857_tobacco_coup.5 hours = 1 } } } }
 			}
+			DOM = { 
+				add_ai_strategy = {
+					type = area_priority
+					id = caribbean
+					value = 200
+				}
+				add_ai_strategy = {
+					type = garrison
+					value = -100
+				}
+				add_ai_strategy = {
+					type = garrison
+					id = -100
+				}
+			}
 		}
 	}
 }
@@ -139,7 +154,7 @@ country_event = {
 					}
 					set_stability = 0.6
 					set_war_support = 0
-					set_political_power = 0
+					#set_political_power = 0
 					add_ideas = no_constitution
 					swap_ideas = {
 						remove_idea = presidential_republic
@@ -186,6 +201,28 @@ country_event = {
 			}
 			1318 = { 
 				OWNER = { 
+					ROOT = { 
+						add_ai_strategy = {
+						 	type = front_control
+						
+							#you can define a target in following ways. you can define more than one
+						
+							tag = PREV 							# target against a specific country
+							state = 1318 						# target on a state
+							strategic_region = 53				# target on a strategic region
+							area = caribbean					# target on a specific ai area
+							#country_trigger = { always = no } 	# a trigger to check agaisnt a specific country. scope is enemy country from scope is our country
+							#state_trigger = { always = no } 	# a trigger to check agaisnt a state. scope is state. from scope is enemy country from.from scope is our country
+						
+							ratio = 0.0 						# the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+						
+							priority = 200 						# default 0, higher prio strats will override lower
+							ordertype = front 					# front or invasion. if set this strategy will only apply to that specific order type
+							execution_type = rush 				# one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+							execute_order = yes 				# yes or no. if set will override execute or not decision of front
+							manual_attack = yes 				# default yes. if no ai will not do manual pokes at enemy (only for front orders)
+						}
+					}
 					add_ideas = limited_constitution
 					set_variable = { THIS.debt_level = ROOT.debt_level }
 					if = {
@@ -220,13 +257,12 @@ country_event = {
 						priority = 1
 						regiments = {
 							line_infantry = { x = 0 y = 0 }
-							line_infantry = { x = 1 y = 0 }
 						}
 						is_locked = yes
 					}
 					1318 = {
 						create_unit = {
-							division = "name = \"Buenaventura's Guards\" division_template = \"Buenaventura's Guards\" start_experience_factor = 0.3 start_equipment_factor = 0.8" 
+							division = "name = \"Buenaventura's Guards\" division_template = \"Buenaventura's Guards\" start_experience_factor = 0.04 start_equipment_factor = 1" 
 							owner = PREV
 							prioritize_location = 7660
 						}
@@ -263,6 +299,7 @@ country_event = {
 				instant_build = yes
 			}
 		}
+		add_ideas = DOM_valverdes_plan
 	}
 }
 
@@ -276,6 +313,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			DOM = { 
+				remove_ideas = DOM_valverdes_plan
 				add_ideas = limited_constitution
 				delete_unit_template_and_units = { division_template = "Valverde's Militia" disband = no }
 				country_event = { id = DOM_1857_tobacco_coup.8 days = 7 }
@@ -482,7 +520,29 @@ country_event = {
 				}
 			}
 			1318 = {
-				OWNER = { 
+				OWNER = {
+					ROOT = { 
+						add_ai_strategy = {
+						 	type = front_control
+						
+							#you can define a target in following ways. you can define more than one
+						
+							tag = PREV 							# target against a specific country
+							state = 1318 						# target on a state
+							strategic_region = 53				# target on a strategic region
+							area = caribbean					# target on a specific ai area
+							#country_trigger = { always = no } 	# a trigger to check agaisnt a specific country. scope is enemy country from scope is our country
+							#state_trigger = { always = no } 	# a trigger to check agaisnt a state. scope is state. from scope is enemy country from.from scope is our country
+						
+							ratio = 0.0 						# the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+						
+							priority = 200 						# default 0, higher prio strats will override lower
+							ordertype = front 					# front or invasion. if set this strategy will only apply to that specific order type
+							execution_type = balanced 			# one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+							execute_order = yes 				# yes or no. if set will override execute or not decision of front
+							manual_attack = yes 				# default yes. if no ai will not do manual pokes at enemy (only for front orders)
+						}
+					}
 					if = {
 						limit = { THIS = { NOT = { has_idea = egy_vic_debt } } }
 						THIS = { add_ideas = egy_vic_debt }
@@ -675,7 +735,7 @@ country_event = {
 				character = DOM_Jose_Desiderio_Valverde
 				ideology = social_liberal
 			}
-			set_political_power = 0
+			#set_political_power = 0
 			set_politics = { ruling_party = radical_democracy }
 			add_ideas = military_junta
 			add_ideas = no_constitution
@@ -2185,7 +2245,7 @@ country_event = {
 	option = {
 		name = SPR_hispaniola.5.a
 		ai_chance = { base = 100 }
-		
+		FROM = { country_event = { id = SPR_hispaniola.6 days = 3 } }
 	}
 }
 
@@ -2201,6 +2261,28 @@ country_event = {
 		name = SPR_hispaniola.6.a
 		ai_chance = { base = 100 }
 		SPR = {
+			create_production_license = {
+				target = DOM
+				equipment = {
+					type = ship_hull_corvette_0
+					version = 
+				}
+				cost_factor = 0
+			}
+			create_production_license = {
+				target = DOM
+				equipment = {
+					type = ship_hull_frigate_0
+				}
+				cost_factor = 0
+			}
+			create_production_license = {
+				target = DOM
+				equipment = {
+					type = ship_hull_frigate_1
+				}
+				cost_factor = 0
+			}
 			create_production_license = {
 				target = DOM
 				equipment = {
@@ -2225,14 +2307,17 @@ country_event = { #Recreation of the Caribbean Capitaincy
 		trigger = { NOT = { has_completed_focus = SPR_give_power_to_the_landowners } }
 		ai_chance = { 
 			base = 100 
-		
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
 		if = { 
-			limit = { has_completed_focus = SPR_give_power_to_the_landowners }
+			limit = { NOT = { has_completed_focus = SPR_give_power_to_the_landowners } }
 			complete_national_focus = SPR_give_power_to_the_landowners
 		}
 		if = { 
-			limit = { has_completed_focus = SPR_recreate_the_capitaincy }
+			limit = { NOT = { has_completed_focus = SPR_recreate_the_capitaincy } }
 			complete_national_focus = SPR_recreate_the_capitaincy
 		}
 		hidden_effect = { FROM = { country_event = { id = SPR_hispaniola.8 days = 7 } } }
@@ -2289,7 +2374,63 @@ country_event = { #Recreation of the Caribbean Capitaincy Declined
 	option = {
 		name = SPR_hispaniola.9.a
 		ai_chance = { base = 100 }
-		
+		add_political_power = -25
+	}
+}
+
+country_event = { 
+	id = SPR_hispaniola.10
+	title = SPR_hispaniola.10.t
+	desc = SPR_hispaniola.10.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = SPR_hispaniola.10.a
+		ai_chance = { base = 100 }
+		add_tech_bonus = {
+			bonus = 0.50
+			uses = 1
+			category = trains_tech
+		}
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = transport_tech
+		}
+		FROM = { country_event = { id = SPR_hispaniola.11 days = 3 } }
+	}
+}
+
+country_event = { 
+	id = SPR_hispaniola.11
+	title = SPR_hispaniola.11.t
+	desc = SPR_hispaniola.11.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = SPR_hispaniola.11.a
+		ai_chance = { base = 100 }
+		add_tech_bonus = {
+			bonus = 0.50
+			uses = 1
+			category = trains_tech
+		}
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = transport_tech
+		}
+		SPR = { 
+			create_production_license = {
+				target = DOM
+				equipment = {
+					type = train_equipment_1
+				}
+				cost_factor = 0
+			}
+		}
 	}
 }
 	

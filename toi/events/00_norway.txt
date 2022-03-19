@@ -263,15 +263,18 @@ country_event = { # Find Vogt's replacement
 		}
 
 		NOR = {
+			NOR_hans_christian_petersen = {
+				add_country_leader_role = {
+					promote_leader = yes
 
-			create_country_leader = {
-				name = "Hans Christian Petersen"
-				desc = "POLITICS_TEMP_DESC"
-				picture = "Hans_Christian_Pedersen.dds"
-				expire = 1862.09.26
-				ideology = conserv
-
-				traits = { staunch_constitutionalist }
+					country_leader = {
+						desc = "POLITICS_TEMP_DESC"
+						expire = 1862.09.26
+						ideology = conserv
+		
+						traits = { staunch_constitutionalist }
+					}
+				}
 			}
 		}
 	}
@@ -910,11 +913,16 @@ country_event = { # Stattholderstriden: Leader Steps Down
 		NOR = {
 			complete_national_focus = NOR_focus_stattholderstriden_resignation
 
-			create_country_leader = {
-				name = "Transitional Government"
-				desc = "POLITICS_TEMP_DESC"
-				ideology = conserv
+			NOR_transitional_government = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_TEMP_DESC"
+						ideology = conserv
+					}
+				}
 			}
+			retire_country_leader = yes
 		}
 	}
 }
@@ -1202,11 +1210,20 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = eoanb_norway.41.a 
+        name = eoanb_norway.41.a
+		add_political_power -50
+		set_temp_variable = { NOR_loyalty_change = 2.5 }
+		NOR_scripted_effect_loyalty_change = yes
+		SWE = {
+			load_oob = NOR_Royal_Guard
+		}
     }
 	
 	option = {
-        name = eoanb_norway.41.b 
+        name = eoanb_norway.41.b
+		add_political_power = 50
+		set_temp_variable = { NOR_loyalty_change = -2.5 }
+		NOR_scripted_effect_loyalty_change = yes
     }
 }
 

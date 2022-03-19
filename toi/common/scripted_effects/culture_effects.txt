@@ -1468,6 +1468,7 @@ religion_setup = {
 	set_variable = { global.shenism = 50 }
 	set_variable = { global.evangelical = 51 }
 	set_variable = { global.spirtism = 52 }
+	set_variable = { global.ukonusko = 53 }
 }
 
 countries_culture_religion_setup = {

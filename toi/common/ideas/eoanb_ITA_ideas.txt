@@ -17,6 +17,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.1
 				war_support_factor = 0.1
+				political_power_factor = 0.1
 			}
 		}
 		ITA_2IP_War_Leader = {
@@ -82,10 +83,27 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
+		TUS_Italian_National_Society = {
+			picture = TUS_National_Society
+			modifier = {
+				political_power_gain = 0.2
+				conscription = 0.01
+				conscription_factor = 0.025
+			}
+		}
+		TUS_History_of_Trade = {
+			picture = FRA_international_inflow
+			modifier = {
+				political_power_gain = 0.1
+				trade_opinion_factor = 0.05
+				faction_trade_opinion_factor = 0.05
+				min_export = 0.05
+			}
+		}
 		PIE_Italian_National_Society = {
 			picture = PIE_National_Society
 			modifier = {
-				political_power_gain = 0.2
+				political_power_gain = 0.1
 				conscription = 0.01
 				conscription_factor = 0.025
 			}
@@ -96,12 +114,13 @@ ideas = {
 				resistance_target = -0.75
 				surrender_limit = 0.2
 				war_support_factor = 0.1
+				political_power_gain = 0.1
 			}
 		}
 		PIE_Perfect_Fusion = {
 			picture = full_equality
 			modifier = {
-				political_power_gain = 0.05
+				political_power_gain = 0.08
 				planning_speed = 0.05
 				army_org = 5
 			}
@@ -384,8 +403,11 @@ ideas = {
 		}
 		ITA_Different_Naval_Doctorines = {
 			picture = italy_disorganised_navy_doctrine
-			research_bonus = {
-				naval_doctrine = -0.1
+			#research_bonus = {
+			#	naval_doctrine = -0.1
+			#}
+			modifier = {
+				naval_doctrine_cost_factor = 0.1
 			}
 		}
 		ITA_Exports_1860 = {
@@ -513,7 +535,7 @@ ideas = {
 				breakthrough_factor = 0.1
 				supply_node_range = 0.2
 				supply_consumption_factor = -0.4
-				out_of_supply_factor = 0.3
+				out_of_supply_factor = -0.3
 				#ai_focus_aggressive_factor = 0.70
 			}
 		}
@@ -532,22 +554,115 @@ ideas = {
 				army_org_regain = 0.05
 				breakthrough_factor = 0.1
 				ai_focus_aggressive_factor = 0.70
+				out_of_supply_factor = -0.3
+			}
+		}
+		TUS_sharecropping_debate_idea = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = ITA_agriculture_focus
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				political_power_gain = -0.025
+			}
+		}
+		TUS_memories_of_1848_idea = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = revolutions_1848_generic
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.05
+			}
+		}
+		TUS_powerful_estates = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_foreign_capital
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = 0.2
+				production_speed_farm_factor = 0.05
+			}
+		}
+		TUS_empowered_workers = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_production_bonus
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = -0.2
+				production_speed_rail_way_factor = 0.05
+			}
+		}
+		TUS_curtailed_innovation = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_agrarian_reform
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				research_speed_Factor = -0.05
+			}
+		}
+		TUS_large_scaled_Exports = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = FRA_international_inflow
+			modifier = {
+				consumer_goods_factor = -0.05
 			}
 		}
 	}
+	
 	#### Companies
 	industrial_concern = {
 		ansaldo = {
 			picture = idea_ansaldo
 			cost = 250
 			allowed = {
-				original_tag = PIE
+				OR = {
+					original_tag = PIE
+					original_tag = TUS
+					#original_tag = NSC
+				}
 			}
 			visible = {
 				NOT = {
 					any_country = {
 						has_country_flag = is_literally_italy
 					}
+				}
+				if = {
+					limit = {
+						tag = TUS
+					}
+					has_completed_focus = TUS_attract_moderates
 				}
 			}
 			research_bonus = {

@@ -12,9 +12,14 @@ focus_tree = {
 
 	default = no
 
+	continuous_focus_position = {
+		x = 650
+		y = 870
+	}
+
 	focus = {
 		id = FIN_the_porvoo_diet
-		icon = GFX_goal_focus_continent_west_europe
+		icon = GFX_Focus_Continent_West_Europe
 		x = 4
 		y = 0
 		cost = 50
@@ -33,7 +38,7 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_the_january_comitee
-		icon = GFX_goal_focus_leave_continent_alone
+		icon = GFX_Focus_leave_continent_alone
 		relative_position_id = FIN_the_porvoo_diet
 		x = 0
 		y = 1
@@ -56,7 +61,7 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_the_diet_of_1863
-		icon = GFX_goal_focus_negotiate_russia
+		icon = GFX_Focus_Diplomatic_Ally_RUS_2
 		relative_position_id = FIN_the_january_comitee
 		x = 0
 		y = 1
@@ -79,7 +84,7 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_flag_discussion
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_the_diet_of_1863
 		x = -3
 		y = 1
@@ -105,7 +110,7 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_fennomans_pol
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_flag_discussion
 		x = 0
 		y = 1
@@ -128,7 +133,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_kielireskripti
-		icon = GFX_goal_focus_leave_continent_alone
+		icon = GFX_Focus_leave_continent_alone
 		relative_position_id = FIN_the_diet_of_1863
 		x = 0
 		y = 1
@@ -177,7 +182,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_karelianism
-		icon = GFX_goal_focus_support_conservatism
+		icon = GFX_Focus_Ideology_Support_Liberty
 		relative_position_id = FIN_support_fennomans
 		x = 0
 		y = 1
@@ -229,7 +234,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_flag_svecomans
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_the_diet_of_1863
 		x = 3
 		y = 1
@@ -255,7 +260,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_svecomans_pol
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_flag_svecomans
 		x = 0
 		y = 1
@@ -304,7 +309,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_finnishing_reforms
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_karelianism
 		x = 1
 		y = 1
@@ -327,7 +332,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_lorem_ipsum_c
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_finnishing_reforms
 		x = 0
 		y = 1
@@ -350,7 +355,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_second_diet
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_lorem_ipsum_c
 		x = 0
 		y = 1
@@ -373,7 +378,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_monetary_reforms
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_second_diet
 		x = 0
 		y = 1
@@ -399,7 +404,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_inspecting_economy
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_monetary_reforms
 		x = -2
 		y = 1
@@ -422,7 +427,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_encourage_investment
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_inspecting_economy
 		x = 0
 		y = 1
@@ -445,7 +450,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_own_currency
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_monetary_reforms
 		x = 0
 		y = 1
@@ -468,7 +473,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_finnish_banks
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_own_currency
 		x = 0
 		y = 1
@@ -500,7 +505,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_hopeamarkka
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_finnish_banks
 		x = -1
 		y = 1
@@ -525,7 +530,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_kultamarkka
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_finnish_banks
 		x = 1
 		y = 1
@@ -551,7 +556,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_lorem_ipsum_d
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_monetary_reforms
 		x = 2
 		y = 1
@@ -574,7 +579,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_lorem_ipsum_e
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_lorem_ipsum_d
 		x = 0
 		y = 1
@@ -597,7 +602,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_lorem_ipsum_f
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_hopeamarkka
 		x = 1
 		y = 1
@@ -627,7 +632,7 @@ focus_tree = {
 	focus = {
 		id = FIN_status_of_economy
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 17
+		x = 19
 		y = 0
 		cost = 50
 
@@ -687,11 +692,15 @@ focus_tree = {
 			focus = FIN_new_technical_school
 		}
 		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.10
+				uses = 3
+				category = naval_doctrine
+			}
 			add_tech_bonus = {
 				bonus = 0.10
 				uses = 3
 				category = naval_equipment
-				category = naval_doctrine
 			}
 		}
 	}
@@ -807,7 +816,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_question_of_industralization
-		icon = GFX_goal_focus_stimulate_economy
+		icon = GFX_Focus_stimulate_economy
 		relative_position_id = FIN_status_of_economy
 		x = -2
 		y = 1
@@ -832,7 +841,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_rapid_industralization
-		icon = GFX_goal_focus_industrial_revolution
+		icon = GFX_Focus_industrial_revolution
 		relative_position_id = FIN_question_of_industralization
 		x = -1
 		y = 1
@@ -858,7 +867,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_slowly_industralization
-		icon = GFX_goal_SWE_agricultural_economy
+		icon = GFX_Focus_agricultural_economy
 		relative_position_id = FIN_question_of_industralization
 		x = 1
 		y = 1
@@ -884,7 +893,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_power_for_factories
-		icon = GFX_goal_focus_industrial_revolution
+		icon = GFX_Focus_industrial_revolution
 		relative_position_id = FIN_rapid_industralization
 		x = -1
 		y = 1
@@ -907,7 +916,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_textile_industry
-		icon = GFX_goal_focus_textile
+		icon = GFX_Focus_Resource_Textile
 		relative_position_id = FIN_power_for_factories
 		x = 0
 		y = 1
@@ -947,7 +956,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_foreign_investors
-		icon = GFX_goal_focus_foreign_diplomacy_economy
+		icon = GFX_Focus_Diplomatic_foreign_economy
 		relative_position_id = FIN_textile_industry
 		x = 0
 		y = 1
@@ -1011,7 +1020,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_abolishtion_of_job_regulation
-		icon = GFX_goal_SWE_legislative_agenda
+		icon = GFX_Focus_Government_Reform_agenda
 		relative_position_id = FIN_sawmill_industry
 		x = 0
 		y = 1
@@ -1034,7 +1043,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_new_custom_policy
-		icon = GFX_goal_focus_freedom_economy
+		icon = GFX_Focus_freedom_economy
 		relative_position_id = FIN_abolishtion_of_job_regulation
 		x = 0
 		y = 1
@@ -1080,7 +1089,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_fight_with_hunger
-		icon = GFX_goal_SWE_famine_relief
+		icon = GFX_Focus_health_famine_relief
 		relative_position_id = FIN_new_agriculture_laws
 		x = 0
 		y = 1
@@ -1133,7 +1142,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_modernisation_of_ironwork_factories
-		icon = GFX_goal_SWE_magnates_support
+		icon = GFX_Focus_Industry_Construction_Support
 		relative_position_id = FIN_foreign_investors
 		x = 0
 		y = 1
@@ -1159,7 +1168,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_dockyard_industry
-		icon = GFX_focus_FIN_focus_finland_naval_supplies
+		icon = GFX_Focus_naval_supplies
 		relative_position_id = FIN_new_custom_policy
 		x = 0
 		y = 1
@@ -1228,7 +1237,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_tamflet_company
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_modernisation_of_ironwork_factories
 		x = 0
 		y = 1
@@ -1251,7 +1260,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_mekaniska_verkstads
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_dockyard_industry
 		x = 0
 		y = 1
@@ -1274,7 +1283,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_fiskari_dominance
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_fiskari_industry
 		x = 0
 		y = 1
@@ -1328,7 +1337,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_establishment_finnish_railways_board
-		icon = GFX_goal_focus_enact_law
+		icon = GFX_Focus_Law_Vote_1
 		relative_position_id = FIN_status_of_economy
 		x = 5
 		y = 1
@@ -1351,7 +1360,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_encourage_domestic_train
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_establishment_finnish_railways_board
 		x = -2
 		y = 1
@@ -1381,7 +1390,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_hanko_hyvinkaa_railway
-		icon = GFX_goal_focus_railroad_development
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = FIN_encourage_domestic_train
 		x = -1
 		y = 1
@@ -1404,7 +1413,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_tampere_helsinki_railway
-		icon = GFX_Focus_Train_Victorian
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = FIN_hanko_hyvinkaa_railway
 		x = 0
 		y = 1
@@ -1427,7 +1436,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_establish_suomen
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_establishment_finnish_railways_board
 		x = 2
 		y = 1
@@ -1482,7 +1491,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_state_railway_investment
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_railway_start
 		x = -1
 		y = 1
@@ -1508,7 +1517,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_private_railway_investment
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_railway_start
 		x = 1
 		y = 1
@@ -1534,7 +1543,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_riihimaki_saint_petersburg_railway
-		icon = GFX_goal_focus_war_gauges
+		icon = GFX_Focus_transport_war_gauges
 		relative_position_id = FIN_establish_suomen
 		x = 1
 		y = 1
@@ -1557,7 +1566,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_helsinki_turku_railway
-		icon = GFX_Focus_Train_Victorian
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = FIN_riihimaki_saint_petersburg_railway
 		x = 0
 		y = 1
@@ -1580,7 +1589,7 @@ focus_tree = {
 			
 	focus = {
 		id = FIN_hameenlinna_helsinki_line
-		icon = GFX_Focus_Train_Victorian
+		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = FIN_tampere_helsinki_railway
 		x = 3
 		y = 1
@@ -1610,7 +1619,7 @@ focus_tree = {
 	
 	focus = {
 		id = FIN_crimea_war_lesson
-		icon = GFX_goal_focus_leave_continent_alone
+		icon = GFX_Focus_leave_continent_alone
 
 		x = 31
 		y = 0
@@ -1630,7 +1639,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_future_of_army
-		icon = GFX_goal_focus_napoleonic_tactics
+		icon = GFX_Focus_Army_Napoleonic
 		relative_position_id = FIN_crimea_war_lesson
 		x = -1
 		y = 1
@@ -1647,8 +1656,8 @@ focus_tree = {
 			focus = FIN_crimea_war_lesson
 		}
 		completion_reward = {
-			add_tech_bonus = { 
-				bonus = 0.75 
+			add_doctrine_cost_reduction = { 
+				cost_reduction = 0.75 
 				uses = 1 
 				category = land_doctrine 
 			}
@@ -1658,7 +1667,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_hire_foreign_instructors
-		icon = GFX_goal_focus_increase_wages
+		icon = GFX_Focus_Economy_Increase_Wages
 		relative_position_id = FIN_future_of_army
 		x = -1
 		y = 1
@@ -1684,7 +1693,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_help_from_russia
-		icon = GFX_goal_focus_negotiate_russia
+		icon = GFX_Focus_Diplomatic_Ally_RUS_2
 		relative_position_id = FIN_future_of_army
 		x = 2
 		y = 1
@@ -1800,7 +1809,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_purchase_dreyse_rifles
-		icon = GFX_goal_focus_contain_prussia
+		icon = GFX_Focus_contain_prussia
 		relative_position_id = FIN_prussian_discipline
 		x = 0
 		y = 1
@@ -1898,7 +1907,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_guard_rifle_battalion
-		icon = GFX_goal_focus_traditional_army
+		icon = GFX_Focus_Army_Victorian_Traditional
 		relative_position_id = FIN_help_from_russia
 		x = 0
 		y = 1
@@ -1948,7 +1957,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_helsinki_junker_school
-		icon = GFX_goal_SWE_brain
+		icon = GFX_Focus_brain
 		relative_position_id = FIN_grenadier_sharpshooters
 		x = 0
 		y = 1
@@ -1971,7 +1980,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_milyutin_reforms
-		icon = GFX_goal_SWE_look_dawn
+		icon = GFX_focus_look_dawn
 		relative_position_id = FIN_helsinki_junker_school
 		x = 0
 		y = 1
@@ -2059,7 +2068,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_gamla_warfsbolaget_i_abo
-		icon = GFX_goal_focus_mass_produce_ships
+		icon = GFX_Focus_Production_Mass
 		relative_position_id = FIN_expansion_of_fortresss_sveaborg
 		x = 0
 		y = 1
@@ -2083,7 +2092,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_rjurik_kalevala
-		icon = GFX_goal_focus_generic_navy_ironclad
+		icon = GFX_Goal_ironclad_focus
 		relative_position_id = FIN_gamla_warfsbolaget_i_abo
 		x = 0
 		y = 1
@@ -2106,9 +2115,9 @@ focus_tree = {
 
 	focus = {
 		id = FIN_rotschild_loan
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
-		x = 40
-		y = 0
+		icon = GFX_focus_generic_get_rick_rolled_meme
+		x = 12
+		y = 10
 		cost = 50
 
 		ai_will_do = {
@@ -2119,20 +2128,29 @@ focus_tree = {
 			}
 		}
 		
-		available = { always = no }
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = FIN_great_famine_trigger_tt
+				hidden_trigger = {
+					has_dynamic_modifier = {
+						modifier = dynmod_FIN_famine
+					}
+				}
+			} 
+		}
 		
 		completion_reward = {
-
+			unlock_decision_tooltip = FIN_decision_rotschild_loan
 		}
 	}
 	
 	focus = {
 		id = FIN_famine_public_railway
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_rotschild_loan
 		x = 0
 		y = 1
-		cost = 50
+		cost = 100
 
 		ai_will_do = {
 			factor = 0
@@ -2151,7 +2169,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_pettu_bread
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_famine_public_railway
 		x = -2
 		y = 1
@@ -2168,13 +2186,14 @@ focus_tree = {
 			focus = FIN_famine_public_railway
 		}
 		completion_reward = {
-
+			unlock_decision_tooltip = FIN_decision_stockpile_food
+			country_event = finlandfamine.3
 		}
 	}
 		
 	focus = {
 		id = FIN_emergency_use_markka
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_famine_public_railway
 		x = 0
 		y = 1
@@ -2187,6 +2206,9 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
+		available = {
+			has_completed_focus = FIN_own_currency
+		}
 		prerequisite = {
 			focus = FIN_famine_public_railway
 		}
@@ -2197,7 +2219,7 @@ focus_tree = {
 		
 	focus = {
 		id = FIN_ask_grain_shipment
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_famine_public_railway
 		x = 2
 		y = 1
@@ -2214,13 +2236,13 @@ focus_tree = {
 			focus = FIN_famine_public_railway
 		}
 		completion_reward = {
-
+			unlock_decision_tooltip = FIN_decision_ask_grain_shipments
 		}
 	}
 		
 	focus = {
 		id = FIN_recover_famine_year
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_emergency_use_markka
 		x = 0
 		y = 1
@@ -2249,7 +2271,7 @@ focus_tree = {
 
 	focus = {
 		id = FIN_boost_industrialization
-		icon = GFX_focus_placeholder_get_rick_rolled_meme
+		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_recover_famine_year
 		x = 0
 		y = 1
@@ -2265,8 +2287,12 @@ focus_tree = {
 		prerequisite = {
 			focus = FIN_recover_famine_year
 		}
+
+		available = { has_country_flag = FIN_flag_famine_recovery }
+
 		completion_reward = {
 
 		}
 	}
+
 }

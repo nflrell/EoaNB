@@ -640,12 +640,12 @@
 			}
 			add_equipment_to_stockpile = {
 				type = support_equipment_1
-				amount = 1000
+				amount = 250
 				producer = ASA
 			}
 			add_equipment_to_stockpile = {
 				type = rifled_cannon_equipment_1
-				amount = 500
+				amount = 50
 				producer = ASA
 			}
 		}
@@ -770,6 +770,7 @@
 				has_completed_focus = ASA_Radical_Republican_Administration
 				has_completed_focus = ASA_Stalwart_Republican_Administration
 				has_completed_focus = ASA_Democratic_Administration
+				has_completed_focus = ASA_Amend_The_Constitution
 			}
 		}
 
@@ -958,6 +959,7 @@
 			OR = {
 				has_completed_focus = ASA_Boost_National_Defense
 				has_completed_focus = ASA_The_Stevens_Seward_Act
+				has_completed_focus = ASA_President_For_Life
 			}
 		}
 
@@ -1179,12 +1181,13 @@
 		x = 0
 		y = 5
 		cost = 42
-
+		available = {
+			has_tech = rifle_equipment3
+		}
 		prerequisite = {
 			focus = ASA_Army_Of_The_Atlantic_States
 			focus = ASA_The_Minutemen_Act
 		}
-
 		completion_reward = {
 			set_country_flag = ASA_established_federal_guard_flag
 			custom_effect_tooltip = ASA_The_Federal_Guard_tt

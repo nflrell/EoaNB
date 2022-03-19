@@ -737,10 +737,17 @@ spriteTypes = {
 		name = "GFX_decision_coal"
 		texturefile = "gfx/interface/decisions/decision_coal.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_decision_iron"
+		texturefile = "gfx/interface/decisions/decision_iron.png"
+	}
+	
 	spriteType = {
 		name = "GFX_decision_fabric"
 		texturefile = "gfx/interface/decisions/decision_fabric.dds"
 	}
+	
 	spriteType = {
 		name = "GFX_decision_wood"
 		texturefile = "gfx/interface/decisions/decision_wood.dds"
@@ -779,6 +786,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_decision_fort_flag"
 		texturefile = "gfx/interface/decisions/decision_fort_flag.png"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_cobble_road"
+		texturefile = "gfx/interface/decisions/decision_cobble_road.png"
 	}
 
 	spriteType = {

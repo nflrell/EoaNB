@@ -1,0 +1,1153 @@
+focus_tree = {
+	id = german_confederation_minor
+	country = {
+        factor = 1
+        modifier = {
+            add = 10
+            OR = {
+                tag = BRE
+				tag = FRK
+				tag = HAN
+				tag = HES
+				tag = HSD
+				tag = LCK
+				tag = MCK
+				tag = NAS
+				tag = OLD
+				tag = THU
+            }
+        }
+    }
+	
+	focus = {
+		id = GEC_focus_member_of_the_german_confederation
+		icon = GFX_
+		x = 18
+		y = 0
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 100 }
+		
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.05
+			add_war_support = -0.1
+			unlock_decision_category_tooltip = GEC_category_domestic_policy
+		}
+	}
+	
+	### POLITICAL BRANCH ###
+	
+	focus = {
+		id = GEC_focus_political_maneuvering
+		icon = GFX_Focus_Government
+		relative_position_id = GEC_focus_member_of_the_german_confederation
+		x = -13
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_member_of_the_german_confederation }
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_internal_policy
+		icon = GFX_Focus_Law_revision
+		relative_position_id = GEC_focus_political_maneuvering
+		x = -3
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_political_maneuvering }
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_liberal_reforms
+		icon = GFX_Focus_Ideology_Support_Liberty
+		relative_position_id = GEC_focus_internal_policy
+		x = -1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { 
+			base = 80
+			modifier = {
+				factor = 0
+				has_government = traditional_conservatism
+			}
+		}
+		
+		prerequisite = { focus = GEC_focus_internal_policy }
+		mutually_exclusive = { focus = GEC_focus_conservative_stance }
+
+		completion_reward = {
+			add_popularity = {
+	    	  	ideology = centrism
+	    	  	popularity = 0.1
+	    	}
+        	add_political_power = 25
+			add_stability = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_constitutional_amendments
+		icon = GFX_Focus_Government_Reform_Administration
+		relative_position_id = GEC_focus_liberal_reforms
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_liberal_reforms }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_conservative_stance
+		icon = GFX_Focus_consolidate_power
+		relative_position_id = GEC_focus_internal_policy
+		x = 1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { 
+			base = 80
+			modifier = {
+				factor = 0
+				has_government = centrism
+			}
+		}
+		
+		prerequisite = { focus = GEC_focus_internal_policy }
+		mutually_exclusive = { focus = GEC_focus_liberal_reforms }
+
+		completion_reward = {
+			add_popularity = {
+	    	  	ideology = traditional_conservatism
+	    	  	popularity = 0.1
+	    	}
+        	add_political_power = 50
+			add_stability = -0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_peace_and_quiet
+		icon = GFX_Focus_Government_2
+		relative_position_id = GEC_focus_conservative_stance
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_conservative_stance }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+			add_political_power = 50
+			add_stability = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_external_policy
+		icon = GFX_Focus_Diplomatic_foreign_central
+		relative_position_id = GEC_focus_political_maneuvering
+		x = 3
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_political_maneuvering }
+
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_trade_policy
+		icon = GFX_Focus_Trade_International
+		relative_position_id = GEC_focus_external_policy
+		x = -2
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_external_policy }
+
+		completion_reward = {
+			add_political_power = 50
+			#unlock_decision_tooltip = 
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_profits_from_our_harbours
+		icon = GFX_
+		relative_position_id = GEC_focus_trade_policy
+		x = -1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_trade_policy }
+		mutually_exclusive = { focus = GEC_focus_profits_from_the_zollverein }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_profits_from_the_zollverein
+		icon = GFX_
+		relative_position_id = GEC_focus_trade_policy
+		x = 1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_trade_policy }
+		mutually_exclusive = { focus = GEC_focus_profits_from_our_harbours }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_tensions_in_the_confederation
+		icon = GFX_focus_BAD_Vereinsgewehr
+		relative_position_id = GEC_focus_external_policy
+		x = 2
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		available = {
+			#
+		}
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_external_policy }
+
+		completion_reward = {
+			add_political_power = -25
+			add_war_support = 0.1
+			add_manpower = 500
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_prussian_affiliation
+		icon = GFX_Focus_Diplomatic_Ally_PRS
+		relative_position_id = GEC_focus_tensions_in_the_confederation
+		x = -1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { 
+			base = 80
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				OR = {
+					tag = FRK
+					tag = HAN
+					tag = HES
+					tag = HSD
+					tag = NAS
+				}
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = GEC_focus_austrian_style_reform
+			}
+		}
+		
+		prerequisite = { focus = GEC_focus_tensions_in_the_confederation }
+		mutually_exclusive = { focus = GEC_focus_austrian_affiliation }
+
+		completion_reward = {
+			add_political_power = 25
+			add_war_support = 0.05
+			add_opinion_modifier = {
+				target = PRS
+				modifier = medium_increase
+			}
+			reverse_add_opinion_modifier = {
+				target = PRS
+				modifier = medium_increase 
+			}
+			#hidden_effect = {
+			#	set_country_flag = eoanb_flag_sww_side_prs
+			#}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_austrian_affiliation
+		icon = GFX_Focus_Diplomatic_Ally_AUS
+		relative_position_id = GEC_focus_tensions_in_the_confederation
+		x = 1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { 
+			base = 80
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				OR = {
+					tag = BRE
+					tag = LCK
+					tag = MCK
+					tag = OLD
+					tag = THU
+				}
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = GEC_focus_prussian_style_reform
+			}
+		}
+		
+		prerequisite = { focus = GEC_focus_tensions_in_the_confederation }
+		mutually_exclusive = { focus = GEC_focus_prussian_affiliation }
+
+		completion_reward = {
+			add_political_power = 30
+			add_war_support = 0.02
+			add_opinion_modifier = {
+				target = AUS
+				modifier = medium_increase
+			}
+			reverse_add_opinion_modifier = {
+				target = AUS
+				modifier = medium_increase 
+			}
+			#hidden_effect = {
+			#	set_country_flag = eoanb_flag_sww_side_aus
+			#}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_bring_our_weight_to_bear
+		icon = GFX_
+		relative_position_id = GEC_focus_constitutional_amendments
+		x = 4
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_constitutional_amendments focus = GEC_focus_peace_and_quiet }
+		prerequisite = { focus = GEC_focus_profits_from_our_harbours focus = GEC_focus_profits_from_the_zollverein }
+		prerequisite = { focus = GEC_focus_prussian_affiliation focus = GEC_focus_austrian_affiliation }
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.02
+			add_war_support = 0.02
+			add_manpower = 500
+		}
+	}
+
+	### MILITARY BRANCH ###
+	
+	focus = {
+		id = GEC_focus_the_state_of_our_armed_forces
+		icon = GFX_Focus_Army_Staff
+		relative_position_id = GEC_focus_member_of_the_german_confederation
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_member_of_the_german_confederation }
+
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = land_doctrine }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_weapons }
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_das_heer
+		icon = GFX_Focus_Army_Defence_1
+		relative_position_id = GEC_focus_the_state_of_our_armed_forces
+		x = -3
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_the_state_of_our_armed_forces }
+
+		completion_reward = {
+			army_experience = 15
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = land_doctrine }
+			add_war_support = 0.03
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_prussian_style_reform
+		icon = GFX_goal_focus_prussian_militarism
+		relative_position_id = GEC_focus_das_heer
+		x = -1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { 
+			base = 80
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				OR = {
+					tag = FRK
+					tag = HAN
+					tag = HES
+					tag = HSD
+					tag = NAS
+				}
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = GEC_focus_austrian_affiliation
+			}
+		}
+		
+		prerequisite = { focus = GEC_focus_das_heer }
+		mutually_exclusive = { focus = GEC_focus_austrian_style_reform }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+			army_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = artillery }
+			add_war_support = 0.02
+			add_opinion_modifier = {
+				target = PRS
+				modifier = small_increase
+			}
+			reverse_add_opinion_modifier = {
+				target = PRS
+				modifier = small_increase 
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_austrian_style_reform
+		icon = GFX_goal_AUS_Austrian_Army
+		relative_position_id = GEC_focus_das_heer
+		x = 1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { 
+			base = 80
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				OR = {
+					tag = BRE
+					tag = LCK
+					tag = MCK
+					tag = OLD
+					tag = THU
+				}
+			}
+			modifier = {
+				factor = 0
+				has_completed_focus = GEC_focus_prussian_affiliation
+			}
+		}
+		
+		prerequisite = { focus = GEC_focus_das_heer }
+		mutually_exclusive = { focus = GEC_focus_prussian_style_reform }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+			add_political_power = 25
+			army_experience = 5
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = artillery }
+			add_war_support = 0.01
+			add_opinion_modifier = {
+				target = AUS
+				modifier = small_increase
+			}
+			reverse_add_opinion_modifier = {
+				target = AUS
+				modifier = small_increase 
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_landwehr_adaptation
+		icon = GFX_focus_BAD_Landwehr
+		relative_position_id = GEC_focus_das_heer
+		x = -2
+		y = 2
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_prussian_style_reform focus = GEC_focus_austrian_style_reform }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+			add_political_power = 25
+			add_war_support = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_jaeger_tactics
+		icon = GFX_Focus_Army_Victorian_Traditional
+		relative_position_id = GEC_focus_das_heer
+		x = 0
+		y = 2
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_prussian_style_reform focus = GEC_focus_austrian_style_reform }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+			army_experience = 5
+			add_war_support = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_cavalry_modernization
+		icon = GFX_Focus_Army_Cavalry
+		relative_position_id = GEC_focus_das_heer
+		x = 2
+		y = 2
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_prussian_style_reform focus = GEC_focus_austrian_style_reform }
+
+		completion_reward = {
+			#unlock_decision_tooltip = 
+			army_experience = 5
+			add_war_support = 0.02
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_die_marine
+		icon = GFX_Focus_Victorian_Line_Ship
+		relative_position_id = GEC_focus_the_state_of_our_armed_forces
+		x = 3
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_the_state_of_our_armed_forces }
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				navy_experience = 15
+				add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = naval_doctrine }
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_equipment }
+			}
+			else = {
+				army_experience = 15
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = support_tech }
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = tech_category_naval_infantry }
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_a_small_task_force
+		icon = GFX_Focus_Navy_Restriction_1
+		relative_position_id = GEC_focus_die_marine
+		x = -1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_die_marine }
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				#unlock_decision_tooltip = 
+			}
+			else = {
+				#add_ideas = 
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_naval_developments
+		icon = GFX_Focus_Production_Mass
+		relative_position_id = GEC_focus_die_marine
+		x = 1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_die_marine }
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				navy_experience = 25
+				add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = naval_doctrine }
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_equipment }
+			}
+			else = {
+				army_experience = 25
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = support_tech }
+				add_tech_bonus = { bonus = 0.25 uses = 1 category = infantry_weapons }
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_defending_our_coast_and_rivers
+		icon = GFX_Focus_coastal_batteries
+		relative_position_id = GEC_focus_die_marine
+		x = -2
+		y = 2
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_a_small_task_force }
+		prerequisite = { focus = GEC_focus_naval_developments }
+
+		completion_reward = {
+			#add_ideas = 
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_naval_exercises
+		icon = GFX_Focus_Navy_Tactics
+		relative_position_id = GEC_focus_die_marine
+		x = 0
+		y = 2
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_a_small_task_force }
+		prerequisite = { focus = GEC_focus_naval_developments }
+
+		completion_reward = {
+			navy_experience = 25
+			add_doctrine_cost_reduction = { cost_reduction = 0.5 uses = 1 category = naval_doctrine }
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_new_ship_classes
+		icon = GFX_Goal_gunboat_focus
+		relative_position_id = GEC_focus_die_marine
+		x = 2
+		y = 2
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_a_small_task_force }
+		prerequisite = { focus = GEC_focus_naval_developments }
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = naval_equipment }
+		}
+	}
+	
+	
+	focus = {
+		id = GEC_focus_a_force_to_be_reckoned_with
+		icon = GFX_Focus_Weapon_Gun_1_WW1
+		relative_position_id = GEC_focus_the_state_of_our_armed_forces
+		x = 0
+		y = 4
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_landwehr_adaptation }
+		prerequisite = { focus = GEC_focus_jaeger_tactics }
+		prerequisite = { focus = GEC_focus_cavalry_modernization }
+		prerequisite = { focus = GEC_focus_defending_our_coast_and_rivers }
+		prerequisite = { focus = GEC_focus_naval_exercises }
+		prerequisite = { focus = GEC_focus_new_ship_classes }
+
+		completion_reward = {
+			army_experience = 10
+			navy_experience = 10
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = land_doctrine }
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = naval_doctrine }
+			add_war_support = 0.05
+			add_manpower = 500
+		}
+	}
+	
+	### ECONOMIC BRANCH ###
+	
+	focus = {
+		id = GEC_focus_industrialization
+		icon = GFX_Focus_industrial_revolution
+		relative_position_id = GEC_focus_member_of_the_german_confederation
+		x = 13
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_member_of_the_german_confederation }
+
+		completion_reward = {
+			add_timed_idea = { idea = GEC_idea_industrialization_efforts days = 1825 }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = mechanical_engineering_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = process_engineering_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = electronics_devices_tech }
+			if = {
+				limit = {
+					NOT = { has_idea = industrializing }
+				}
+				activate_mission_tooltip = GEC_mission_industrializing
+				hidden_effect = {
+					activate_mission = GEC_mission_industrializing
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_technological_advancements
+		icon = GFX_focus_kor_studying_of_science
+		relative_position_id = GEC_focus_industrialization
+		x = -5
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_industrialization }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = infantry_weapons }
+			add_tech_bonus = { bonus = 0.75 uses = 2 category = mechanical_engineering_tech }
+			unlock_decision_tooltip = GEC_decision_establish_scientific_research
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_biochemical_discoveries
+		icon = GFX_focus_research2
+		relative_position_id = GEC_focus_technological_advancements
+		x = -1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_technological_advancements }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 2 category = biochemistry_tech }
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_electronic_inventions
+		icon = GFX_Focus_Telegraph_Lines
+		relative_position_id = GEC_focus_biochemical_discoveries
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_biochemical_discoveries }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 2 category = electronics_devices_tech }
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_new_production_methods
+		icon = GFX_Focus_machine_concern
+		relative_position_id = GEC_focus_technological_advancements
+		x = 1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_technological_advancements }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 2 category = process_engineering_tech }
+		}
+	}
+	
+	focus = {
+		id =  GEC_focus_modern_means_of_transportation
+		icon = GFX_Focus_transport_railroad_development
+		relative_position_id = GEC_focus_new_production_methods
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_new_production_methods }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = transport_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = humanities_tech }
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_infrastructure_investments
+		icon = GFX_focus_KNS_rail_company_subsidies
+		relative_position_id = GEC_focus_industrialization
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_industrialization }
+
+		completion_reward = {
+			add_timed_idea = { idea = GEC_idea_infrastructure_investments days = 1825 }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = transport_tech }
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_naval_infrastructure
+		icon = GFX_Focus_Naval_Supplies
+		relative_position_id = GEC_focus_infrastructure_investments
+		x = -2
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_infrastructure_investments }
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				navy_experience = 25
+				add_doctrine_cost_reduction = { cost_reduction = 0.75 uses = 1 category = naval_doctrine }
+				unlock_decision_tooltip = GEC_decision_invest_in_our_naval_infrastructure
+			}
+			else = {
+				add_political_power = 50
+				navy_experience = 10
+				unlock_decision_tooltip = GEC_decision_invest_in_our_naval_infrastructure_inland
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_ports_and_docks
+		icon = GFX_goal_generic_construct_naval_dockyard
+		relative_position_id = GEC_focus_naval_infrastructure
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_naval_infrastructure }
+		
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				navy_experience = 25
+				add_doctrine_cost_reduction = { cost_reduction = 0.75 uses = 1 category = naval_doctrine }
+				unlock_decision_tooltip = GEC_decision_invest_in_our_naval_ports
+				unlock_decision_tooltip = GEC_decision_invest_in_our_dockyards
+			}
+			else = {
+				add_political_power = 50
+				navy_experience = 10
+				unlock_decision_tooltip = GEC_decision_invest_in_our_river_ports
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_terrestrial_infrastructure
+		icon = GFX_Focus_transport_gas_lighting_streets
+		relative_position_id = GEC_focus_infrastructure_investments
+		x = 2
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_infrastructure_investments }
+		
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = { cost_reduction = 0.75 uses = 1 category = land_doctrine }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = mechanical_engineering_tech }
+			unlock_decision_tooltip = GEC_decision_invest_in_our_terrestrial_infrastructure
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_roads_and_canals
+		icon = GFX_Focus_Roads_Canals_Investment
+		relative_position_id = GEC_focus_naval_infrastructure
+		x = 2
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_naval_infrastructure }
+		prerequisite = { focus = GEC_focus_terrestrial_infrastructure }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = transport_tech }
+			unlock_decision_tooltip = GEC_decision_invest_in_our_road_network
+			unlock_decision_tooltip = GEC_decision_invest_in_our_canals
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_railway_connections
+		icon = GFX_Focus_transport_prefecture_lines_railway
+		relative_position_id = GEC_focus_terrestrial_infrastructure
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_terrestrial_infrastructure }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = trains_tech }
+			unlock_decision_tooltip = GEC_decision_railway_upgrade
+			unlock_decision_tooltip = GEC_decision_acquire_trains
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_industrial_developments
+		icon = GFX_Focus_Industrial_Complex
+		relative_position_id = GEC_focus_industrialization
+		x = 5
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_industrialization }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = mechanical_engineering_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = process_engineering_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = electronics_devices_tech }
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_resource_prospecting
+		icon = GFX_Focus_Resource_Extraction_Mining
+		relative_position_id = GEC_focus_industrial_developments
+		x = -1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_industrial_developments }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = resource_extraction_tech }
+			if = {
+				limit = {
+					any_owned_state = {
+						has_resources_amount = {
+							resource = iron
+							amount > 0
+						}
+					}
+				}
+				unlock_decision_tooltip = GEC_decision_resource_prospecting_iron
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						has_resources_amount = {
+							resource = coal
+							amount > 0
+						}
+					}
+				}
+				unlock_decision_tooltip = GEC_decision_resource_prospecting_coal
+			}
+			#alternative for city states?
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_extraction_enhancement
+		icon = GFX_
+		relative_position_id = GEC_focus_resource_prospecting
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_resource_prospecting }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 2 category = resource_extraction_tech }
+			unlock_decision_tooltip = GEC_decision_subsidize_new_extraction_methods_1
+			#alternative for city states?
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_encouraging_trades_and_industry
+		icon = GFX_Focus_Industry_Construction_Support
+		relative_position_id = GEC_focus_industrial_developments
+		x = 1
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_industrial_developments }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = humanities_tech }
+			if = {
+				limit = {
+					has_idea = GEC_idea_zunftwesen
+				}
+				unlock_decision_tooltip = GEC_decision_enact_gewerbefreiheit
+			}
+			else = {
+				unlock_decision_tooltip = GEC_decision_establish_gewerbeordnung
+			}
+		}
+	}
+	
+	focus = {
+		id = GEC_focus_industrial_subsidies_and_support
+		icon = GFX_Focus_Industry_Construction_Support_Budget
+		relative_position_id = GEC_focus_encouraging_trades_and_industry
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_encouraging_trades_and_industry }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = humanities_tech }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = economics_tech }
+			unlock_decision_tooltip = GEC_decision_subsidize_and_support_major_industries
+		}
+	}
+	
+	focus = {
+		id =  GEC_focus_industrializing_society
+		icon = GFX_Focus_Industry
+		relative_position_id = GEC_focus_roads_and_canals
+		x = 0
+		y = 1
+		cost = 75
+		available_if_capitulated = no
+		ai_will_do = { base = 80 }
+		
+		prerequisite = { focus = GEC_focus_electronic_inventions }
+		prerequisite = { focus = GEC_focus_modern_means_of_transportation }
+		prerequisite = { focus = GEC_focus_ports_and_docks }
+		prerequisite = { focus = GEC_focus_roads_and_canals }
+		prerequisite = { focus = GEC_focus_railway_connections }
+		prerequisite = { focus = GEC_focus_extraction_enhancement }
+		prerequisite = { focus = GEC_focus_industrial_subsidies_and_support }
+
+		completion_reward = {
+			add_tech_bonus = { bonus = 1 uses = 1 category = mechanical_engineering_tech }
+			add_tech_bonus = { bonus = 1 uses = 1 category = process_engineering_tech }
+			add_tech_bonus = { bonus = 1 uses = 1 category = biochemistry_tech }
+			add_tech_bonus = { bonus = 1 uses = 1 category = electronics_devices_tech }
+			add_timed_idea = { idea = GEC_idea_steady_industrialization days = 1825 }
+		}
+	}
+	
+}

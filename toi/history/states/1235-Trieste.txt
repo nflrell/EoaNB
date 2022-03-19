@@ -13,7 +13,7 @@ state = {
 			6626 10
 		}
 		victory_points = {
-			14191 1
+			14191 3
 		}
 
 		buildings = {
@@ -38,7 +38,7 @@ state = {
 	}
 
 	provinces = {
-		6626 14191
+		6626 14191 14287
 	}
 	manpower =225789
 

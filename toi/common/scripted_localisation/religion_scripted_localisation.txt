@@ -152,6 +152,12 @@ defined_text = {
 		localization_key = "NATIONAL_RELIGION_CRUZOOB"
 	}
 	text = {
+		trigger = {
+			check_variable = { v = global.ukonusko }
+		}
+		localization_key = "NATIONAL_RELIGION_UKONUSKO"
+	}
+	text = {
 		localization_key = "NATIONAL_RELIGION_SECULAR"
 	}
 }
@@ -465,7 +471,12 @@ defined_text = {
 		}
 		localization_key = "Taoism"
 	}
-	
+	text = {
+		trigger = {
+			check_variable = { v = global.ukonusko }
+		}
+		localization_key = "Ukonusko"
+	}
 	text = {
 		localization_key = "Unknown"
 	}
@@ -782,6 +793,12 @@ defined_text = {
 	}
 	
 	text = {
+		trigger = {
+			check_variable = { v = global.ukonusko }
+		}
+		localization_key = "GFX_idea_religion_ukonusko"
+	}	
+	text = {
 		localization_key = "GFX_religion_unknown"
 	}
 }
@@ -1024,6 +1041,12 @@ defined_text = {
 		    has_idea = ITA_hos_Victor_Emmanuel_II  
 		}
 		localization_key = "Victor Emmanuel II"
+	}
+	text = {
+		trigger = {
+			has_ideas = TUS_hos_Leopold_II
+		}
+		localization_key = "Lepold II"
 	}
 	text = {
 		trigger = {

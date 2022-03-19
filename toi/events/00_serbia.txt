@@ -902,3 +902,337 @@ country_event = { #Serbian Gendermery
 		ai_chance = { factor = 100 }
 	}
 }
+
+country_event = { #Act on Establishment of the National Army
+	id = SERmisc.7
+	title = SERmisc.7.t
+	desc = SERmisc.7.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.7.a
+		ai_chance = { factor = 100 }
+		swap_ideas = {
+			remove_idea = SER_idea_serbianarmy
+			add_idea = SER_idea_serbianarmy1
+		}
+	}
+}
+
+country_event = { #Decree of the People's Army
+	id = SERmisc.8
+	title = SERmisc.8.t
+	desc = SERmisc.8.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.8.a
+		ai_chance = { factor = 100 }
+		swap_ideas = {
+			remove_idea = volunteer_only
+			add_idea = early_conscription
+		}
+	}
+}
+
+country_event = { #Hipolit Mondain Army Reform
+	id = SERmisc.9
+	title = SERmisc.9.t
+	desc = SERmisc.9.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.9.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.05
+		add_advisor_role = {
+			Character = SER_Hipolit_Mondain
+			advisor = {
+				slot = army_chief
+				cost = 50
+				idea_token = SER_Hipolit_Mondain_HC
+				traits = {
+					army_chief_organizational_2
+					army_chief_reform_1
+				}
+				allowed = {
+					original_tag = SER
+				}
+			}
+			Activate = yes
+		}
+		activate_mission = SER_mission_mondain_army_reforms
+		add_ideas = SER_idea_mondain_reform
+	}
+}
+
+country_event = { #Law of Artillery Administration
+	id = SERmisc.10
+	title = SERmisc.10.t
+	desc = SERmisc.10.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.10.a
+		ai_chance = { factor = 100 }
+		swap_ideas = {
+			remove_idea = SER_idea_mondain_reform
+			add_idea = SER_idea_mondain_reform1
+		}
+		add_advisor_role = {
+			Character = SER_Frantisek_Zach
+			advisor = {
+				slot = theorist
+				cost = 50
+				idea_token = SER_Frantisek_Zach_HC
+				traits = {
+					military_theorist
+					army_artillery_1
+				}
+				allowed = {
+					original_tag = SER
+				}
+			}
+			Activate = yes
+		}
+	}
+}
+
+country_event = { #Mondain - succed 
+	id = SERmisc.11
+	title = SERmisc.11.t
+	desc = SERmisc.11.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.11.a
+		ai_chance = { factor = 100 }
+		
+		retire_character = SER_Hipolit_Mondain
+		
+		swap_ideas = {
+			remove_idea = law_pre_industrial_army
+			add_idea = law_victorian_army
+		}
+
+		hidden_effect = {
+			remove_ideas = SER_idea_mondain_reform1
+			add_advisor_role = {
+			Character = SER_Milivoje_Blaznavac
+			advisor = {
+				slot = army_chief
+				cost = 50
+				idea_token = SER_Milivoje_Blaznavac_HC
+				traits = {
+					army_chief_planning_1
+					army_chief_drill_1
+				}
+				allowed = {
+					original_tag = SER
+				}
+			}
+			Activate = yes
+			}
+		}
+	}
+}
+
+country_event = { #Mondain - failed
+	id = SERmisc.12
+	title = SERmisc.12.t
+	desc = SERmisc.12.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.12.a
+		ai_chance = { factor = 100 }
+		retire_character = SER_Hipolit_Mondain
+		hidden_effect = {
+			remove_ideas = SER_idea_mondain_reform1
+			add_advisor_role = {
+			Character = SER_Milivoje_Blaznavac
+			advisor = {
+				slot = army_chief
+				cost = 50
+				idea_token = SER_Milivoje_Blaznavac_HC
+				traits = {
+					#army_chief_organizational_2
+					#army_chief_drill_1
+				}
+				allowed = {
+					original_tag = SER
+				}
+			}
+			Activate = yes
+			}
+		}
+	}
+}
+
+country_event = { #Convocation of the Second Bulgarian Legion
+	id = SERmisc.13
+	title = SERmisc.13.t
+	desc = SERmisc.13.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.13.a
+		ai_chance = { factor = 100 }
+		custom_effect_tooltip = eoanb_tt_SER_event_bulgarian_legion
+		hidden_effect = {
+			add_war_support = 0.05
+			army_experience = 20
+		}
+	}
+}
+
+country_event = { #New Talented Generals
+	id = SERmisc.14
+	title = SERmisc.14.t
+	desc = SERmisc.14.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.14.a
+		ai_chance = { factor = 100 }
+		#custom_effect_tooltip = eoanb_tt_SER_event_bulgarian_legion
+		hidden_effect = {
+			add_doctrine_cost_reduction = { cost_reduction = 0.25 uses = 1 category = land_doctrine }
+        	#SER_Milojko_Lesjanin = {
+				#add_corps_commander_role = {
+					#traits = { }
+					#skill = 3
+						#attack_skill = 2
+						#defense_skill = 3
+						#planning_skill = 2
+						#logistics_skill = 4
+					#legacy_id = 3606
+				#}
+			#}
+		}
+	}
+}
+
+country_event = { #Cooperation with Montenegro - pt 1
+	id = SERmisc.15
+	title = SERmisc.15.t
+	desc = SERmisc.15.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.15.a
+		ai_chance = { factor = 70 }
+		add_political_power = -50
+		MNT = { country_event = { id = SERmisc.16 } }
+	}
+	
+	option = {
+		name = SERmisc.15.b
+		ai_chance = { factor = 30 }
+		add_political_power = 50
+		add_war_support = -0.05
+		army_experience = -20
+	}
+}
+
+country_event = { #Cooperation with Montenegro - pt 2 Montenegro's respond
+	id = SERmisc.16
+	title = SERmisc.16.t
+	desc = SERmisc.16.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.16.a
+		ai_chance = { factor = 70 }
+		reverse_add_opinion_modifier = { target = SER modifier = eoanb_om_RUS_increase_very_small }
+			diplomatic_relation = {
+                country = SER
+                relation = non_aggression_pact
+                active = yes
+            }
+		}
+	}
+	
+	option = {
+		name = SERmisc.16.a
+		ai_chance = { factor = 30 }
+		reverse_add_opinion_modifier = { target = SER modifier = eoanb_om_RUS_decrease_small }
+	}
+}
+
+country_event = { #Pancic's Time
+	id = SERmisc.19
+	title = SERmisc.19.t
+	desc = SERmisc.19.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.19.a
+		ai_chance = { factor = 100 }
+		add_political_power = 100
+	}
+}
+
+country_event = { #Commercial Code
+	id = SERmisc.17
+	title = SERmisc.17.t
+	desc = SERmisc.17.d
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SERmisc.17.a
+		ai_chance = { factor = 100 }
+		add_political_power = 50
+		add_stability = 0.05
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech category = economics_tech }
+		swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship }
+	}
+}

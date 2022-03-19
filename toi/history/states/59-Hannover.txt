@@ -5,7 +5,8 @@ state = {
 	state_category = city
 	
 	resources = {
-		wood = 4
+		iron = 6
+		wood = 2
 	}
 
 	provinces = {

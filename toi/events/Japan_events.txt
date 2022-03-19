@@ -1,11 +1,13 @@
 ###Japan is the best
 add_namespace = japindustrialrevolution
 add_namespace = JAP_public_works_department
-add_namespace = foreign_funds
-add_namespace = jap_request_choo_choo
+add_namespace = JAP_foreign_funds
+add_namespace = JAP_request_trains
+add_namespace = JAP_political
+add_namespace = JAP_military
 
 ###Form a Budget
-country_event = {  
+	country_event = {  
 		id = japindustrialrevolution.1
 		title = japindustrialrevolution.1.t
 		desc = japindustrialrevolution.1.d
@@ -15,8 +17,13 @@ country_event = {
 		is_triggered_only = yes
 
 		option = {
-			name = japindustrialrevolution.1.a
+			name = japindustrialrevolution.1.a	
 			add_ideas = JAP_military_industry
+			custom_effect_tooltip = form_a_budget_his_tt
+		}
+		option = {
+			name = japindustrialrevolution.1.b
+			custom_effect_tooltip = form_a_budget_alt_tt
 		}
 	}
 	#Tokyo Railway Opening
@@ -24,7 +31,7 @@ country_event = {
 		id = japindustrialrevolution.2
 		title = japindustrialrevolution.2.t
 		desc = japindustrialrevolution.2.d
-		picture = GFX_news_event_japan_victorian_railroad
+		picture = GFX_news_event_jap_victorian_railroad
 	
 		is_triggered_only = yes
 	
@@ -49,7 +56,7 @@ country_event = {
 				add_opinion_modifier = { target = JAP modifier = eoanb_om_PRS_focus_like }
 				reverse_add_opinion_modifier = { target = JAP modifier = eoanb_om_PRS_focus_like }
 				JAP = { country_event = japindustrialrevolution.8 }
-				FRA = { 
+				HOL = { 
 					add_political_power = 15
 				}
 			}
@@ -83,7 +90,7 @@ country_event = {
 		option = {
 			name = japindustrialrevolution.4.b
 			hidden_effect = {
-			JAP = { country_event = japindustrialrevolution.11 }
+			PRS = { country_event = japindustrialrevolution.11 }
 			}
 		}
 	}
@@ -103,7 +110,7 @@ country_event = {
 				add_opinion_modifier = { target = JAP modifier = eoanb_om_PRS_focus_like }
 				reverse_add_opinion_modifier = { target = JAP modifier = eoanb_om_PRS_focus_like }
 				JAP = { country_event = japindustrialrevolution.12 }
-				FRA = { 
+				ENG = { 
 					add_political_power = 15
 				}
 			}
@@ -157,7 +164,7 @@ country_event = {
 				add_opinion_modifier = { target = JAP modifier = eoanb_om_PRS_focus_like }
 				reverse_add_opinion_modifier = { target = JAP modifier = eoanb_om_PRS_focus_like }
 				JAP = { country_event = japindustrialrevolution.16 }
-				FRA = { 
+				USA = { 
 					add_political_power = 15
 				}
 			}
@@ -180,6 +187,12 @@ country_event = {
 
 		option = {
 			name = japindustrialrevolution.8.a
+			JAP = {
+				add_timed_idea = {
+					idea = JAP_dutch_accept
+					days = 720
+				}
+			}
 		}
 	}
 	###Dutch Decline
@@ -208,6 +221,12 @@ country_event = {
 
 		option = {
 			name = japindustrialrevolution.10.a
+			JAP = {
+				add_timed_idea = {
+					idea = JAP_prussia_accept
+					days = 720
+				}
+			}
 		}
 	}
 	#Prussia Declines
@@ -224,7 +243,7 @@ country_event = {
 			name = japindustrialrevolution.11.a
 		}
 	}
-	###Britian Accepts
+	###Britain Accepts
 	country_event = {  
 		id = japindustrialrevolution.12
 		title = japindustrialrevolution.12.t
@@ -236,6 +255,12 @@ country_event = {
 
 		option = {
 			name = japindustrialrevolution.12.a
+			JAP = {
+				add_timed_idea = {
+					idea = JAP_british_accept
+					days = 720
+				}
+			}
 		}
 	}
 	###Britain Declines
@@ -264,6 +289,12 @@ country_event = {
 
 		option = {
 			name = japindustrialrevolution.14.a
+			JAP = {
+				add_timed_idea = {
+					idea = JAP_french_accept
+					days = 720
+				}
+			}
 		}
 	}
 	###France Declines
@@ -292,6 +323,12 @@ country_event = {
 
 		option = {
 			name = japindustrialrevolution.16.a
+			JAP = {
+				add_timed_idea = {
+					idea = JAP_usa_accept
+					days = 720
+				}
+			}
 		}
 	}
 	###USA Declines
@@ -308,23 +345,25 @@ country_event = {
 			name = japindustrialrevolution.17.a
 		}
 	}
-	###MEIJI IR PLANNING
+	###MEIJI IR FIRST
 	country_event = {  
 		id = japindustrialrevolution.18
 		title = japindustrialrevolution.18.t
 		desc = japindustrialrevolution.18.d
-		picture = GFX_report_event_generic_sign_treaty2
+		picture = GFX_report_event_jap_meiji_signature
 
 		fire_only_once = yes
 		is_triggered_only = yes
 
 		option = {
 			name = japindustrialrevolution.18.a
-				add_stability = .1
-	   }
-	option = {
-		name = japindustrialrevolution.8.b
-			add_stability = -.08
+				add_stability = 0.04
+				add_political_power = -25
+	   	}
+		option = {
+		name = japindustrialrevolution.18.b
+			add_stability = -0.04
+			add_political_power = 25
 		}
 	}
 	### SHIROYAMA FLAVOR 1
@@ -332,7 +371,7 @@ country_event = {
 		id = japindustrialrevolution.19
 		title = japindustrialrevolution.19.t
 		desc = japindustrialrevolution.19.d
-		picture = GFX_report_event_samarai
+		picture = GFX_report_event_jap_samarai_1
 
 		fire_only_once = yes
 		is_triggered_only = yes
@@ -347,7 +386,7 @@ country_event = {
 		id = japindustrialrevolution.20
 		title = japindustrialrevolution.20.t
 		desc = japindustrialrevolution.20.d
-		#picture = 
+		picture = GFX_report_event_jap_shinto_shrine
 
 		fire_only_once = yes
 		is_triggered_only = yes
@@ -361,7 +400,7 @@ country_event = {
 		id = japindustrialrevolution.21
 		title = japindustrialrevolution.21.t
 		desc = japindustrialrevolution.21.d
-		#picture = 
+		picture = GFX_report_event_jap_meiji_signature
 
 		fire_only_once = yes
 		is_triggered_only = yes
@@ -375,7 +414,7 @@ country_event = {
 		id = japindustrialrevolution.22
 		title = japindustrialrevolution.22.t
 		desc = japindustrialrevolution.22.d
-		picture = GFX_report_event_meiji_signature
+		picture = GFX_report_event_jap_meiji_signature
 	
 		fire_only_once = yes
 		is_triggered_only = yes
@@ -397,6 +436,7 @@ country_event = {
 	
 		option = {
 			name = japindustrialrevolution.23.a
+			add_political_power = -15
 		}
 	}
 	### Hire Edmund Morel
@@ -411,6 +451,77 @@ country_event = {
 	
 		option = {
 			name = japindustrialrevolution.24.a
+			add_political_power = -15
+		}
+	}
+	### Naval Bill 1
+	country_event = {  
+		id = japindustrialrevolution.25
+		title = japindustrialrevolution.25.t
+		desc = japindustrialrevolution.25.d
+		picture = GFX_report_event_jap_naval_buildup
+	
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = japindustrialrevolution.25.a
+		}
+	}
+	### Naval Bill 2
+	country_event = {  
+		id = japindustrialrevolution.26
+		title = japindustrialrevolution.26.t
+		desc = japindustrialrevolution.26.d
+		picture = GFX_report_event_jap_naval_buildup
+	
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = japindustrialrevolution.26.a
+		}
+	}
+	### Naval Bill 3
+	country_event = {  
+		id = japindustrialrevolution.27
+		title = japindustrialrevolution.27.t
+		desc = japindustrialrevolution.27.d
+		picture = GFX_report_event_jap_naval_buildup
+	
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = japindustrialrevolution.27.a
+		}
+	}
+	### Naval Bill 4
+	country_event = {  
+		id = japindustrialrevolution.28
+		title = japindustrialrevolution.28.t
+		desc = japindustrialrevolution.28.d
+		picture = GFX_report_event_jap_naval_buildup
+	
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = japindustrialrevolution.28.a
+		}
+	}
+	### Japanese Industrial Revolution
+	country_event = {  
+		id = japindustrialrevolution.29
+		title = japindustrialrevolution.29.t
+		desc = japindustrialrevolution.29.d
+		picture = GFX_report_event_jap_industrialization
+	
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = japindustrialrevolution.29.a
 		}
 	}
 	### DEPARTMENT OF PUBLIC WORKS ###
@@ -500,68 +611,82 @@ country_event = {
 	}
 	#### I about McFucking had it with these events *funds from the french*
 	country_event = {  
-		id = foreign_funds.1
-		title = foreign_funds.1.t
-		desc = foreign_funds.1.d
+		id = JAP_foreign_funds.1
+		title = JAP_foreign_funds.1.t
+		desc = JAP_foreign_funds.1.d
 		picture = GFX_report_event_generic_sign_treaty2
 
 		fire_only_once = yes
 		is_triggered_only = yes
 
 		option = {
-			name = foreign_funds.1.a
+			name = JAP_foreign_funds.1.a
 			add_relation_modifier = {
 				target = JAP
 				modifier = ROM_military_modernization	
 			}
 			FRA = { 
-				add_ideas = open_to_japanese_funds
 				add_political_power = -50
+				add_timed_idea = {
+					idea = JAP_open_to_japanese_funds
+					days = 730
+				}
+			}
+			hidden_effect = {
+				JAP = { 
+					add_ideas = JAP_french_funds
+				}
 			}
 		}
 		option = {
-			name = foreign_funds.1.b
-			
+			name = JAP_foreign_funds.1.b
 			}
 		}
 	#### British Funds
 	country_event = {  
-		id = foreign_funds.2
-		title = foreign_funds.2.t
-		desc = foreign_funds.2.d
+		id = JAP_foreign_funds.2
+		title = JAP_foreign_funds.2.t
+		desc = JAP_foreign_funds.2.d
 		picture = GFX_report_event_generic_sign_treaty2
 	
 		fire_only_once = yes
 		is_triggered_only = yes
 	
 		option = {
-			name = foreign_funds.2.a
+			name = JAP_foreign_funds.2.a
 			add_relation_modifier = {
 				target = JAP
 				modifier = ROM_military_modernization
-			}	
+			}
 			ENG = { 
-				add_ideas = open_to_japanese_funds 
 				add_political_power = -50
+				add_timed_idea = {
+					idea = JAP_open_to_japanese_funds
+					days = 730
+				}
+			}
+			hidden_effect = {
+				JAP = { 
+					add_ideas = JAP_british_funds
+				}
 			}
 		}
 		option = {
-			name = foreign_funds.2.b
-				
+			name = JAP_foreign_funds.2.b
 			}
 		}
-	### ENG Japan Requests Choo Choo's
+	### ENG Japan Requests Trains
 	country_event = {  
-		id = jap_request_choo_choo.1
-		title = jap_request_choo_choo.1.t
-		desc = jap_request_choo_choo.1.d
-		picture = GFX_report_event_generic_sign_treaty2
+		id = JAP_request_trains.1
+		title = JAP_request_trains.1.t
+		desc = JAP_request_trains.1.d
+		picture = GFX_event_flavor_london_underground
 
 		fire_only_once = yes
 		is_triggered_only = yes
 	
 		option = {
-			name = jap_request_choo_choo.1.a
+			name = JAP_request_trains.1.a
 			add_opinion_modifier = { target = ENG modifier = eoanb_om_RUS_increase_small }
 			reverse_add_opinion_modifier = { target = ENG modifier = eoanb_om_RUS_increase_small 
 			}
@@ -574,7 +699,7 @@ country_event = {
 			}
 		}
 		option = {
-			name = jap_request_choo_choo.1.b
+			name = JAP_request_trains.1.b
 			add_opinion_modifier = { target = JAP modifier = eoanb_om_RUS_increase_small }
 			reverse_add_opinion_modifier = { target = JAP modifier = eoanb_om_RUS_increase_small 	
 			}
@@ -587,8 +712,168 @@ country_event = {
 			}
 		}
 		option = {
-			name = jap_request_choo_choo.1.c
+			name = JAP_request_trains.1.c
 			add_opinion_modifier = { target = JAP modifier = eoanb_om_RUS_decrease_small }
 			reverse_add_opinion_modifier = { target = JAP modifier = eoanb_om_RUS_decrease_small }
 			}
 		}
+	### JAPANESE POLITICAL TREE
+	### Decide the Monetary System
+	country_event = {  
+		id = JAP_political.1
+		title = JAP_political.1.t
+		desc = JAP_political.1.d
+		picture = GFX_report_event_generic_sign_treaty2
+
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = JAP_political.1.a
+			set_country_flag = UK_system
+		}
+		option = {
+			name = JAP_political.1.b
+			set_country_flag = US_system
+
+		}
+		option = {
+			name = JAP_political.1.c
+			set_country_flag = our_system
+			}
+		}
+	### Fueduel No Longer
+	country_event = {  
+		id = JAP_political.2
+		title = JAP_political.2.t
+		desc = JAP_political.2.d
+		picture = GFX_report_event_generic_sign_treaty2
+
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = JAP_political.2.a
+			add_political_power = 100
+			}
+		}
+	### Iwakura Mission
+	country_event = {
+    	id = JAP_political.3
+    	title = JAP_political.3.t
+   		desc = JAP_political.3.d
+   		picture = GFX_report_event_jap_iwakura_mission
+
+		fire_only_once = no
+   		is_triggered_only = yes
+
+    	option = {
+    	    name = JAP_political.3.a
+    	    ai_chance = { factor = 100 }
+			add_timed_idea = {
+				idea = Iwakura
+				days = 730
+			}
+   	 		}
+		}
+	### Iwakura Mission
+	country_event = {
+    	id = JAP_political.4
+    	title = JAP_political.4.t
+   		desc = JAP_political.4.d
+   		picture = GFX_report_event_jap_iwakura_mission_women
+
+		fire_only_once = no
+		is_triggered_only = yes
+
+    	option = {
+    	    name = JAP_political.4.a
+    	    ai_chance = { factor = 100 }
+			add_timed_idea = {
+				idea = Iwakura
+				days = 730
+			}
+   	 	}
+	}
+	### Japanese Political Start
+	country_event = {  
+		id = JAP_political.5
+		title = JAP_political.5.t
+		desc = JAP_political.5.d
+		picture = GFX_report_event_jap_meiji_imperial_family
+
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = JAP_political.5.a
+			add_stability = 0.05
+		}
+	}
+	### Question the Han System
+	country_event = {  
+		id = JAP_political.6
+		title = JAP_political.6.t
+		desc = JAP_political.6.d
+		picture = GFX_report_event_jap_japan_map_1
+
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = JAP_political.6.a
+			add_stability = -0.01
+			add_political_power = -50
+		}
+	}
+	### Osaka Conference
+	country_event = {
+		id = JAP_political.7
+		title = JAP_political.7.t
+		desc = JAP_political.7.d
+		#picture =
+		
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = JAP_political.7.a
+			add_popularity = {
+				ideology = centrism
+				popularity = -0.075
+			}
+			#
+		}
+		
+	}
+	### MILITARY ###
+	### Japanese Navy STaff
+	country_event = {  
+		id = JAP_military.1
+		title = JAP_military.1.t
+		desc = JAP_military.1.d
+		#picture = 
+
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = JAP_military.1.a
+			add_stability = 0.05
+		}
+	}
+	### Japanese Army STaff
+	country_event = {  
+		id = JAP_military.2
+		title = JAP_military.2.t
+		desc = JAP_military.2.d
+		#picture = 
+
+		fire_only_once = yes
+		is_triggered_only = yes
+	
+		option = {
+			name = JAP_military.2.a
+			add_stability = 0.05
+		}
+	}

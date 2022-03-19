@@ -1,10 +1,1440 @@
+GEC_category_domestic_policy = {
+	
+	GEC_decision_establish_scientific_research = {
+
+		icon = generic_research
+
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+		
+		available = {
+			has_completed_focus = GEC_focus_technological_advancements
+			has_tech = tech_humanities_capitalism
+			has_tech = tech_humanities_social_stratification
+			has_tech = tech_humanities_public_works
+			NOT = { has_country_flag = GEC_domestic_policy_flag }
+		}
+
+		visible = {
+			NOT = { has_idea = GEC_idea_scientific_research }
+		}
+		
+		cost = 100
+		
+        days_remove = 360
+         
+        modifier = {
+            political_power_gain = -0.1
+			consumer_goods_factor = 0.1
+        }
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = GEC_domestic_policy_flag
+			}
+		}
+       
+        remove_effect = {
+			add_timed_idea = { idea = GEC_idea_scientific_research days = 1095 }
+			add_tech_bonus = { bonus = 0.75 uses = 1 category = biochemistry_tech }
+			hidden_effect = {
+				clr_country_flag = GEC_domestic_policy_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+
 GEC_category_industrialization = {
-    HSD_decision_man_werk_gustavsburg = {
+	
+	GEC_mission_industrializing = {
+		
+		icon = generic_factory
+		
+		allowed = { always = no }
+		
+		available = { 
+			has_stability > 0.5
+			has_tech = interchange_parts
+			has_idea = NA_B_medium_scale_railways
+			if = {
+				limit = {
+					tag = HAN
+				}
+				num_of_factories > 3
+			}
+			else_if = {
+				limit = {
+					tag = HES
+				}
+				num_of_factories > 1
+			}
+			else = {
+				num_of_factories > 0
+			}
+		}
+		
+		activation = { always = no }
+		
+		days_mission_timeout = 3000
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -100
+			}
+		}
+		
+		complete_effect = {
+			swap_ideas = { remove_idea = agrarian add_idea = industrializing }
+		}
+	}
+	
+	GEC_decision_railway_upgrade = {
+
+		icon = railway
+
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+		
+		available = {
+			has_completed_focus = GEC_focus_railway_connections
+			any_owned_state = {
+				infrastructure > 4
+			}
+			if = {
+				limit = {
+					tag = HAN
+				}
+				any_owned_state = {
+					rail_way > 9
+				}
+				has_railway_level = {
+					state = 59
+					level = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = MCK
+						tag = THU
+					}
+				}
+				any_owned_state = {
+					rail_way > 5
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = HES
+						tag = HSD
+					}
+				}
+				any_owned_state = {
+					rail_way > 4
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = NAS
+						tag = OLD
+					}
+				}
+				any_owned_state = {
+					rail_way > 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = BRE
+						tag = FRK
+						tag = LCK
+					}
+				}
+				any_owned_state = {
+					rail_way > 0
+				}
+			}
+		    has_tech = steam_locomotive_3
+		    has_tech = standardized_gauge
+			has_tech = train_1855
+		}
+
+		visible = {
+			OR = {
+				has_idea = NA_B_early_scale_railways
+				has_idea = NA_B_small_scale_railways
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 100
+		
+        days_remove = 360
+         
+        modifier = {
+            political_power_gain = -0.05
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+        }
+		
+		complete_effect = {
+			if = {  
+				limit = { 
+					has_idea = inframain_no_subsidies_infrastructure 
+				} 
+				swap_ideas = { remove_idea = inframain_no_subsidies_infrastructure add_idea = inframain_basic_maintenance_infrastructure }
+			}
+			else_if = {
+				limit = {
+					has_idea = inframain_basic_maintenance_infrastructure
+				}
+				swap_ideas = { remove_idea = inframain_basic_maintenance_infrastructure add_idea = inframain_well_maintaned_infrastructure } 
+			}
+			else_if = {
+				limit = {
+					has_idea = inframain_well_maintaned_infrastructure
+				}
+				swap_ideas = { remove_idea = inframain_well_maintaned_infrastructure add_idea = inframain_steady_network_expansion } 
+			}
+		}
+       
+        remove_effect = {
+			if = {
+				limit = {
+					has_idea = NA_B_small_scale_railways
+				}
+				swap_ideas = { remove_idea = NA_B_small_scale_railways add_idea = NA_B_medium_scale_railways }
+			}
+			else = {
+				swap_ideas = { remove_idea = NA_B_early_scale_railways add_idea = NA_B_small_scale_railways }
+			}
+			set_temp_variable = { eoanb_prestige_change = 2 }
+			eoanb_change_prestige_score = yes
+	    }
+       
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	GEC_decision_invest_in_our_naval_infrastructure = {
+
+		icon = generic_construction
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_naval_infrastructure
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+        days_remove = 90
+         
+        modifier = {
+            political_power_gain = -0.1
+			consumer_goods_factor = 0.1
+        }
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			if = {
+				limit = {
+					has_idea = navinfra_good_naval_infrastructure
+				}
+				swap_ideas = { remove_idea = navinfra_good_naval_infrastructure add_idea = navinfra_excellent_naval_infrastructure }
+			}
+			else_if = {
+				limit = {
+					has_idea = navinfra_decent_naval_infrastructure
+				}
+				swap_ideas = { remove_idea = navinfra_decent_naval_infrastructure add_idea = navinfra_good_naval_infrastructure }
+			}
+			else_if = {
+				limit = {
+					has_idea = navinfra_low_naval_infrastructure
+				}
+				swap_ideas = { remove_idea = navinfra_low_naval_infrastructure add_idea = navinfra_decent_naval_infrastructure }
+			}
+			else_if = {
+				limit = {
+					has_idea = navinfra_no_naval_infrastructure
+				}
+				swap_ideas = { remove_idea = navinfra_no_naval_infrastructure add_idea = navinfra_low_naval_infrastructure }
+			}
+			add_timed_idea = { idea = GEC_idea_investments_in_naval_infrastructure days = 1080 }
+			unlock_decision_tooltip = GEC_decision_invest_in_our_naval_ports
+			unlock_decision_tooltip = GEC_decision_invest_in_our_dockyards
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	GEC_decision_invest_in_our_naval_infrastructure_inland = {
+
+		icon = generic_construction
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_naval_infrastructure
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			any_owned_state = {
+				is_coastal = no
+			}
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+        days_remove = 90
+         
+        modifier = {
+            political_power_gain = -0.1
+			consumer_goods_factor = 0.1
+        }
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			add_timed_idea = { idea = GEC_idea_investments_in_naval_infrastructure_inland days = 1080 }
+			unlock_decision_tooltip = GEC_decision_invest_in_our_river_ports
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	GEC_decision_invest_in_our_naval_ports = {
+
+		icon = naval_base
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_ports_and_docks
+			has_idea = GEC_idea_investments_in_naval_infrastructure
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_trigger = {
+			has_political_power > 49.9
+			has_navy_experience > 9.99
+		}
+		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_10
+		
+        days_remove = 180
+         
+        modifier = {
+            political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+        }
+		
+		complete_effect = {
+			add_political_power = -50
+			navy_experience = -10
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			if = {
+				limit = {
+					tag = HAN
+				}
+				59 = {
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						instant_build = yes
+						province = 6349
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					tag = MCK
+				}
+				61 = {
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						instant_build = yes
+						province = 321
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_timed_idea = { idea = GEC_idea_stimulated_trade days = 1825 }
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_invest_in_our_river_ports = {
+
+		icon = naval_base
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_ports_and_docks
+			has_idea = GEC_idea_investments_in_naval_infrastructure_inland
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			any_owned_state = {
+				is_coastal = no
+			}
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_trigger = {
+			has_political_power > 49.9
+			has_navy_experience > 9.99
+		}
+		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_10
+		
+        days_remove = 180
+         
+        modifier = {
+            political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+        }
+		
+		complete_effect = {
+			add_political_power = -50
+			navy_experience = -10
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			add_equipment_to_stockpile = {
+                type = convoy
+                amount = 10
+			}
+			add_timed_idea = { idea = GEC_idea_stimulated_trade_inland days = 1825 }
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_invest_in_our_dockyards = {
+
+		icon = naval_base
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_ports_and_docks
+			has_idea = GEC_idea_investments_in_naval_infrastructure
+			num_of_civilian_factories_available_for_projects > 0
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_trigger = {
+			has_political_power > 99.9
+			has_navy_experience > 29.99
+		}
+		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_30
+		
+        days_remove = 730
+         
+        modifier = {
+            political_power_gain = -0.1
+			civilian_factory_use = 1
+        }
+		
+		complete_effect = {
+			add_political_power = -50
+			navy_experience = -30
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			if = {
+				limit = {
+					tag = HAN
+				}
+				59 = {
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 200
+		}
+	}
+	
+	GEC_decision_invest_in_our_terrestrial_infrastructure = {
+
+		icon = generic_construction
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_terrestrial_infrastructure
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			#
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+        days_remove = 90
+         
+        modifier = {
+            political_power_gain = -0.1
+			consumer_goods_factor = 0.1
+        }
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			if = {
+				limit = {
+					has_idea = inframain_steady_network_expansion
+				}
+				swap_ideas = { remove_idea = inframain_steady_network_expansion add_idea = inframain_rapid_network_expansion }
+			}
+			else_if = {
+				limit = {
+					has_idea = inframain_well_maintaned_infrastructure
+				}
+				swap_ideas = { remove_idea = inframain_well_maintaned_infrastructure add_idea = inframain_steady_network_expansion }
+			}
+			else_if = {
+				limit = {
+					has_idea = inframain_basic_maintenance_infrastructure
+				}
+				swap_ideas = { remove_idea = inframain_basic_maintenance_infrastructure add_idea = inframain_well_maintaned_infrastructure }
+			}
+			else_if = {
+				limit = {
+					has_idea = inframain_no_subsidies_infrastructure
+				}
+				swap_ideas = { remove_idea = inframain_no_subsidies_infrastructure add_idea = inframain_basic_maintenance_infrastructure }
+			}
+			add_timed_idea = { idea = GEC_idea_investments_in_terrestrial_infrastructure days = 1080 }
+			unlock_decision_tooltip = GEC_decision_invest_in_our_road_network
+			unlock_decision_tooltip = GEC_decision_invest_in_our_canals
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	GEC_decision_invest_in_our_road_network = {
+
+		icon = cobble_road
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_roads_and_canals
+			has_idea = GEC_idea_investments_in_terrestrial_infrastructure
+			has_tech = tech_humanities_roadworks
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			#
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+        days_remove = 180
+         
+        modifier = {
+            political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+        }
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			add_timed_idea = { idea = GEC_idea_road_investments days = 1825 }
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_invest_in_our_canals = {
+
+		icon = naval_base
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_roads_and_canals
+			has_idea = GEC_idea_investments_in_terrestrial_infrastructure
+			NOT = { has_country_flag = GEC_economic_investment_flag }
+		}
+
+		visible = {
+			#
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_trigger = {
+			has_political_power > 49.9
+			has_navy_experience > 9.99
+		}
+		custom_cost_text = GEC_pp_more_than_49_navy_experience_more_than_10
+		
+        days_remove = 180
+         
+        modifier = {
+            political_power_gain = -0.05
+			consumer_goods_factor = 0.05
+        }
+		
+		complete_effect = {
+			add_political_power = -50
+			navy_experience = -10
+			hidden_effect = {
+				set_country_flag = GEC_economic_investment_flag
+			}
+		}
+       
+        remove_effect = {
+			add_timed_idea = { idea = GEC_idea_canal_investments days = 1825 }
+			hidden_effect = {
+				clr_country_flag = GEC_economic_investment_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_acquire_trains = {
+
+		icon = train
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_railway_connections
+			has_tech = basic_train
+		}
+
+		visible = {
+			OR = {
+				has_idea = NA_B_early_scale_railways
+				has_idea = NA_B_small_scale_railways
+				has_idea = NA_B_medium_scale_railways
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 50
+		
+        days_remove = 180
+         
+        modifier = {
+            political_power_gain = -0.1
+			consumer_goods_factor = 0.15
+        }
+		
+		complete_effect = {
+			#
+		}
+       
+        remove_effect = {
+			if = {
+				limit = {
+					has_tech = basic_train
+					NOT = { has_tech = train_1855 }
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment_1
+					amount = 20
+					producer = THIS
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = train_1855
+					NOT = { has_tech = train_1865 }
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment_2
+					amount = 20
+					producer = THIS
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = train_1865
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment_3
+					amount = 20
+					producer = THIS
+				}
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_resource_prospecting_iron = {
+
+		icon = iron
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_resource_prospecting
+			has_tech = refining
+			has_tech = mechanized_mining
+			NOT = { has_country_flag = GEC_resource_prospecting_flag }
+		}
+
+		visible = {
+			any_owned_state = {
+				has_resources_amount = {
+					resource = iron
+					amount > 0
+				}
+			}
+		}
+
+		fire_only_once = no
+		
+		cost = 20
+		
+        days_remove = 90
+         
+        modifier = {
+			consumer_goods_factor = 0.03
+        }
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = GEC_resource_prospecting_flag
+			}
+		}
+       
+        remove_effect = {
+			custom_effect_tooltip = GEC_decision_resource_prospecting_effect_tt
+			hidden_effect = {
+				set_country_flag = GEC_resource_prospecting_iron_flag
+				random_list = {
+					10 = {
+						country_event = { id = gerconfed.30 }
+					}
+					90 = {
+						country_event = { id = gerconfed.31 }
+					}
+				}
+				clr_country_flag = GEC_resource_prospecting_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_resource_prospecting_coal = {
+
+		icon = coal
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_resource_prospecting
+			has_tech = refining
+			has_tech = mechanized_mining
+			NOT = { has_country_flag = GEC_resource_prospecting_flag }
+		}
+
+		visible = {
+			any_owned_state = {
+				has_resources_amount = {
+					resource = coal
+					amount > 0
+				}
+			}
+		}
+
+		fire_only_once = no
+		
+		cost = 20
+		
+        days_remove = 90
+         
+        modifier = {
+			consumer_goods_factor = 0.03
+        }
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = GEC_resource_prospecting_flag
+			}
+		}
+       
+        remove_effect = {
+			custom_effect_tooltip = GEC_decision_resource_prospecting_effect_tt
+			hidden_effect = {
+				set_country_flag = GEC_resource_prospecting_coal_flag
+				random_list = {
+					10 = {
+						country_event = { id = gerconfed.30 }
+					}
+					90 = {
+						country_event = { id = gerconfed.31 }
+					}
+				}
+				clr_country_flag = GEC_resource_prospecting_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_subsidize_new_extraction_methods_1 = {
+
+		icon = generic_construction
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_extraction_enhancement
+			has_tech = nitroglycerine
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					has_resources_amount = {
+						resource = iron
+						amount > 0
+					}
+				}
+				any_owned_state = {
+					has_resources_amount = {
+						resource = coal
+						amount > 0
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 25
+		
+        days_remove = 90
+         
+        modifier = {
+			consumer_goods_factor = 0.05
+        }
+		
+		complete_effect = {
+			#
+		}
+       
+        remove_effect = {
+			add_ideas = GEC_idea_new_extraction_methods_1
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_subsidize_new_extraction_methods_2 = {
+
+		icon = generic_construction
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_extraction_enhancement
+			has_tech = dynamite
+		}
+
+		visible = {
+			has_idea = GEC_idea_new_extraction_methods_1
+			OR = {
+				any_owned_state = {
+					has_resources_amount = {
+						resource = iron
+						amount > 0
+					}
+				}
+				any_owned_state = {
+					has_resources_amount = {
+						resource = coal
+						amount > 0
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+		
+		cost = 25
+		
+        days_remove = 90
+         
+        modifier = {
+			consumer_goods_factor = 0.05
+        }
+		
+		complete_effect = {
+			#
+		}
+       
+        remove_effect = {
+			swap_ideas = { remove_idea = GEC_idea_new_extraction_methods_1 add_idea = GEC_idea_new_extraction_methods_2 }
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_enact_gewerbefreiheit = {
+
+		icon = eng_trade_unions_support
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_encouraging_trades_and_industry
+			has_tech = tech_humanities_mercantilism
+		}
+
+		visible = {
+			has_idea = GEC_idea_zunftwesen
+		}
+
+		fire_only_once = yes
+		
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+			political_power_gain = -0.1
+			stability_weekly_factor = -0.003
+        }
+		
+		complete_effect = {
+			add_stability = -0.02
+			decrease_ps_by_one = yes
+		}
+       
+        remove_effect = {
+			remove_ideas = GEC_idea_zunftwesen
+			set_temp_variable = { eoanb_prestige_change = 1 }
+			eoanb_change_prestige_score = yes
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_establish_gewerbeordnung = {
+
+		icon = generic_factory
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_encouraging_trades_and_industry
+			has_tech = tech_humanities_capitalism
+		}
+
+		visible = {
+			NOT = { has_idea = GEC_idea_zunftwesen }
+		}
+
+		fire_only_once = yes
+		
+		cost = 75
+		
+        days_remove = 180
+         
+        modifier = {
+			political_power_gain = -0.1
+			stability_weekly_factor = -0.001
+        }
+		
+		complete_effect = {
+			add_stability = -0.02
+		}
+       
+        remove_effect = {
+			add_ideas = GEC_idea_gewerbeordnung
+			set_temp_variable = { eoanb_prestige_change = 2 }
+			eoanb_change_prestige_score = yes
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	GEC_decision_subsidize_and_support_major_industries = {
+
+		icon = generic_factory
+		
+		#allowed = {
+		#	OR = {
+        #       tag = BRE
+		#		tag = FRK
+		#		tag = HAN
+		#		tag = HES
+		#		tag = HSD
+		#		tag = LCK
+		#		tag = MCK
+		#		tag = NAS
+		#		tag = OLD
+		#		tag = THU
+		#	}
+		#}
+
+		available = {
+			has_completed_focus = GEC_focus_industrial_subsidies_and_support
+			has_tech = factory_industry_1
+			has_tech = industrial_blast_furnace
+			has_tech = industrial_finery_forge
+		}
+
+		visible = {
+			NOT = { has_idea = GEC_idea_zunftwesen }
+		}
+
+		fire_only_once = no
+		
+		cost = 100
+		
+        days_remove = 730
+         
+        modifier = {
+			consumer_goods_factor = 0.05
+			political_power_gain = -0.1
+			production_speed_buildings_factor = 0.15
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_start_efficiency_factor = 0.05
+			research_speed_factor = 0.02
+			local_resources_factor = 0.05
+        }
+		
+		complete_effect = {
+			if = {
+				limit = {
+					has_idea = sfund_regular_state_sponsorship
+				}
+				swap_ideas = { remove_idea = sfund_regular_state_sponsorship add_idea = sfund_excellent_state_sponsorship }
+				set_country_flag = sfund_regular_state_sponsorship_flag
+			}
+			else_if = {
+				limit = {
+					has_idea = sfund_limited_state_sponsorship
+				}
+				swap_ideas = { remove_idea = sfund_limited_state_sponsorship add_idea = sfund_regular_state_sponsorship }
+				set_country_flag = sfund_limited_state_sponsorship_flag
+			}
+			else_if = {
+				limit = {
+					has_idea = sfund_private_ventures_only
+				}
+				swap_ideas = { remove_idea = sfund_private_ventures_only add_idea = sfund_limited_state_sponsorship }
+				set_country_flag = sfund_private_ventures_only_flag
+			}
+		}
+       
+        remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = sfund_regular_state_sponsorship_flag
+				}
+				add_ideas = sfund_regular_state_sponsorship
+				clr_country_flag = sfund_regular_state_sponsorship_flag
+			}
+			else_if = {
+				limit = {
+					has_country_flag = sfund_limited_state_sponsorship_flag
+				}
+				add_ideas = sfund_limited_state_sponsorship
+				clr_country_flag = sfund_limited_state_sponsorship_flag
+			}
+			else_if = {
+				limit = {
+					has_country_flag = sfund_private_ventures_only_flag
+				}
+				add_ideas = sfund_private_ventures_only
+				clr_country_flag = sfund_private_ventures_only_flag
+			}
+	    }
+       
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	HSD_decision_man_werk_gustavsburg = {
 
 		icon = generic_factory
 		
 		allowed = {
-		    TAG = HSD
+		    tag = HSD
 		}
 
 		available = {
@@ -12,7 +1442,7 @@ GEC_category_industrialization = {
 		}
 
 		visible = {
-			TAG = HSD
+			tag = HSD
 		}
 
 		fire_only_once = yes
@@ -40,120 +1470,6 @@ GEC_category_industrialization = {
 				}
 			}
 		}
-       
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	GEC_mission_industrializing = {
-		
-		icon = generic_factory
-		
-		allowed = { always = no }
-		
-		available = { 
-			has_stability > 0.5
-			has_tech = interchange_parts
-			has_idea = NA_B_medium_scale_railways
-			num_of_factories > 5
-		}
-		
-		activation = { always = no }
-		
-		days_mission_timeout = 3000
-		
-		timeout_effect = {
-		    add_political_power = -100
-		}
-		
-		complete_effect = {
-		    swap_ideas = { remove_idea = agrarian add_idea = industrializing }	
-		}
-	}
-	
-	GEC_decision_railway_upgrade = {
-
-		icon = railway
-		
-		allowed = {
-			OR = {
-				tag = BAV
-				tag = BAD
-				tag = WUR
-			}
-		}
-
-		available = {
-		    if = {
-				limit = {
-					tag = BAD
-				}
-				744 = { infrastructure > 6 }
-			}
-			if = {
-				limit = {
-					tag = BAV
-				}
-				52 = { infrastructure > 6 }
-				53 = { infrastructure > 5 }
-				54 = { infrastructure > 6 }
-			}
-			if = {
-				limit = {
-					tag = WUR
-				}
-				50 = { infrastructure > 6 }
-			}
-		    has_tech = steam_locomotive_3
-		    has_tech = standardized_gauge
-		}
-
-		visible = {
-			has_idea = NA_B_small_scale_railways
-			OR = {
-				has_completed_focus = BAD_focus_railway_switzerland
-				has_completed_focus = BAV_extendludwigsdnordbahn
-				has_completed_focus = WUR_staats_eisenbahnen
-			}
-		}
-
-		fire_only_once = yes
-		
-		cost = 100
-		
-        days_remove = 360
-         
-        modifier = {
-            political_power_gain = -0.05
-			consumer_goods_factor = 0.1
-			production_speed_buildings_factor = -0.05
-        } 
-		
-		complete_effect = {
-			if = {  
-				limit = { 
-					has_idea = inframain_no_subsidies_infrastructure 
-				} 
-				swap_ideas = { remove_idea = inframain_no_subsidies_infrastructure add_idea = inframain_basic_maintenance_infrastructure }
-			}
-			else_if = {
-				limit = {
-					has_idea = inframain_basic_maintenance_infrastructure
-				}
-				swap_ideas = { remove_idea = inframain_basic_maintenance_infrastructure add_idea = inframain_well_maintaned_infrastructure } 
-			}
-			else_if = {
-				limit = {
-					has_idea = inframain_well_maintaned_infrastructure
-				}
-				swap_ideas = { remove_idea = inframain_well_maintaned_infrastructure add_idea = inframain_steady_network_expansion } 
-			}
-		}
-       
-        remove_effect = {
-			swap_ideas = { remove_idea = NA_B_small_scale_railways add_idea = NA_B_medium_scale_railways } 
-	    }
        
 		ai_will_do = {
 			base = 1000
@@ -381,7 +1697,7 @@ GEC_category_trade = {
 				has_country_flag = GEC_trade_from_bremen_flag
 			}
 			has_equipment = {
-                convoy > 9
+				convoy > 9
             }
 		}
 
@@ -393,19 +1709,26 @@ GEC_category_trade = {
 			}
 		}
 
-		fire_only_once = no
+		fire_only_once = yes
 		
 		cost = 100
 		
         days_remove = 180
-		
-		days_re_enable = 180
          
         modifier = {
-            political_power_gain = -0.2
+            political_power_gain = -0.1
         }
        
         remove_effect = {
+			add_ideas = GEC_idea_trade_with_england
+			add_opinion_modifier = {
+				target = ENG
+				modifier = GEC_TRADE_WITH_ENG
+			}
+			reverse_add_opinion_modifier = {
+				target = ENG
+				modifier = GEC_TRADE_WITH_ENG 
+			}
 		}
        
 		ai_will_do = {

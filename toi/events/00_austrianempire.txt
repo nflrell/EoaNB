@@ -10,6 +10,7 @@ add_namespace = AUShuncompromise
 add_namespace = AUSfedcompromise
 add_namespace = AUSfocustree
 add_namespace = austriaexternal
+add_namespace = austriainternal
 
 #Startup Event: German or English state names?
 country_event = {
@@ -3316,6 +3317,140 @@ country_event = {
 	}
 }
 
+###Austrian Train Units Trainings - start
+country_event = {
+	id = AUSfocustree.12
+	title = AUSfocustree.12.t
+	desc = AUSfocustree.12.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSfocustree.12.a 
+		ai_chance = { factor = 80 }
+			country_event = { days = 260 id = AUSfocustree.13 }
+			add_political_power = -50
+	}
+	
+	option = {
+		name = AUSfocustree.12.a 
+		ai_chance = { factor = 20 }
+			add_political_power = 50
+	}
+}
+
+###Austrian Train Units Trainings - finished
+country_event = {
+	id = AUSfocustree.13
+	title = AUSfocustree.13.t
+	desc = AUSfocustree.13.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSfocustree.13.a 
+		ai_chance = { factor = 100 }
+		army_experience = 100
+		add_tech_bonus = {
+			bonus = 0.1
+			uses = 3
+			category = trains_tech
+		}	
+	}
+}
+
+###Degenfeld Chief of Army
+country_event = {
+	id = AUSfocustree.14
+	title = AUSfocustree.14.t
+	desc = AUSfocustree.14.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSfocustree.14.a 
+		ai_chance = { factor = 100 }
+		add_war_support = 0.05
+		add_advisor_role = {
+			Character = AUS_August_Degenfeld
+			advisor = {
+				slot = army_chief
+				cost = 50
+				idea_token = AUS_August_Degenfeld_HC
+				traits = {
+					#army_chief_organizational_2
+					#army_chief_drill_1
+				}
+				allowed = {
+					original_tag = AUS
+				}
+			}
+			Activate = yes
+		}
+	}
+}
+
+###Benedek Chief of Army
+country_event = {
+	id = AUSfocustree.15
+	title = AUSfocustree.15.t
+	desc = AUSfocustree.15.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSfocustree.15.a 
+		ai_chance = { factor = 100 }
+		add_war_support = 0.05
+		add_advisor_role = {
+			Character = AUS_Ludwig_Benedek
+			advisor = {
+				slot = army_chief
+				cost = 50
+				idea_token = AUS_Ludwig_Benedek_HC
+				traits = {
+					#army_chief_organizational_2
+					#army_chief_drill_1
+				}
+				allowed = {
+					original_tag = AUS
+				}
+			}
+			Activate = yes
+		}
+	}
+}
+
+###Österreichische Militärische Zeitschrift
+country_event = {
+	id = AUSfocustree.16
+	title = AUSfocustree.16.t
+	desc = AUSfocustree.16.d
+	picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	
+    is_triggered_only = yes 
+	
+	option = {
+		name = AUSfocustree.16.a 
+		ai_chance = { factor = 100 }
+		army_experience = 75
+	}
+}
+
 ### Italian Situation focus tree
 
 country_event = { #Appoint new Viceroy
@@ -3362,7 +3497,6 @@ country_event = { #Appoint new Viceroy
 			}			
            # custom_effect_tooltip = 	
 	}
-	
 }
 
 ### External Threats Events ###
@@ -4052,6 +4186,39 @@ country_event = {
 	
 	option = {
 		name = austriaexternal.15.a
+		ai_chance = { base = 100 }
+	}
+}
+
+### Internal Threats Events ###
+
+#
+country_event = {
+	id = austriainternal.1
+	title = austriainternal.1.t
+	desc = austriainternal.1.d
+	#picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = austriainternal.1.a
+		ai_chance = { base = 100 }
+	}
+}
+
+country_event = {
+	id = austriainternal.2
+	title = austriainternal.2.t
+	desc = austriainternal.2.d
+	#picture = GFX_report_event_AUS_wien_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = austriainternal.2.a
 		ai_chance = { base = 100 }
 	}
 }

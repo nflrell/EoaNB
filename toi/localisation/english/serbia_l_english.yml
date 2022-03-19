@@ -169,108 +169,6 @@
     SER_Herzegovina_Uprising:0 "Herzegovina Uprising"
     SER_Herzegovina_Uprising_desc:0 ""
 
-    SER_Serbian_Military:0 "Serbian Military"
-    SER_Serbian_Military_desc:0 "Even though we managed to win some impressive victories over the Turks from our revolt in 1804. it was mostly due to their lack of response and Russian aid, we cannot deny that our uprising failed to achieve what we yearned for, ever since the Turks marched into our homeland, no matter, we should learn from our defeat and start army drillings and excersises, next time we will be ready."
-
-    SER_Artillery_Effort:0 "Artillery Effort"
-    SER_Artillery_Effort_desc:0 "Guns and tactics mean nothing without a weapon with large firepower and a devastating range, artillery, ever since it's invention brought glory to their Kings and Emperors, but they also brought fortresses to their knees and fear in the hearts of enemies, we have to use it to our advantage, but keeping it secret will prove to be both a challenge and a suprise for when the time comes."
-
-    SER_New_Guns:0 "New Guns"
-    SER_New_Guns_desc:0 "Our greatest threat aren't our Turkish overlords or the Habsburgs in the north, but the British, the enemy of Russia and the ones who aided the Sultan in the Crimean war, their rifles and men proved to be more effective than the Russian hordes and that is troubling, it doesn't help that they sent a load of those same rifles to the Turks, we need to study their design in hope of remain ''technology wise'' ahead of the Turks."
-
-    SER_Army_Training:0 "Training Our Army"
-    SER_Army_Training_desc:0 "With the reorganization and establishment of our new and permanent armed forces and reforms enacted and equipment organised the next step clearly is passing our new tactics and strategies from our generals to our armed forces, that is where the failiure of the revolt has a bitter sweet meaning, most of our old guard fell meaning we can pass strategies more easily onto a new generation of Serbia's heroes."
-
-    SER_New_Era_Cavalry:0 "New Era Cavalry"
-    SER_New_Era_Cavalry_desc:0 "Cavalry still remains one of the most important factors to the armed forces all around Europe. praised for their speed, agility and flanking ability it can surround and crush enemy in a matter of seconds if they do not respond quickly and decisively, we shall modernize our cavalry to the standards of nations such as Britain and France, with them we will be secured from the threats outside our borders and it will give us time for further scheming."
-
-    SER_Equipment_Modernization:0 "Equipment Modernization"
-    SER_Equipment_Modernization_desc:0 "Further arms modernization is required so that our army can keep up wit up-to date standards, but we are in luck, since our army minister has brought some new blueprints for the new french rifles we are sure to always be a step ahead from our overlord in the south."
-
-    SER_Engineer_Corps:0 "Engineer Corps"
-    SER_Engineer_Corps_desc:0 "One of the bigges failiures of our uprising was it's poor managment, what little supply we had was missmanaged and to say the least used poorly and so the army's morale and capability could be shaken to the core with only one defeat, the establishment of engineer corps suggested by our minister of war will help us improve troops quality and overall figting capabilities, the birth of a modern Serbian army has begun."
-
-    SER_New_Army_Tactics:0 "New Tactics"
-    SER_New_Army_Tactics_desc:0 "Simple disorganized ''hit and run'' tactics will achieve us a victory for a day, but not for a war, we have to not only improve but change our army's way of offense and defense and how to use our mountainous terrain to our advantage, if we want to stand a chance we will enact them as soon as possible."
-
-    SER_Study_New_Strategies:0 "Study New Strategies"
-    SER_Study_New_Strategies_desc:0 "Russia's crumbling defeat meant that the dreams of our independence have slipped from our grasp, but it also proved to us that mass assaults mean nothing if not backed by a greater strategy, the Crimean War should be the first but not the last example of how army's should be led and we will learn from it so we don't repeat the same mistakes they did."
-
-    SER_Improve_Strategies:0 "Improve Strategies"
-    SER_Improve_Strategies_desc:0 "Whilst excersising and in middle of training our troops the generals found some flaws in these strategies, while others thought to change them according to our principalities terrain and weather with these new information brought into consideration it seems certain that our nation is in a midst of not researching army doctorines, but creating one suited to itself."
-
-    SER_National_Army_Law:0 "National Army Law"
-    SER_National_Army_Law_desc:0 "Our revolt of 1804 brought what little we achieved on a brink of complete anarchy, our manpower and resources that remain are a little more than shambles, but by introducing a National Army Law and promoting a military life men will flock to our colours and stand to protect the legacy of 1804, granted it won't change much it is a crucial step in asserting our authority inside and outside the principality."
-
-    SER_Foreign_Officers_Law:0 "Foreign Officers Law"
-    SER_Foreign_Officers_Law_desc:0 "Just learning from occasional Russo-Turkish wars will do us no good, we need to establish military missions from the western powers to help us modernize to our full potential, with our already enacted reforms and Russia breathing down his neck the Sultan will not be able to respond with force with our military missions."
-
-    SER_Foreign_Military_Schooling:0 "Foreign Military Schooling"
-    SER_Foreign_Military_Schooling_desc:0 "Small scale army missions from France and Russia won't be enough to turn the tide in our favor against the Sultan, our generals and even our minister suggests of us to send our generals abroad to study modern warfare where it is made, that will not only improve our army's quality but also increase the faith of our people in the new army and the state preparing them for the inevitable liberation of the south."
-
-    SER_First_Minister_Of_Military:0 "First Minister Of Military"
-    SER_First_Minister_Of_Military_desc:0 "By appointing Hippolyte Mondain as Serbia's first minister of war the impementation of new strategies and military reforms will be easier than ever, it will also please the French Emperor who has been seeking ways to increase his influence in and around the Ottoman Empire, by granting a Frenchman this position, perhaps we can win his favor?"
-
-    SER_Mobilization_Speed:0 "Mobilization Speed"
-    SER_Mobilization_Speed_desc:0 "Over the past years the infrastructure of our nation greatly improved connecting small and rural villages to our urban center of Belgrade, but the civillians are not the only ones to rejoice, with infrastrucure improvments we can finally mobilise more troops in less time with higher efficiency than ever before, God bless Serbia."
-
-    SER_Military_Pension_Fund:0 "Military Pension Fund"
-    SER_Military_Pension_Fund_desc:0 "Even though our people desire freedom, liberty and equality free of the Turkish chains most remain too afraid to fight against them and die, some on the other hand see little to no personal gain, with a proposal from our minister of war the introduction of military pensions morale of both the army and civillians will increase and will be used to inscentivize the fiery spirits and dreams of free Serbia."
-
-    SER_French_Military_Rules:0 "French Military Rules"
-    SER_French_Military_Rules_desc:0 "French military doctorine was always based on a combination of both good offense and defense to wait for the perfect opportunnity on how, where and when to strike, with the implementation of these principles w will be unstoppable."
-
-    SER_Reorganize_Medical_Corps:0 "Reorganize Medical Corps"
-    SER_Reorganize_Medical_Corps_desc:0 "With our rapid industrialization and trains being delivered and running through Serbia on the newly build railroads it is time for a reorganization of our medical corps, which up to now had to be raised from local hospitals to fight in the army, we need a permanent and separate entities both for our army and the civillians so that our troops don't have to worry about the medical state of their loved ones, and it will raise the troops morale and fighting spirits."
-
-    SER_Reborn_Army:0 "Reborn Army"
-    SER_Reborn_Army_desc:0 "Everything is finally in place our generals studied army tactics near and far while our researchers made ground-breaking discoveries on the field of warfare, the time is finally to walk out of the shadow of 1804 and stand as a shining beacon looking at the sea of Turks, we will stand as an example in the Balkans and we will let everyone know, the day of national liberation is getting ever so closer."
-
-    SER_Build_Our_Army:0 "Build Our Army"
-    SER_Build_Our_Army_desc:0 "With all pieces in place and a climate in Europe shifting more rapidly day by day storm clouds are gathering over Constantinopole, the time is perfect to use our knowledge and build our new and permanent standing army which shall stand from this day till the end of time."
-
-    SER_Faster_Recruitment:0 "Faster Recruitment"
-    SER_Faster_Recruitment_desc:0 "As new asphalt roads are built and field hospitals becoming more and more reliable and common we can hope to recruit more men than we could have dreamed of."
-
-    SER_Recruit_More_Men:0 "Recruit More Men"
-    SER_Recruit_More_Men_desc:0 "The industrialization finally reached Serbia, after so long, with it's technologies we are able to produce an unimaginable amount of food, whilst before the grain produced had to be taken from the locals to feed the troops, often leaving some families to starve, the time of that injustice is finished and the people know it and congratulate our goverment for their efforts, with all this food the population is booming and more and more men flock to join the Serbian Armed Forces."
-
-    SER_Officer_Training:0 "Officer Training"
-    SER_Officer_Training_desc:0 "We have a fighting spirit and a will for a greater good, but that is not enough to win a battle, let alone a war, as of that exact reason we shall send our officers on training all over Europe, from France to Britain to Russia to study new tactics and strategies of modern warfare so we might adapt to the modern age."
-
-    SER_New_Artillery:0 "New Artillery"
-    SER_New_Artillery_desc:0 "The Kingdom of Prussia has done what many of our politicians deemed a fantasy, they brought Austria and the Habsburgs to their knees, not only with superior tactics but a top-notch new model of artillery, we simply need to acquire more knowledge on this model, and perhaps buy the blueprints from them."
-
-    SER_Better_Infantry_Weapons:0 "Better Infantry Weapons"
-    SER_Better_Infantry_Weapons_desc:0 "The war between Austria and Prussia even though smaller in scale than the Crimean War, saw the usage of never-before seen models of rifles the Snider-Enfield, made in the United Kingdom this rifle is not only more precise but it can also shoot seven more rounds per minute that it's predecessors could, we have to get our hands on them."
-
-    SER_European_Tactics:0 "European Tactics"
-    SER_European_Tactics_desc:0 "Our researchers have decided to further invest into studying the tactics of the great powers of Europe, such incuding further research of the Italian Wars a decade before and now the most recent ''Bruder Krieg'' between Prussia and Austria."
-
-    SER_Serbian_Warrior:0 "Serbian Warrior"
-    SER_Serbian_Warrior_desc:0 "Every individual soldier of ours is the glue that keeps our great and beloved Serbia together for if the flame in their hearts was to fade out, so will the dark storm clouds fall over Belgrade, and that time the flame will never be rekindled again, that day must not come, not yet, but the final battle draws closer, we need to prepare."
-
-    SER_Study_Ottoman_Army:0 "Study Ottoman Army"
-    SER_Study_Ottoman_Army_desc:0 "The British have not decided to open up to us, as expected they wish to maintain their good relations with the Sultan, but what their soldiers learn still can be seen, we shall send ou officers and even spies to keep a good track of the Ottoman army's modernization, we have to be prepared for everything at any cost."
-
-    SER_Train_Our_Warriors:0 "Train Our Warriors"
-    SER_Train_Our_Warriors_desc:0 "With more and more of our officers returning home from far away lands the time has come to teach our warriors of the tactics of new, by the time they are finished with transfering their knowledge the world will not know a diffrence between the soldiers of France, Britain, Russia and Serbia."
-
-    SER_Support_Roles:0 "Support Roles"
-    SER_Support_Roles_desc:0 "Artillery of great proportions and modern guns might win us a battle, but they also require care, a gentle touch, like one of the mothers to their offspring, as for that reason we shall recruit voulonteers from Belgrade university that specialize in weaponary to help us maintain our gear."
-
-    SER_Improve_Cavalry:0 "Improve Cavalry"
-    SER_Improve_Cavalry_desc:0 "What use do we have od our artillery if it gets encircled? None. We shall adopt our cavalry officers with new technologies and support equipment so that they may run behind the enemy and encircle him and crush him under their hoves."
-
-    SER_Better_Uniforms:0 "Better Uniforms"
-    SER_Better_Uniforms_desc:0 "Weather is changing from harvest to harvest and winter is only getting harsher, with our country being based on mountain ranges it does not help us either, we have to improve the uniforms of our soldiers so they might stand their ground on their posts, on our borders and in the cold winter night."
-
-    SER_Serbian_General_Staff:0 "Serbian General Staff"
-    SER_Serbian_General_Staff_desc:0 "Months have passed and flew by like a flock of birds heading for the warmer lands, our officers have returned along with our generals from foreign Empires finally to once again serve their fatherland, and as they return via transport and passenger ships sun can be seen setting behind the Dinarid mountains, we can only hope tommorow it will rise again, along with our new general staff."
-
-    SER_Prepare_For_War:0 "Prepare For War"
-    SER_Prepare_For_War_desc:0 "The dawn of judgment is upon us, all the pieces are in place and this Crisis is an opportunnity unlike any other this, this will be a final nail in the coffin for Turkish supremacy over the lands of our grandfathers and their grandfathers as well, we must not let our flame die down, it will be a fire that will swallow the Sultan is the sea of anger and vengance, if done correctly, sun will never rise upon their capital again."
-
     SER_Serbian_Economy:0 "Serbian Economy"
     SER_Serbian_Economy_desc:0 "After the disasterous revolutions that swept throught Serbia from 1804. to 1835. in an attempt to establish our sovreingty against the Sultan our economy saw a complete collapse, families lost their sons and their homes, by reingniting the cogs of our industry these horrors will begin to be undone."
 
@@ -333,6 +231,109 @@
 
     SER_Promote_Crafts:0 "Promote Crafts"
     SER_Promote_Crafts_desc:0 "Even though we may not attract many tourists their numbers are not so small and many of them fall in love with our culture and history, and a lot of them wish to bring a piece of Serbia back home with them no matter how small it is, this is a great opportunity to fund some small-scale crafts businesses in making of Serbian national symbols and dolls with native dresses and clothing, while it won't be generating much income it is a step in awakening the Serbian Industrial Revolution."
+
+    ###Serbian Military Focuses 
+    
+    SER_establish_national_army:0 "Act on Establishment of the National Army"
+    SER_establish_national_army_desc:0 " "
+    
+    SER_people_army_decree:0 "Decree of the People's Army"
+    SER_people_army_decree_desc:0 " "
+    
+    SER_mondain_army_reform:0 "Hipolit Mondain Army Reform"
+    SER_mondain_army_reform_desc:0 " "
+    
+    SER_zajecar_fortification:0 "Zajecar Fortifications"
+    SER_zajecar_fortification_desc:0 " "
+    
+    SER_danub_fortification:0 "Danube Frotifications"
+    SER_danub_fortification_desc:0 " "
+    
+    SER_belgrad_fortification:0 "Belgrad Forts"
+    SER_belgrad_fortification_desc:0 " "
+    
+    SER_kragujevac_factory:0 "Kragujevac Factory"
+    SER_kragujevac_factory_desc:0 " "
+    
+    SER_modern_army_rifle:0 "Modern Army Rifle"
+    SER_modern_army_rifle_desc:0 " "
+    
+    SER_contract_with_belgian:0 "Contracts with Belgian"
+    SER_contract_with_belgian_desc:0 " "
+    
+    SER_contract_with_french:0 "Contracts with French"
+    SER_contract_with_french_desc:0 " "
+    
+    SER_petrovic_system_rifle:0 "Minie-Francot-Petrović system Rifle"
+    SER_petrovic_system_rifle_desc:0 " "
+    
+    SER_stragari_gunpowder:0 "Stragari Gunpowder Magazine"
+    SER_stragari_gunpowder_desc:0 " "
+    
+    SER_artillery_administration_law:0 "Law of Artillery Administration"
+    SER_artillery_administration_law_desc:0 " "
+    
+    SER_artillery_school:0 "Artillery School"
+    SER_artillery_school_desc:0 " "
+    
+    SER_la_hitte_cannons:0 "La Hitte Cannons"
+    SER_la_hitte_cannons_desc:0 " "
+    
+    SER_serbian_gendarmerie:0 "Serbian Gendarmerie"
+    SER_serbian_gendarmerie_desc:0 " "
+    
+    SER_military_uniform_regulation:0 "Military Uniforms Regulation"
+    SER_military_uniform_regulation_desc:0 " "
+    
+    SER_french_medical_officer:0 "French Medical Officers"
+    SER_french_medical_officer_desc:0 " "
+    
+    SER_blaznavac_war_minister:0 "Minister of War Blaznavac"
+    SER_blaznavac_war_minister_desc:0 " "
+    
+    SER_army_political_influence:0 "Army's Influence in the politics"
+    SER_army_political_influence_desc:0 " "
+    
+    SER_corruption_affair:0 "Corruption Affair"
+    SER_corruption_affair_desc:0 " "
+    
+    SER_belgrade_military_drills:0 "Military drills in Belgrade"
+    SER_belgrade_military_drills_desc:0 " "
+    
+    SER_army_dominance:0 "Army Dominance"
+    SER_army_dominance_desc:0 " "
+    
+    SER_fresh_russian_capitals:0 "Fresh Russian Capitals"
+    SER_fresh_russian_capitals_desc:0 " "
+    
+    SER_rearm_serbian_military:0 "Rearmament of the Serbian Army"
+    SER_rearm_serbian_military_desc:0 " "
+    
+    SER_military_foundry:0 "Military Foundry"
+    SER_military_foundry_desc:0 " "
+    
+    SER_european_model_army:0 "European Model Army"
+    SER_european_model_army_desc:0 " "
+    
+    SER_new_generals:0 "New Generals in the Army"
+    
+    SER_franco_prussian_observer:0 "Send an observer to the Franco-Prussian War"
+    
+    SER_greater_military_autonomy:0 "Greater Military Autonomy"
+    
+    SER_secret_military_council:0 "The Secret Military Council"
+    
+    SER_coordinate_military_actions:0 "Coordinate Military Actions"
+    
+    SER_convocate_second_bulgarian_legion:0 "Convocation of the Second Bulgarian Legion"
+    
+    SER_join_forces_montenegro:0 "Join Forces with Montenegro"
+    
+    SER_prepare_for_war:0 "Prepare for the War"
+    
+    SER_grujic_war_plan:0 "Major Grujic's War Plan"
+    
+    SER_serbian_ottoman_war:0 "Serbian-Ottoman War"
 
     #EVENTS
 
@@ -475,6 +476,50 @@
     SERmisc.6.t:0 "Establishing Serbian Gendarmery"
     SERmisc.6.d:0 "We have established first Serbian Gendarmery"
     SERmisc.6.a:0 "Glory to Serbia!"
+    
+    SERmisc.7.t:0 "Act on Establishment of the National Army"
+    SERmisc.7.d:0 ""
+    SERmisc.7.a:0 "Glory to Serbia!"
+    
+    SERmisc.8.t:0 "Decree of the People's Army"
+    SERmisc.8.d:0 ""
+    SERmisc.8.a:0 "Glory to Serbia!"
+    
+    SERmisc.9.t:0 "Hipolit Mondain's Army Reform"
+    SERmisc.9.d:0 ""
+    SERmisc.9.a:0 "Glory to Serbia!"
+    
+    SERmisc.10.t:0 "Law of Artillery Administration"
+    SERmisc.10.d:0 ""
+    SERmisc.10.a:0 "Glory to Serbia!"
+    
+    SERmisc.11.t:0 "Hipolit Mondain's Army Reform - Succeed!"
+    SERmisc.11.d:0 ""
+    SERmisc.11.a:0 "Glory to Serbia!"
+    
+    SERmisc.12.t:0 "Hipolit Mondain's Army Reform - Failed!"
+    SERmisc.12.d:0 ""
+    SERmisc.12.a:0 "Glory to Serbia!"
+    
+    SERmisc.13.t:0 "Convocation of the Second Bulgarian Legion"
+    SERmisc.13.d:0 ""
+    SERmisc.13.a:0 "Glory to Serbia!"
+    
+    SERmisc.14.t:0 "New Talented Serbian Generals"
+    SERmisc.14.d:0 ""
+    SERmisc.14.a:0 "Glory to Serbia!"
+    
+    SERmisc.15.t:0 "Question of Montenegro-Serbia Military Agreement"
+    SERmisc.15.d:0 ""
+    SERmisc.15.a:0 "Glory to Serbia!"
+    
+    SERmisc.17.t:0 "Commercial Code of 1860"
+    SERmisc.17.d:0 ""
+    SERmisc.17.a:0 "Glory to Serbia!"
+    
+    SERmisc.19.t:0 "Pancic's Time!"
+    SERmisc.19.d:0 ""
+    SERmisc.19.a:0 "Glory to Serbia!"
 
     SERcuk.1.t:0 "Chukur Fountain Incident"
     SERcuk.1.d:0 "A hot summer day. Both Serbs and Turkish soldiers are drinking water from a well in Belgrade. An argument started about who will drink/take the water first. And in that heated moment, a Serbian boy named Sava Petkovic accidentaly broke a water jug belonging to a Turkish soldier. The soldier hit the boy in the head and wounded him. Serbian police sent some gendarmes to arrest the soldier. Other Turkish soldiers shot at and killed two Serb policemen. The shots could be heard around the city the whole night."
@@ -503,10 +548,6 @@
     SERcuk.7.t:0 "Ottoman Empire accepts"
     SERcuk.7.d:0 ""
     SERcuk.7.a:0 "Excellent"
-
-    #GOVERNMENT
-
-    SER_idea_hippolyte_mondain:0 "Hippolyte Mondain"
     
     #HEAD OF State
     
@@ -521,17 +562,23 @@
     SER_decisions_buy:0 "Buy Some Land"
     SER_decisions_buy_desc:0 "Buy land for state and military use."
 
-    SER_french_mission:0 "Monden's Army Reforms"
+    SER_french_mission:0 "Serbian Army Reforms"
     SER_mission_army_modernization:0 "Modernization of Serbian Army"
     SER_decision_kragujevac_fortress_renovation:0 "Renovation of Kragujevac Fortress"
-    SER_decision_purchase_foreign_firearms:0 "Purchase French Firearms"
-    SER_decision_purchase_support_equipment:0 "Purchase French Support Equipment"
+    SER_decision_purchase_foreign_firearms:0 "Purchase Foreign Firearms"
+    SER_decision_purchase_support_equipment:0 "Purchase Foreign Support Equipment"
     SER_decision_purchase_foreign_artillery:0 "Purchase French Artillery"
-    SER_decree_on_state_armory:0 "Decree on State Armory"
-    SER_decree_chief_arsenal:0 "Decree on State Chief Military Arsenal"
-    SER_decree_people_army:0 "Decree of the People’s Army"
-
-    SER_kragujevac_fortress_renovation:0 "Kragujevac Fortress is renovated"
+    SER_decree_on_state_armory:0 "Decree on State Armory - Kragujevac"
+    SER_decision_zajecar_fortification:0 "Zaječar Fortress"
+    SER_decision_danube_forts:0 "Danube Forts"
+    SER_decision_belgrad_fortification:0 "Fortifications of Belgrade"
+    SER_stragari_gunpodwer_magazine:0 "Rise of Stragari Gunpowder Magazine"
+    SER_decision_increase_army_budget:0 "Increase Army Budget"
+    SER_mission_mondain_army_reforms:0 "Hippolyte Florentain Mondain's Army Reform"
+    SER_decision_belgrade_infantry_exercises:0 "Infantry Exercises in Belgrade with Kosta Protic"
+    SER_decision_belgrade_artillery_exercises:0 "Artillery Training Outside of the Capital"
+    SER_decision_franco_prussian_observer:0 "Send Milojko Lesjanin to Germany"
+    SER_decision_military_foundry:0 "Expand Military Foundries"
 
     #SPIRITS
 
@@ -540,7 +587,8 @@
     SER_idea_1838constitution_desc:0 "1838 Constitution of Serbia, also known as Turkish Constitution, is a constitution through which the Ottoman Empire shows that Serbia is subservient to it. It replaced Sretenje Constitution and Milos Obrenovic abdicated in favor of his son, Mihailo, because of it. This constitution is the foundation of the current government's regime."
     SER_idea_1838constitution2:0 "Weakened 1838 Constitution"
     SER_idea_1838constitution2_desc:0 "The Turkish Constitution has been weakened through smart diplomacy."
-    SER_idea_serbianarmy:0 "Serbian Army"
+    SER_idea_serbianarmy:0 "Garnizono Vojinstvo"
+    SER_idea_serbianarmy1:0 "Garnizono Vojinstvo"
     SER_idea_alliance:0 "The Balkan Alliance"
     SER_idea_alliance_desc:0 "An alliance created by Serbia, Montenegro, Greece and Wallachia for the purpose of defeating the Ottomans and freeing their people from their rule."
     SER_idea_dual_government_of_belgrade:0 "Dual Goverment of Belgrade"
@@ -549,10 +597,19 @@
     SER_idea_growing_turkish_minority_desc:0 "With our recent actions and will to resist the Porte Sultan has grown increasingly worried about Russia's influence over our Principality so along with the garrison came their families with which the Sultan hopes to change the ethnic map of not only Belgrade but Serbia as a whole, and those very actions haven drained what little we have dry, as long as the garrison stays so will the civillians."
     SER_idea_the_sultans_watchful_eyes:0 "The Sultan's Watchful Eyes"
     SER_idea_the_sultans_watchful_eyes_desc:0 "The issue of Dual Administration lays in the heart of Serbia itself, it's fortress in which the Sultan's lapdog resides the Pasha of Belgrade, the Porte's Watchful Eyes, as long as he and the garrison remain we have little power over the Principalities internal and external policies which forces us to keep our head low, until the first opportunnity strikes."
-    SER_idea_principality_in_name_only:0 "Principality in Name Only"
-    SER_idea_principality_in_name_only_desc:0 "Even though our Principality gained an autonomous status it is still a part of the Ottoman Empire and the Porte is making sure we remember that, all of our cities are under the Sultan's administration and protection as well as all resources belong to the Porte and little that is left is distributed between the Principalities, which prevents any meaningful conscription inside the Principality only time will tell if this nightmare ever end."
     SER_idea_legacy_of_the_serbian_uprisings:0 "Legacy of the Serbian Uprisings"
     SER_idea_legacy_of_the_serbian_uprisings_desc:0 "The Serbian Uprisings are still remaining fresh in the memory of our citizens, how against all odds we still rose up in defiance to our overlords, in hopes of self determination, in hope of liberty, their sacrifice will be remembered as long as we are not free from the chains of Muslim opression."
+    #Military Ideas
+    SER_idea_mondain_reform:0 "Mondain's Army Reform"
+    SER_idea_mondain_reform1:0 "Mondain's Army Reform"
+    SER_idea_army_corruption:0 "Army Political Influence"
+    SER_idea_prepare_for_war:0 "On The Road to War"
+    SER_idea_russian_industry_help:0 "Heavy Industry Help from Russia"
+    SER_idea_grujic_war_plan:0 "Major Grujic War Plan"
+    #Economy Ideas
+    SER_idea_improve_mining_conditions:0 "Advacement of Mining and Industry Technologies"
+    SER_idea_improve_mining_conditions1:0 "Advacement of Mining and Industry Technologies"
+    
     #CUSTOM EFFECT TOOLTIPS
 
     eoanb_tt_SER_obrenovic:0 "§HMilos Obrenovic §!becomes the leader of Serbia.\n§HObrenovic dynasty §!(Autocracy) becomes the rulling party."
@@ -562,15 +619,8 @@
     eoanb_tt_SER_withdrawal:0 "This focus will unlock §H2 new decisions§!."
     eoanb_tt_SER_milosdies:0 "§HMihailo Obrenovic§! inherits the throne and becomes new Knez of Serbia."
 
-    eoanb_tt_SER_focus_mobilization:0 "Mobilization Speed: §G+20% §! "
-    eoanb_tt_SER_focus_attack:0 "Division Attack: §G+10% §! "
-    eoanb_tt_SER_focus_defense:0 "Division Defense: §G+10% §! "
-    eoanb_tt_SER_moralefactor:0 "Division Recovery Rate: §G+10% §! "
-    eoanb_tt_SER_powergain:0 "Legislative Power Gain: §G+5% §! "
-    eoanb_tt_SER_factoryoutput:0 "Factory Output: §G+5% §! "
-    eoanb_tt_SER_factoryef:0 "Factory Efficiency: §G+5% §! "
-    eoanb_tt_SER_focus_resourcegain:0 "Resource Gain: §G+10% §! "
-    eoanb_tt_SER_focus_outofsupply:0 "Out Of Supply: §G-20% §! "
+    eoanb_tt_SER_event_bulgarian_legion:0 "§GDuring the war with Turkey, the Bulgarian Legion will join our army.§!"
+    eoanb_tt_SER_grujic_war_plan:0 "§GWith the completion of this focus, Major Grujic's war plan will come into effect during the war against the Ottoman Empire.§!"
 
     #IDEAS
 

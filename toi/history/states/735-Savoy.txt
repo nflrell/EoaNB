@@ -16,10 +16,10 @@ state = {
 			#farm = 2
 		}
 		victory_points = {
-			778 6
+			11573 3
 		}
 		victory_points = {
-			6609 3
+			9603 3
 		}
 		add_claim_by = FRA
 			add_to_array = { state_culture_array = 36 }

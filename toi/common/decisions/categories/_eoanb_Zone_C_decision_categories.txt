@@ -218,39 +218,51 @@ GER_category_southern_generals = {
 
 #### German Confederation Decision Categories ####
 
-GEC_category_industrialization = {
-	icon = generic_industry
+GEC_category_domestic_policy = {
+	icon = generic_political_actions
 	
-	allowed = { 
-		OR = { tag = HES tag = HSD tag = FRK tag = THU tag = SAX tag = MCK tag = BAD tag = OLD tag = HAN tag = HAM tag = BRE tag = LCK tag = BAV tag = NAS } 
+	allowed = {
+		OR = { tag = BRE tag = FRK tag = HAN tag = HES tag = HSD tag = LCK tag = MCK tag = NAS tag = OLD tag = THU }
 	}
 	
 	visible = {
-		OR = { tag = HES tag = HSD tag = FRK tag = THU tag = SAX tag = MCK tag = BAD tag = OLD tag = HAN tag = HAM tag = BRE tag = LCK tag = BAV tag = NAS }
+		has_completed_focus = GEC_focus_member_of_the_german_confederation
+	}
+}
+
+GEC_category_industrialization = {
+	icon = generic_industry
+	
+	allowed = {
+		OR = { tag = BRE tag = FRK tag = HAN tag = HES tag = HSD tag = LCK tag = MCK tag = NAS tag = OLD tag = THU }
+	}
+	
+	visible = {
+		has_completed_focus = GEC_focus_industrialization
 	}
 }
 
 GEC_category_trade = {
 	icon = navy
 	
-	allowed = { 
-		OR = { tag = HES tag = HSD tag = FRK tag = THU tag = SAX tag = MCK tag = BAD tag = OLD tag = HAN tag = HAM tag = BRE tag = LCK tag = BAV tag = NAS } 
+	allowed = {
+		OR = { tag = BAD tag = BAV tag = BRE tag = FRK tag = HAM tag = HAN tag = HES tag = HSD tag = LCK tag = MCK tag = NAS tag = OLD tag = SAX tag = THU tag = WUR }
 	}
 	
 	visible = {
-		OR = { tag = HES tag = HSD tag = FRK tag = THU tag = SAX tag = MCK tag = BAD tag = OLD tag = HAN tag = HAM tag = BRE tag = LCK tag = BAV tag = NAS }
+		OR = { tag = BAD tag = BAV tag = BRE tag = FRK tag = HAM tag = HAN tag = HES tag = HSD tag = LCK tag = MCK tag = NAS tag = OLD tag = SAX tag = THU tag = WUR }
 	}
 }
 
 GEC_hansa_cities_decision_category = {
     icon = navy
 	
-	allowed = { 
-		OR = { tag = HAM tag = BRE tag = LCK } 
-	} 
+	allowed = {
+		OR = { tag = BRE tag = HAM tag = LCK }
+	}
 	
-	visible = { 
-		OR = { tag = HAM tag = BRE tag = LCK } 
+	visible = {
+		OR = { tag = BRE tag = HAM tag = LCK }
 	}
 }
 
@@ -259,9 +271,9 @@ GEC_polizeiverein_decision_category = {
 	
 	priority = 20
 	
-	allowed = { 
-		OR = { tag = AUS tag = PRS tag = BAD tag = BAV tag = HAN tag = SAX tag = WUR } 
-	} 
+	allowed = {
+		OR = { tag = AUS tag = PRS tag = BAD tag = BAV tag = HAN tag = SAX tag = WUR }
+	}
 	
 	visible = {
 		OR = { has_idea = GEC_Polizeiverein_leader has_idea = GEC_Polizeiverein_member }
@@ -397,21 +409,25 @@ AUS_decision_category_habsburg_army = {
 
 BAD_military_decision_category = {
 	icon = PRS_army_reform
-
-	picture = GFX_decision_cat_generic_commonwealth
     
 	allowed = {
 		tag = BAD
 	}
+	
+	visible = {
+		has_completed_focus = BAD_focus_our_army
+	}
 }
 
 BAD_economy_decision_category = {
-	icon = generic_independence
-
-	picture = GFX_decision_cat_generic_commonwealth
+	icon = generic_industry
     
 	allowed = {
 		tag = BAD
+	}
+	
+	visible = {
+		has_completed_focus = BAD_focus_industrial_situation
 	}
 }
 
@@ -622,6 +638,25 @@ ITA_decisions_category_wars_and_conflicts = {
 		#has_country_flag = is_literally_italy
 	}
 }
+ITA_decisions_category_artisan_industry = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_ita_artisans
+	priority = 12
+	allowed = {
+		OR = {
+			original_tag = PIE
+			original_tag = TUS
+			#original_tag = AUS
+			#original_tag = FRA
+			original_tag = NSC
+			original_tag = SWI
+		}
+	}
+	visible = {
+		#has_country_flag = is_literally_italy
+	}
+}
+
 
 ITA_Culture_category_decisions = {
 	icon = ita_culture
@@ -744,6 +779,19 @@ ITA_decisions_category_PIE_legislative_actions = {
 		}
 	}
 	priority = 25
+}
+ITA_decisions_category_TUS_liberalizing_tuscany = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_ita_legislative_actions
+	allowed = {
+		tag = TUS
+	}
+	visible = {
+		NOT = {
+			has_country_flag = is_literally_italy
+		}
+	}
+	priority = 20
 }
 ITA_decisions_category_PIE_diplomatic_endeavors = {
 	icon = generic_political_actions
@@ -1014,6 +1062,20 @@ FIN_category_political_reforms_decisions = {
 	}
 }
 
+FIN_category_famine = {
+	icon = generic_economy
+
+	allowed = {
+		tag = FIN
+	}
+
+	visible = {
+		has_dynamic_modifier = {
+			modifier = dynmod_FIN_famine
+		} 
+	}
+}
+
 #### Netherlands Decision Categories ####
 
 HOL_land_reclaimation = {
@@ -1063,7 +1125,7 @@ GRE_decision_category_industry = {
 	allowed = { tag = GRE }
 	
 	visible = {
-		has_idea = industrializing
+		#has_idea = industrializing
 	}
 }
 
@@ -1198,7 +1260,6 @@ SER_french_mission  = {
 	}
 	
 	visible = {
-	    has_completed_focus = SER_First_Minister_Of_Military
 	}
 }
 
