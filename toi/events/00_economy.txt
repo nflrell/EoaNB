@@ -14,3 +14,17 @@ country_event = {
 		
 	}
 }
+
+news_event = {
+	id = economy.2
+	title = economy.2.t
+	desc = economy.2.d
+	picture = GFX_news_event_ukraine_invasion
+
+	is_triggered_only = yes
+
+	option = { #War In Europe is back in fashion
+		name = economy.2.a
+		
+	}
+}

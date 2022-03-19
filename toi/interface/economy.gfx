@@ -4,6 +4,10 @@ spriteTypes = {
 		name = "GFX_report_event_generic_work_programs"
 		texturefile = "gfx/event_pictures/generic/report_event_generic_work_programs.png"
 	}
+	spriteType = {
+		name = "GFX_news_event_ukraine_invasion"
+		texturefile = "gfx/event_pictures/russia/news_event_ukraine_invasion.png"
+	}
 
 	#GUI
 	spriteType = {

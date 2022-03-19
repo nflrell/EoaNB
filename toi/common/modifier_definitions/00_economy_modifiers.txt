@@ -243,5 +243,11 @@
             precision = 2
             category = country
         }
+        shipping_cost_modifier = {
+            color_type = bad
+            value_type = percentage
+            precision = 2
+            category = country #no local
+        }
     #
 #

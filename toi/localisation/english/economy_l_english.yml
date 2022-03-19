@@ -6,6 +6,10 @@
 
   military_goods_loc:0 "[?government_military_goods_percent|0]%"
 
+  economy.2.t:0 "Russia invades Ukraine"
+  economy.2.d:0 "In the early hours on the 24th of February, Russian missiles and artillery shells rained down on the Ukranian cities of Kharkov, Kiev, Odessa, among others. Russian Naval forces have been spotted in the Black Sea with naval invasions near Odessa and Mauripol.\n\nDuring the UN Emergency Council meeting that day, the Ukranian representative called the actions a declaration of war and demanded for Russia's UN Security Council status to be revoked. The Russian representative called the manuevers  'Special Military Operations,' insisting that Russia is not invading Ukraine. Many NATO countries, including a previously hesitant Germany, have condemned this operation. \n\nLarge portions of the civilian Ukrainian population are fleeing from the combat zones. The sitution is still developing."
+  economy.2.a:0 "War in Europe is back in fashion"
+
   #Modifiers
     rgo_max_size_modifier:0 "RGO Max Size"
     rgo_output_modifier:0 "RGO Output"
@@ -41,6 +45,7 @@
     infrastructure_efficiency_modifier:0 "§YInfrastructure§! Efficiency"
 
     transport_cost_modifier:0 "Transport Cost"
+    shipping_cost_modifier:0 "Shipping Cost"
   #
 
   #State Economy Screen

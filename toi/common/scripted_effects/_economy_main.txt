@@ -2307,7 +2307,7 @@
 								set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 							}
 							divide_variable = { shipping_cost = global.base_shipping_cost_divisor }
-							set_temp_variable = { modifier_temp = shipping_cost_effect }
+							set_temp_variable = { modifier_temp = modifier@shipping_cost_modifier }
 							add_to_temp_variable = { modifier_temp = 1 }
 							multiply_variable = { shipping_cost = modifier_temp }
 							add_to_variable = { shipping_cost = 1 }
@@ -2480,7 +2480,7 @@
 								set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 							}
 							divide_variable = { shipping_cost = global.base_shipping_cost_divisor }
-							set_temp_variable = { modifier_temp = shipping_cost_effect }
+							set_temp_variable = { modifier_temp = modifier@shipping_cost_modifier }
 							add_to_temp_variable = { modifier_temp = 1 }
 							multiply_variable = { shipping_cost = modifier_temp }
 							add_to_variable = { shipping_cost = 1 }
@@ -2653,7 +2653,7 @@
 								set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 							}
 							divide_variable = { shipping_cost = global.base_shipping_cost_divisor }
-							set_temp_variable = { modifier_temp = shipping_cost_effect }
+							set_temp_variable = { modifier_temp = modifier@shipping_cost_modifier }
 							add_to_temp_variable = { modifier_temp = 1 }
 							multiply_variable = { shipping_cost = modifier_temp }
 							add_to_variable = { shipping_cost = 1 }
@@ -2826,7 +2826,7 @@
 								set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 							}
 							divide_variable = { shipping_cost = global.base_shipping_cost_divisor }
-							set_temp_variable = { modifier_temp = shipping_cost_effect }
+							set_temp_variable = { modifier_temp = modifier@shipping_cost_modifier }
 							add_to_temp_variable = { modifier_temp = 1 }
 							multiply_variable = { shipping_cost = modifier_temp }
 							add_to_variable = { shipping_cost = 1 }
@@ -2999,7 +2999,7 @@
 								set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 							}
 							divide_variable = { shipping_cost = global.base_shipping_cost_divisor }
-							set_temp_variable = { modifier_temp = shipping_cost_effect }
+							set_temp_variable = { modifier_temp = modifier@shipping_cost_modifier }
 							add_to_temp_variable = { modifier_temp = 1 }
 							multiply_variable = { shipping_cost = modifier_temp }
 							add_to_variable = { shipping_cost = 1 }
@@ -3172,7 +3172,7 @@
 								set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 							}
 							divide_variable = { shipping_cost = global.base_shipping_cost_divisor }
-							set_temp_variable = { modifier_temp = shipping_cost_effect }
+							set_temp_variable = { modifier_temp = modifier@shipping_cost_modifier }
 							add_to_temp_variable = { modifier_temp = 1 }
 							multiply_variable = { shipping_cost = modifier_temp }
 							add_to_variable = { shipping_cost = 1 }
@@ -6450,6 +6450,9 @@
 				#
 
 				#Infra Modifiers
+					set_temp_variable = { efficiency_effect_temp = infrastructure_efficiency_effect }
+					add_to_temp_variable = { efficiency_effect_temp = 1 }
+
 					set_temp_variable = { infra_maintenance_fulfilled_temp = infrastructure_industrial_goods_fulfilled_percentage }
 					add_to_temp_variable = { infra_maintenance_fulfilled_temp = 1 }
 					divide_temp_variable = { infra_maintenance_fulfilled_temp = 2 }
@@ -6457,24 +6460,24 @@
 					set_variable = { infrastructure_rgo_output_modifier = infrastructure_level }
 					multiply_variable = { infrastructure_rgo_output_modifier = global.infrastructure_rgo_output_modifier }
 					multiply_variable = { infrastructure_rgo_output_modifier = infra_maintenance_fulfilled_temp }
+					multiply_variable = { infrastructure_rgo_output_modifier = infrastructure_efficiency_effect }
 
 					set_variable = { infrastructure_factory_throughput_modifier = infrastructure_level }
 					multiply_variable = { infrastructure_factory_throughput_modifier = global.infrastructure_factory_throughput_modifier }
 					multiply_variable = { infrastructure_factory_throughput_modifier = infra_maintenance_fulfilled_temp }
+					multiply_variable = { infrastructure_factory_throughput_modifier = infrastructure_efficiency_effect }
 
 					set_variable = { infrastructure_build_cost_modifier = infrastructure_level }
 					multiply_variable = { infrastructure_build_cost_modifier = global.infrastructure_build_cost_modifier }
 					multiply_variable = { infrastructure_build_cost_modifier = infra_maintenance_fulfilled_temp }
+					multiply_variable = { infrastructure_build_cost_modifier = infrastructure_efficiency_effect }
 
 					set_variable = { infrastructure_transport_cost_modifier = 1 }
-					subtract_from_variable = { infrastructure_transport_cost_modifier = PREV.tech_transport_cost }
-					set_temp_variable = { divisor_temp = 1 }
-					subtract_from_temp_variable = { divisor_temp = global.infrastructure_transport_cost_multiplier }
-					set_temp_variable = { reduction_effect_temp = infrastructure_transport_cost_reduction_effect }
-					add_to_temp_variable = { reduction_effect_temp = 1 }
-					multiply_temp_variable = { divisor_temp = reduction_effect_temp }
-					set_variable = { infrastructure_transport_cost_multiplier_per_level = 1 }
-					subtract_from_variable = { infrastructure_transport_cost_multiplier_per_level = divisor_temp }
+					add_to_variable = { infrastructure_transport_cost_modifier = PREV.modifier@transport_cost_modifier }
+					set_variable = { infrastructure_transport_cost_multiplier_per_level = global.infrastructure_transport_cost_multiplier }
+					subtract_from_variable = { infrastructure_transport_cost_multiplier_per_level = 1 }
+					multiply_variable = { infrastructure_transport_cost_multiplier_per_level = infrastructure_efficiency_effect }
+					add_to_variable = { infrastructure_transport_cost_multiplier_per_level = global.infrastructure_transport_cost_multiplier }
 					for_loop_effect = {
 						start = 0
 						end = infrastructure_level
@@ -11427,7 +11430,7 @@
 			divide_temp_variable = { country_weight_temp = modifier_temp }
 			
 			set_temp_variable = { modifier_temp = 1 }
-			add_to_temp_variable = { modifier_temp = PREV.shipping_cost_effect }
+			add_to_temp_variable = { modifier_temp = PREV.modifier@shipping_cost_modifier }
 			divide_temp_variable = { global_weight_temp = modifier_temp }
 			divide_temp_variable = { global_weight_temp = modifier_temp }
 
@@ -11745,7 +11748,7 @@
 			divide_temp_variable = { country_weight_temp = modifier_temp }
 			
 			set_temp_variable = { modifier_temp = 1 }
-			add_to_temp_variable = { modifier_temp = PREV.shipping_cost_effect }
+			add_to_temp_variable = { modifier_temp = PREV.modifier@shipping_cost_modifier }
 			divide_temp_variable = { global_weight_temp = modifier_temp }
 			divide_temp_variable = { global_weight_temp = modifier_temp }
 
@@ -12062,7 +12065,7 @@
 			divide_temp_variable = { country_weight_temp = modifier_temp }
 			
 			set_temp_variable = { modifier_temp = 1 }
-			add_to_temp_variable = { modifier_temp = PREV.shipping_cost_effect }
+			add_to_temp_variable = { modifier_temp = PREV.modifier@shipping_cost_modifier }
 			divide_temp_variable = { global_weight_temp = modifier_temp }
 			divide_temp_variable = { global_weight_temp = modifier_temp }
 
@@ -15622,7 +15625,6 @@
 				set_variable = { build_speed_effect = 0 }
 
 				set_variable = { transport_cost_effect = 0 }
-				set_variable = { shipping_cost_effect = 0 }
 
 			#RGO Modifiers
 				set_variable = { rgo_max_size_effect = 0 }
@@ -15664,8 +15666,7 @@
 				set_variable = { infrastructure_build_cost_effect = 0 }
 				set_variable = { infrastructure_build_speed_effect = 0 }
 				set_variable = { infrastructure_maintenance_cost_effect = 0 }
-				set_variable = { infrastructure_transport_cost_reduction_effect = 0 }
-				set_variable = { infrastructure_shipping_cost_reduction_effect = 0 }
+				set_variable = { infrastructure_efficiency_effect = 0 }
 			#
 		#
 		#State Level Modifiers
@@ -15705,50 +15706,52 @@
 		#Tech
 			controller = {
 				#General Modifiers
-				add_to_variable = { PREV.build_cost_effect = tech_build_cost }
-				add_to_variable = { PREV.build_speed_effect = tech_build_speed }
+				add_to_variable = { PREV.build_cost_effect = modifier@build_cost_modifier }
+				add_to_variable = { PREV.build_speed_effect = modifier@build_speed_modifier }
 
-				add_to_variable = { PREV.transport_cost_effect = tech_transport_cost }
+				add_to_variable = { PREV.transport_cost_effect = modifier@transport_cost_modifier }
 
 				#RGO modifiers
-				add_to_variable = { PREV.rgo_output_effect = tech_rgo_output }
-				add_to_variable = { PREV.raw_goods_output_effect = tech_raw_goods_output }
-				add_to_variable = { PREV.life_goods_output_effect = tech_life_goods_output }
-				add_to_variable = { PREV.valuable_goods_output_effect = tech_valuable_goods_output }
+				add_to_variable = { PREV.rgo_output_effect = modifier@rgo_output_modifier }
+				add_to_variable = { PREV.raw_goods_output_effect = modifier@raw_goods_rgo_output_modifier }
+				add_to_variable = { PREV.life_goods_output_effect = modifier@life_goods_rgo_output_modifier }
+				add_to_variable = { PREV.valuable_goods_output_effect = modifier@valuable_goods_rgo_output_modifier }
 
-				add_to_variable = { PREV.rgo_max_size_effect = tech_rgo_max_size }
-				add_to_variable = { PREV.life_goods_rgos_max_mechanization = tech_life_goods_rgos_max_mechanization }
-				add_to_variable = { PREV.raw_goods_rgos_max_mechanization = tech_raw_goods_rgos_max_mechanization }
-				add_to_variable = { PREV.valuable_goods_rgos_max_mechanization = tech_valuable_goods_rgos_max_mechanization }
+				add_to_variable = { PREV.rgo_max_size_effect = modifier@rgo_max_size_modifier }
+				add_to_variable = { PREV.life_goods_rgos_max_mechanization = modifier@life_goods_rgo_max_mechanization_modifier }
+				add_to_variable = { PREV.life_goods_rgos_max_mechanization = modifier@rgo_max_mechanization_modifier }
+				add_to_variable = { PREV.raw_goods_rgos_max_mechanization = modifier@raw_goods_rgo_max_mechanization_modifier }
+				add_to_variable = { PREV.raw_goods_rgos_max_mechanization = modifier@rgo_max_mechanization_modifier }
+				add_to_variable = { PREV.valuable_goods_rgos_max_mechanization = modifier@valuable_goods_rgo_max_mechanization_modifier }
+				add_to_variable = { PREV.valuable_goods_rgos_max_mechanization = modifier@rgo_max_mechanization_modifier }
 
 				#Factory Modifiers
-				add_to_variable = { PREV.factory_size_effect = tech_factory_size }
-				add_to_variable = { PREV.factory_build_cost_effect = tech_factory_build_cost }
-				add_to_variable = { PREV.factory_build_speed_effect = tech_factory_build_speed }
+				add_to_variable = { PREV.factory_size_effect = modifier@factory_size_modifier }
+				add_to_variable = { PREV.factory_build_cost_effect = modifier@factory_build_cost_modifier }
+				add_to_variable = { PREV.factory_build_speed_effect = modifier@factory_build_speed_modifier }
 
-				add_to_variable = { PREV.factory_goods_output_effect = tech_factory_goods_output }
-				add_to_variable = { PREV.factory_everyday_goods_effect = tech_factory_everyday_goods_output }
-				add_to_variable = { PREV.factory_luxury_goods_effect = tech_factory_luxury_goods_output }
-				add_to_variable = { PREV.factory_industrial_goods_output_effect = tech_factory_industrial_goods_output }
+				add_to_variable = { PREV.factory_goods_output_effect = modifier@factory_output_modifier }
+				add_to_variable = { PREV.factory_everyday_goods_effect = modifier@everyday_goods_factory_output_modifier }
+				add_to_variable = { PREV.factory_luxury_goods_effect = modifier@luxury_goods_factory_output_modifier }
+				add_to_variable = { PREV.factory_industrial_goods_output_effect = modifier@rgo_max_size_industrial_goods_factory_output_modifiermodifier }
 
-				add_to_variable = { PREV.factory_throughput_effect = tech_factory_throughput }
-				add_to_variable = { PREV.factory_everyday_goods_throughput_effect = tech_factory_everyday_goods_throughput }
-				add_to_variable = { PREV.factory_luxury_goods_throughput_effect = tech_factory_luxury_goods_throughput }
-				add_to_variable = { PREV.factory_industrial_goods_throughput_effect = tech_factory_industrial_goods_throughput }
+				add_to_variable = { PREV.factory_throughput_effect = modifier@factory_throughput_modifier }
+				add_to_variable = { PREV.factory_everyday_goods_throughput_effect = modifier@everyday_goods_factory_throughput_modifier }
+				add_to_variable = { PREV.factory_luxury_goods_throughput_effect = modifier@luxury_goods_factory_throughput_modifier }
+				add_to_variable = { PREV.factory_industrial_goods_throughput_effect = modifier@industrial_goods_factory_throughput_modifier }
 
-				add_to_variable = { PREV.factory_raw_goods_input_effect = tech_factory_raw_goods_input }
-				add_to_variable = { PREV.factory_everyday_goods_raw_goods_input_effect = tech_factory_everyday_goods_raw_goods_input }
-				add_to_variable = { PREV.factory_luxury_goods_raw_goods_input_effect = tech_factory_luxury_goods_raw_goods_input }
-				add_to_variable = { PREV.factory_industrial_goods_raw_goods_input_effect = tech_factory_industrial_goods_raw_goods_input }
+				add_to_variable = { PREV.factory_raw_goods_input_effect = modifier@factory_input_modifier }
+				add_to_variable = { PREV.factory_everyday_goods_raw_goods_input_effect = modifier@everyday_goods_factory_input_modifier }
+				add_to_variable = { PREV.factory_luxury_goods_raw_goods_input_effect = modifier@luxury_goods_factory_input_modifier }
+				add_to_variable = { PREV.factory_industrial_goods_raw_goods_input_effect = modifier@industrial_goods_factory_input_modifier }
 				
-				add_to_variable = { PREV.factory_industrial_goods_maintenance_effect = tech_factory_industrial_goods_maintenance }
+				add_to_variable = { PREV.factory_industrial_goods_maintenance_effect = modifier@factory_maintenance_modifier }
 
 				#Infrastructure Modifiers
-				add_to_variable = { PREV.infrastructure_build_cost_effect = tech_infrastructure_build_cost }
-				add_to_variable = { PREV.infrastructure_build_speed_effect = tech_infrastructure_build_speed }
-				add_to_variable = { PREV.infrastructure_maintenance_cost_effect = tech_infrastructure_maintenance_cost }
-				add_to_variable = { PREV.infrastructure_transport_cost_reduction_effect = tech_infrastructure_transport_cost_reduction }
-				add_to_variable = { PREV.infrastructure_shipping_cost_reduction_effect = tech_infrastructure_shipping_cost_reduction }
+				add_to_variable = { PREV.infrastructure_build_cost_effect = modifier@infrastructure_build_cost_modifier }
+				add_to_variable = { PREV.infrastructure_build_speed_effect = modifier@infrastructure_build_speed_modifier }
+				add_to_variable = { PREV.infrastructure_maintenance_cost_effect = modifier@infrastructure_maintenance_modifier }
+				add_to_variable = { PREV.infrastructure_efficiency_effect = modifier@infrastructure_efficiency_modifier }
 			}
 		#
 		#Multipliers
