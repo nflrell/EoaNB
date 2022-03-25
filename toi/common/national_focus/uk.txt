@@ -3012,7 +3012,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_mining_efforts
-		icon = GFX_goal_generic_production
+		icon = GFX_Focus_Resource_Extraction_Mining
 		x = 54
 		y = 3
 		cost = 50
@@ -3728,7 +3728,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_demand_japanese_trade_port
-		icon = GFX_goal_focus_JAP_science_eng_navy
+		icon = GFX_focus_JAP_science_eng_navy
 		x = 66
 		y = 3
 		cost = 30
@@ -5786,7 +5786,7 @@ focus_tree = {
 		
 		completion_reward = {
 
-			ENG = { country_event = { id = britain.68 days = 10 } }
+			country_event = britain.68
 			country_event = britain.81
 		}
 	}
@@ -5796,7 +5796,7 @@ focus_tree = {
 	### Will be completed by event
 	focus = {
 		id = ENG_focus_Palmerston_Wins
-		icon = GFX_goal_focus_palmerston_government
+		icon = GFX_ENG_focus_portrait_lord_palmerston
 		x = -3
 		y = 1
 		cost = 7
@@ -5830,7 +5830,7 @@ focus_tree = {
 	### Will be completed by event
 	focus = {
 		id = ENG_focus_Derby_Wins
-		icon = GFX_goal_focus_derby_government
+		icon = GFX_ENG_focus_portrait_edward_smith_stanley
 		x = 3
 		y = 1
 		cost = 7
@@ -6188,7 +6188,6 @@ focus_tree = {
 			random_list = {
 				20 = {country_event = { id= britain.56 days = 10 } }
 				80 = {}
-
 			}
 			country_event = britain.119
 		}
@@ -6198,7 +6197,7 @@ focus_tree = {
 	### Will be completed by event
 	focus = {
 		id = ENG_focus_Palmerston_wins2
-		icon = GFX_goal_focus_palmerston_government
+		icon = GFX_ENG_focus_portrait_lord_palmerston
 		x = -2
 		y = 1
 		cost = 7
@@ -6230,7 +6229,7 @@ focus_tree = {
 	### Will be completed by event
 	focus = {
 		id = ENG_focus_Derby_wins2
-		icon = GFX_goal_focus_derby_government
+		icon = GFX_ENG_focus_portrait_edward_smith_stanley
 		x = 2
 		y = 1
 		cost = 7
@@ -6339,7 +6338,6 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = { id = britain.88 }
-
 		}
 	}
 
@@ -6372,7 +6370,6 @@ focus_tree = {
 		}
 	}
 
-
 	### 1868 General elections
 	focus = {
 		id = ENG_focus_1868_general_elections
@@ -6403,7 +6400,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_Gladstone_wins
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_ENG_focus_portrait_william_ewart_gladstone
 		x = -2
 		y = 1
 		cost = 7
@@ -6435,7 +6432,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_Disraeli_wins
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_ENG_focus_portrait_benjamin_disraeli
 		x = 2
 		y = 1
 		cost = 7
@@ -6460,8 +6457,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ALTHISTORY }
 		
 		completion_reward = {
-			ENG = { country_event = { id = britain.91 days = 90 } }
-			ENG = { country_event = { id = britain.107 days = 5 } }
+			country_event = { id = britain.91 days = 90 }
+			country_event = britain.107
 		}
 	}
 
@@ -6643,7 +6640,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_Gladstone_wins2
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_ENG_focus_portrait_william_ewart_gladstone
 		x = -2
 		y = 1
 		cost = 7
@@ -6669,12 +6666,13 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = britain.117
+			country_event = { id = britain.129 days = 90 }
 		}
 	}
 
 	focus = {
 		id = ENG_focus_Disraeli_wins2
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_ENG_focus_portrait_benjamin_disraeli
 		x = 2
 		y = 1
 		cost = 7
@@ -6874,7 +6872,6 @@ focus_tree = {
 		}
 	}
 
-
 	focus = {
 		id = ENG_focus_Cavendish_wins
 		icon = GFX_Focus_Law_Vote_1
@@ -6908,7 +6905,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_Disraeli_wins3
-		icon = GFX_Focus_Law_Vote_1
+		icon = GFX_ENG_focus_portrait_benjamin_disraeli
 		x = 2
 		y = 1
 		cost = 7
@@ -7010,6 +7007,108 @@ focus_tree = {
 		
 		completion_reward = {
 			unlock_decision_tooltip = ENG_decision_Conveying_Law_Property_Act
+		}
+	}
+
+	focus = {
+		id = ENG_focus_placeholder1
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = 3
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1880_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Conveying_Law_Property_Act
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			#unlock_decision_tooltip = ENG_decision_Conveying_Law_Property_Act
+		}
+	}
+
+	focus = {
+		id = ENG_focus_placeholder2
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = 0
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1880_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Married_Womens_Property_Act 
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			#unlock_decision_tooltip = ENG_decision_Conveying_Law_Property_Act
+		}
+	}
+
+	focus = {
+		id = ENG_focus_placeholder3
+		icon = GFX_idea_ENG_focus_enact_law_uk_parliament
+		x = -3
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1880_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_Newspaper_Libel_Registration_Act
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			#unlock_decision_tooltip = ENG_decision_Conveying_Law_Property_Act
+		}
+	}
+
+	focus = {
+		id = ENG_focus_1885_transfer
+		icon = GFX_Focus_Law_Vote_1
+		x = 0
+		y = 4
+		cost = 70
+		available_if_capitulated = no
+
+		relative_position_id = ENG_focus_1880_general_elections
+
+		ai_will_do = {
+			factor = 60
+		}
+
+		prerequisite = {
+			focus = ENG_focus_placeholder3
+		}
+		prerequisite = {
+			focus = ENG_focus_placeholder2
+		}
+		prerequisite = {
+			focus = ENG_focus_placeholder1
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			custom_effect_tooltip = CAN_END
 		}
 	}
 }

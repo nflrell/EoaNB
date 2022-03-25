@@ -629,6 +629,70 @@ country_event = {  #Status of finnish economy
 		}
 	}
 	
+	country_event = {  #Fennoman Elias Lönnrot
+		id = finlandfocus.7
+		title = finlandfocus.7.t
+		desc = finlandfocus.7.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.7.a
+				FIN_elias_lonnrot = {
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							idea_token = FIN_advisor_elias_lonnrot
+							allowed = {
+								original_tag = FIN
+							}
+							traits = {
+								FIN_trait_elias_lonnrot
+							}
+							ai_will_do = {
+								factor = 5
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	country_event = {  #Svecoman Axel Olof Freudenthal (racist swede)
+		id = finlandfocus.8
+		title = finlandfocus.8.t
+		desc = finlandfocus.8.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.8.a
+				FIN_axel_olof_freudenthal = {
+				add_advisor_role = {
+					advisor = {
+						slot = political_advisor
+						idea_token = FIN_advisor_axel_olof_freudenthal
+						allowed = {
+							original_tag = FIN
+						}
+						traits = {
+							FIN_axel_olof_freudenthal
+						}
+						ai_will_do = {
+							factor = 5
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	country_event = {  #Porvoo Diet
 		id = finlandfocus.5
 		title = finlandfocus.5.t
@@ -644,6 +708,269 @@ country_event = {  #Status of finnish economy
 
 		}
 	}
+	country_event = {  #Language Event
+		id = finlandfocus.6
+		title = finlandfocus.6.t
+		desc = finlandfocus.6.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.6.a
+			swap_ideas = { remove_idea = FIN_the_language_strife add_idea = FIN_the_language_strife1 }
+		}
+	}
+	
+	country_event = {  #Voting Rights
+		id = finlandfocus.9
+		title = finlandfocus.9.t
+		desc = finlandfocus.9.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.9.a
+			add_ideas = FIN_voting_rights
+		}
+	}
+	
+	country_event = {  #Diet of 1867
+		id = finlandfocus.10
+		title = finlandfocus.10.t
+		desc = finlandfocus.10.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.10.a
+				set_temp_variable = { EOANBSYS_humanitive_change = 0.05 }
+				EOANBSYS_institutions_humanitive_change = yes
+				hidden_effect = {
+					FIN = { country_event = { id = finlandfocus.11 days = 3 } }
+			}
+		}
+	}
+	
+	country_event = {  #Representatives of Estates
+		id = finlandfocus.11
+		title = finlandfocus.11.t
+		desc = finlandfocus.11.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.11.a
+				add_political_power = 50
+				add_stability = 0.05
+		}
+	}
+	
+	country_event = {  #New Knights Act
+		id = finlandfocus.12
+		title = finlandfocus.12.t
+		desc = finlandfocus.12.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.12.a
+		}
+		
+		option = {
+			name = finlandfocus.12.b
+		}
+	}
+	
+	country_event = {  #January Comittee 
+		id = finlandfocus.13
+		title = finlandfocus.13.t
+		desc = finlandfocus.13.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.13.a
+			set_temp_variable = { EOANBSYS_humanitive_change = 0.05 }
+			EOANBSYS_institutions_humanitive_change = yes
+			hidden_effect = {
+				FIN = { country_event = { id = finlandfocus.14 days = 10 } }
+			}
+		}
+		
+		option = {
+			name = finlandfocus.13.b
+			hidden_effect = {
+				FIN = { country_event = { id = finlandfocus.14 days = 30 } }
+			}
+		}
+	}
+	
+	country_event = {  #April Manifesto
+		id = finlandfocus.14
+		title = finlandfocus.14.t
+		desc = finlandfocus.14.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.14.a
+			set_temp_variable = { EOANBSYS_humanitive_change = 0.05 }
+			EOANBSYS_institutions_humanitive_change = yes
+			hidden_effect = {
+				FIN = { country_event = { id = finlandfocus.15 days = 10 } }
+			}
+		}
+		
+		option = {
+			name = finlandfocus.14.b
+			set_temp_variable = { EOANBSYS_humanitive_change = 0.03 }
+			EOANBSYS_institutions_humanitive_change = yes
+			hidden_effect = {
+				FIN = { country_event = { id = finlandfocus.15 days = 10 } }
+			}
+		}
+	}
+	
+	country_event = {  #Helsinki Demonstration 
+		id = finlandfocus.15
+		title = finlandfocus.15.t
+		desc = finlandfocus.15.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.15.a
+			set_temp_variable = { EOANBSYS_humanitive_change = 0.02 }
+			EOANBSYS_institutions_humanitive_change = yes
+		}
+	}
+	
+	country_event = {  #Diet of 1863
+		id = finlandfocus.16
+		title = finlandfocus.16.t
+		desc = finlandfocus.16.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.16.a
+				hidden_effect = {
+					FIN = { country_event = { id = finlandfocus.17 days = 3 } }
+			}
+		}
+	}
+	
+	country_event = {  #Representatives of Estates
+		id = finlandfocus.17
+		title = finlandfocus.17.t
+		desc = finlandfocus.17.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.17.a
+				add_political_power = 50
+				add_stability = 0.05
+		}
+	}
+	
+	country_event = {  #Municipal Decree1865
+		id = finlandfocus.18
+		title = finlandfocus.18.t
+		desc = finlandfocus.18.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.18.a
+
+		}
+	}
+	
+	country_event = {  #First Diet Reforms
+		id = finlandfocus.19
+		title = finlandfocus.19.t
+		desc = finlandfocus.19.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.19.a
+				retire_character = FIN_Fabian_Langenskiold
+		}
+	}
+	
+	country_event = {  #The Law of Diet
+		id = finlandfocus.20
+		title = finlandfocus.20.t
+		desc = finlandfocus.20.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.20.a
+			swap_ideas = { remove_idea = no_constitution add_idea = human_rights }
+		}
+	}
+	
+	country_event = {  #Own Currency
+		id = finlandfocus.21
+		title = finlandfocus.21.t
+		desc = finlandfocus.21.d
+
+		picture = GFX_GEO_report_event_Dadiani_Palace
+
+		fire_only_once = yes
+		is_triggered_only = yes
+
+		option = {
+			name = finlandfocus.21.a
+			set_temp_variable = { EOANBSYS_humanitive_change = 0.03 }
+			EOANBSYS_institutions_humanitive_change = yes
+			set_temp_variable = { eoanb_prestige_change = 10 }
+			eoanb_change_prestige_score = ye
+		}
+	}
+	
 
 ### Finnish famine
 ## Famine warning
@@ -704,15 +1031,73 @@ country_event = {
 
 ##Pettu Bread
 country_event = {
-	id = finlandfamine.3
-	title = finlandfamine.3.t
-	desc = finlandfamine.3.d
+	id = finlandfamine.4
+	title = finlandfamine.4.t
+	desc = finlandfamine.4.d
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = finlandfamine.3.a
+		name = finlandfamine.4.a
 		FIN_decrease_famine_modifiers = yes
+	}
+}
+
+##Emergency Use of Markka
+country_event = {
+	id = finlandfamine.5
+	title = finlandfamine.5.t
+	desc = finlandfamine.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Basic Effort
+		name = finlandfamine.5.a
+		custom_effect_tooltip = FIN_combat_famine_effect_tt
+			if = {
+				limit = {
+					has_idea = FIN_markka
+				}
+				add_political_power = -50
+				FIN_decrease_famine_modifiers = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = FIN_markka_silver
+						has_idea = FIN_markka_gold
+					}
+				}
+				add_political_power = -70
+				FIN_decrease_famine_modifiers = yes
+			}
+		}
+	
+	option = { #Twiced Effort
+		name = finlandfamine.5.b
+		custom_effect_tooltip = FIN_combat_famine_effect_tt
+			if = {
+				limit = {
+					has_idea = FIN_markka
+				}
+				add_political_power = -100
+				FIN_decrease_twice_famine_modifiers = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea = FIN_markka_silver
+						has_idea = FIN_markka_gold
+					}
+				}
+				add_political_power = -140
+				FIN_decrease_twice_famine_modifiers = yes
+			}
+		}
+	
+	option = { #No Effort
+		name = finlandfamine.5.c
 	}
 }

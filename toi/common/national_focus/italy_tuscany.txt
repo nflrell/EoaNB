@@ -96,11 +96,17 @@ focus_tree = {
 		id = TUS_ridolfis_experiment
 		icon = GFX_Focus_Economy_Tax
 		relative_position_id = TUS_the_sharecropping_debates
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
 			focus = TUS_the_sharecropping_debates
+		}
+		available = {
+			OR = {
+				has_completed_focus = TUS_convince_the_populace
+				has_completed_focus = TUS_avoid_agitation
+			}
 		}
 		x = -2
 		y = 1
@@ -246,7 +252,7 @@ focus_tree = {
 		id = TUS_continue_with_free_trade
 		icon = GFX_Focus_Trade_International
 		relative_position_id = TUS_textile_industry
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -262,6 +268,7 @@ focus_tree = {
 			OR = {
 				has_completed_focus = TUS_the_farmer_rebellion
 				has_completed_focus = TUS_the_elections_of_year
+				has_completed_focus = TUS_formation_central_state
 			}
 		}
 		x = -2
@@ -294,7 +301,7 @@ focus_tree = {
 		id = TUS_protect_tuscan_production
 		icon = GFX_Focus_Economy_Growth
 		relative_position_id = TUS_textile_industry
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -310,6 +317,7 @@ focus_tree = {
 			OR = {
 				has_completed_focus = TUS_the_farmer_rebellion
 				has_completed_focus = TUS_the_elections_of_year
+				has_completed_focus = TUS_formation_central_state
 			}
 		}
 		x = 2
@@ -406,7 +414,7 @@ focus_tree = {
 		id = TUS_the_iron_industry
 		icon = GFX_Focus_Production_Raw_Iron
 		relative_position_id = TUS_the_artisans
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -427,7 +435,7 @@ focus_tree = {
 		id = TUS_learn_from_leghorn
 		icon = GFX_Focus_mediterranean_trade
 		relative_position_id = TUS_the_iron_industry
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -450,7 +458,7 @@ focus_tree = {
 		id = TUS_modernisation
 		icon = GFX_focus_kor_studying_of_science
 		relative_position_id = TUS_learn_from_leghorn
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -484,7 +492,7 @@ focus_tree = {
 		id = TUS_not_industrialisation
 		icon = GFX_Focus_transport_railroad_development
 		relative_position_id = TUS_modernisation
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -505,7 +513,7 @@ focus_tree = {
 		id = TUS_social_concerns
 		icon = GFX_Focus_school_opening
 		relative_position_id = TUS_the_iron_industry
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -526,7 +534,7 @@ focus_tree = {
 		id = TUS_stability_for_workers
 		icon = GFX_Focus_Worker
 		relative_position_id = TUS_social_concerns
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -550,7 +558,7 @@ focus_tree = {
 		id = TUS_and_for_land_owners
 		icon = GFX_Focus_Elite
 		relative_position_id = TUS_stability_for_workers
-		cost = 35
+		cost = 25
 		available = {
 		}
 		prerequisite = {
@@ -621,10 +629,6 @@ focus_tree = {
 		available = {
 			AND = {
 				has_completed_focus = TUS_not_industrialisation
-				OR = {
-					has_completed_focus = TUS_power_to_the_estates
-					has_completed_focus = TUS_power_to_the_workers
-				}
 				has_completed_focus = TUS_and_for_land_owners
 			}
 		}
@@ -758,6 +762,12 @@ focus_tree = {
 		ai_will_do = {
 			base = 2
 		}
+		available = {
+			OR = {
+				has_completed_focus = TUS_power_to_the_estates
+				has_completed_focus = TUS_power_to_the_workers
+			}
+		}
 		completion_reward = {
 			#event about 1848 goals
 			#choose leadership?
@@ -798,7 +808,7 @@ focus_tree = {
 			base = 2
 		}
 		completion_reward = {
-			#will spawn volunteer divisions (2)
+			unlock_decision_tooltip = ITA_TUS_form_volunteer_regiment
 		}
 	}
 	focus = {
@@ -817,7 +827,7 @@ focus_tree = {
 			base = 2
 		}
 		completion_reward = {
-			#unlocks decisions to ask for recognition/assistance from various nations
+			#unlock_decision_tooltip = 
 			#Russia, France, Prussia
 		}
 	}
@@ -837,7 +847,8 @@ focus_tree = {
 			base = 2
 		}
 		completion_reward = {
-			#sardinia gets event about Tuscany wanting to join the fight, sets a country flag
+			unlock_decision_tooltip = ITA_TUS_request_goods_from_piedmont
+			unlock_decision_tooltip = ITA_TUS_request_piedmont_military_advisors
 		}
 	}
 	focus = {
@@ -857,7 +868,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = TUS_join_2IP_TT
-			# Sardinia gets event about Tuscany joining the war?
+			# Sardinia gets event about Tuscany joining the war? 
+			retire_character = TUS_leopold_ii
+			retire_character = TUS_federico_ferrari_da_grado
 			if = {
 				limit = {
 					RUS = {
@@ -910,6 +923,12 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			base = 2
+		}
+		available = {
+			OR = {
+				has_completed_focus = TUS_power_to_the_estates
+				has_completed_focus = TUS_power_to_the_workers
+			}
 		}
 		completion_reward = {
 			TUS_giovanni_baldasseroni = {
@@ -1464,6 +1483,9 @@ focus_tree = {
 					target = TIC
 					transfer_troops = yes
 				}
+				add_state_core = 808
+				add_state_core = 813
+				add_state_core = 161
 			}
 		}
 	}
@@ -1765,7 +1787,57 @@ focus_tree = {
 			focus = TUS_hostility_break_out
 		}
 		completion_reward = {
-			#creates Civic Guard Divisions
+			division_template = {
+				name = "Civic Guard"
+				is_locked = yes
+				priority = 0
+				template_counter = 0
+				regiments = {
+					guard_infantry = {
+						x = 0
+						y = 0
+					}
+					guard_infantry = {
+						x = 0
+						y = 1
+					}
+					guard_infantry = {
+						x = 0
+						y = 2
+					}
+					line_infantry = {
+						x = 1
+						y = 0
+					}
+					line_infantry = {
+						x = 1
+						y = 1
+					}
+				}
+			}
+			162 = {
+				create_unit = {
+					division = "name = \"1st Civic Guard Division\" division_template = \"Civic Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+				create_unit = {
+					division = "name = \"2nd Civic Guard Division\" division_template = \"Civic Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+				create_unit = {
+					division = "name = \"3rd Civic Guard Division\" division_template = \"Civic Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+				create_unit = {
+					division = "name = \"4th Civic Guard Division\" division_template = \"Civic Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+			}
+			
 		}
 	}
 	focus = {

@@ -232,6 +232,69 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = sardinia.11
+	title = sardinia.11.t
+	desc = sardinia.11.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = sardinia.11.a
+		ai_chance = { base = 0 }
+
+		hidden_effect = {
+			735 = { set_state_name = "Sabaudo" }
+			822 = { set_state_name = "Nizza" }
+			981 = { set_state_name = "Piemonte" }
+			159 = { set_state_name = "Lombardia" }
+			160 = { set_state_name = "Vèneto" }
+			39 = { set_state_name = "Alto-Adige" }
+			736 = { set_state_name = "Venezia Giulia" }
+			162 = { set_state_name = "Toscana" }
+			157 = { set_state_name = "Umbria e Marche" }
+			812 = { set_state_name = "Abruzzi" }
+			2 = { set_state_name = "Lazio" }
+			997 = { set_state_name = "Pùglia" }
+			156 = { set_state_name = "Calabria e Lucania" }
+			115 = { set_state_name = "Sicilia" }
+			114 = { set_state_name = "Sardegna" }
+			103 = { set_state_name = "Dalmazia Settentrionale" }
+			970 = { set_state_name = "Dalmazia Meridionale" }
+			set_province_name = { id = 9603 name = "Ènneci" }
+			set_province_name = { id = 11573 name = "Chambèri" }
+			set_province_name = { id = 9909 name = "Nizza" }
+			set_province_name = { id = 6780 name = "Torino" }
+			set_province_name = { id = 9741 name = "Lissandria" }
+			set_province_name = { id = 6788 name = "Genova" }
+			set_province_name = { id = 3780 name = "Milano" }
+			set_province_name = { id = 773 name = "Carmona" }
+			set_province_name = { id = 603 name = "Pischera sul Garda" }
+			set_province_name = { id = 6656 name = "Mantova" }
+			set_province_name = { id = 3657 name = "Veròna" }
+			set_province_name = { id = 14288 name = "Venezia" }
+			set_province_name = { id = 9630 name = "Bolzano" }
+			set_province_name = { id = 782 name = "Ravèna" }
+			set_province_name = { id = 9907 name = "Firenze" }
+			set_province_name = { id = 9904 name = "Roma" }
+			set_province_name = { id = 13298 name = "Vaticano" }
+			set_province_name = { id = 6831 name = "Piscàre" }
+			set_province_name = { id = 819 name = "Napoli" }
+			set_province_name = { id = 11837 name = "Tarde" }
+			set_province_name = { id = 9990 name = "Riggiu di Calabria" }
+			set_province_name = { id = 4159 name = "Missina" }
+			set_province_name = { id = 12003 name = "La Valletta" }
+			set_province_name = { id = 9772 name = "Sàssari" }
+		}
+		
+	}
+	option = {
+		name = sardinia.11.b	
+		ai_chance = { base = 100 }
+	}
+}
+
 ###########
 # BELOW MAY NEED DELETED
 #########
@@ -1933,7 +1996,7 @@ country_event = {
 				add_ai_strategy = {
 					type = prepare_for_war
 					id = AUS
-					value = 10
+					value = 15
 				}
 			}
 		}
@@ -2816,6 +2879,11 @@ country_event = {
 				traits = {
 				}
 			}
+			add_to_war = {
+				targeted_alliance = PIE
+				enemy = LVN
+				hostility_reason = asked_to_join
+			}
 		}
 	}
 	option = {
@@ -2868,6 +2936,22 @@ country_event = {
 	option = {
 		name = sardinia.120.a
 		puppet = TUS
+		TUS = {
+			TUS_girolamo_calà_ulloa = {
+				add_corps_commander_role = {
+					traits = {
+						organizer
+						defensive_doctrine
+						thorough_planner
+					}
+					skill = 3
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 1
+				}
+			}
+		}
 	}
 }
 
@@ -3796,26 +3880,31 @@ country_event = {
 		PIE = {
 			country_event = {
 				id = sardinia.156
+				days = 1
 			}
 		}
 		AUS = {
 			country_event = {
 				id = sardinia.156
+				days = 1
 			}
 		}
 		ENG = {
 			country_event = {
 				id = sardinia.156
+				days = 1
 			}
 		}
 		FRA = {
 			country_event = {
 				id = sardinia.156
+				days = 1
 			}
 		}
 		PRS = {
 			country_event = {
 				id = sardinia.156
+				days = 1
 			}
 		}
 		hidden_effect = {
@@ -3844,26 +3933,31 @@ country_event = {
 		PIE = {
 			country_event = {
 				id = sardinia.158
+				days = 1
 			}
 		}
 		AUS = {
 			country_event = {
 				id = sardinia.158
+				days = 1
 			}
 		}
 		ENG = {
 			country_event = {
 				id = sardinia.158
+				days = 1
 			}
 		}
 		FRA = {
 			country_event = {
 				id = sardinia.158
+				days = 1
 			}
 		}
 		PRS = {
 			country_event = {
 				id = sardinia.158
+				days = 1
 			}
 		}
 		hidden_effect = {
@@ -3892,26 +3986,31 @@ country_event = {
 		PIE = {
 			country_event = {
 				id = sardinia.161
+				days = 1
 			}
 		}
 		AUS = {
 			country_event = {
 				id = sardinia.161
+				days = 1
 			}
 		}
 		ENG = {
 			country_event = {
 				id = sardinia.161
+				days = 1
 			}
 		}
 		FRA = {
 			country_event = {
 				id = sardinia.161
+				days = 1
 			}
 		}
 		PRS = {
 			country_event = {
 				id = sardinia.161
+				days = 1
 			}
 		}
 		hidden_effect = {
@@ -3932,6 +4031,7 @@ country_event = {
 		hidden_effect = {
 			country_event = {
 				id = sardinia.160
+				days = 1
 			}
 		}
 	}
@@ -3961,26 +4061,31 @@ country_event = {
 		PIE = {
 			country_event = {
 				id = sardinia.162
+				days = 1
 			}
 		}
 		AUS = {
 			country_event = {
 				id = sardinia.162
+				days = 1
 			}
 		}
 		ENG = {
 			country_event = {
 				id = sardinia.162
+				days = 1
 			}
 		}
 		FRA = {
 			country_event = {
 				id = sardinia.162
+				days = 1
 			}
 		}
 		PRS = {
 			country_event = {
 				id = sardinia.162
+				days = 1
 			}
 		}
 		hidden_effect = {
@@ -4009,26 +4114,31 @@ country_event = {
 		PIE = {
 			country_event = {
 				id = sardinia.163
+				days = 1
 			}
 		}
 		AUS = {
 			country_event = {
 				id = sardinia.163
+				days = 1
 			}
 		}
 		ENG = {
 			country_event = {
 				id = sardinia.163
+				days = 1
 			}
 		}
 		FRA = {
 			country_event = {
 				id = sardinia.163
+				days = 1
 			}
 		}
 		PRS = {
 			country_event = {
 				id = sardinia.163
+				days = 1
 			}
 		}
 		hidden_effect = {
@@ -4098,6 +4208,7 @@ country_event = {
 		hidden_effect = {
 			country_event = {
 				id = sardinia.155
+				days = 1
 			}
 		}
 	}
@@ -4872,6 +4983,66 @@ country_event = {
 				add_ideas = {
 					ITA_CBI_garibaldi_idea
 				}
+				hidden_effect = {
+					division_template = {
+						name = "Southern Army Artillery"
+						is_locked = yes
+						priority = 0
+						template_counter = 0
+						regiments = {
+							light_infantry = {
+								x = 0
+								y = 0
+							}
+							light_infantry = {
+								x = 0
+								y = 1
+							}
+							light_infantry = {
+								x = 0
+								y = 2
+							}
+							line_infantry = {
+								x = 1
+								y = 0
+							}
+							line_infantry = {
+								x = 1
+								y = 1
+							}
+						}
+						support = {
+							cannon_artillery_support = {
+								x = 0
+								y = 0
+							}
+						}
+					}
+					division_template = {
+						name = "Sicilian Volunteers"
+						is_locked = yes
+						priority = 0
+						template_counter = 0
+						regiments = {
+							light_infantry = {
+								x = 0
+								y = 0
+							}
+							light_infantry = {
+								x = 0
+								y = 1
+							}
+							light_infantry = {
+								x = 0
+								y = 2
+							}
+							light_infantry = {
+								x = 1
+								y = 0
+							}
+						}
+					}
+				}
 			}
 			news_event = {
 				id = sardinia_news.13
@@ -4883,6 +5054,11 @@ country_event = {
 			}
 			PIE_giuseppe_maria_garibaldi = {
 				set_nationality = CBI
+			}
+			CBI = {
+				PIE_giuseppe_maria_garibaldi = {
+					promote_character = yes
+				}
 			}
 			PIE_nino_bixio = {
 				set_nationality = CBI
@@ -5166,7 +5342,7 @@ country_event = {
 				ruling_party = radical_democracy
 				elections_allowed = no
 			}
-			CBI_giuseppe_garibaldi = {
+			PIE_giuseppe_maria_garibaldi = {
 				add_country_leader_role = {
 					promote_leader = Yes
 					country_leader = {
@@ -5211,6 +5387,7 @@ country_event = {
 	option = {
 		name = sardinia.195.a
 		set_country_flag = PIE_treaty_of_chambery
+		complete_national_focus = PIE_Declare_War_on_Sicily
 	}
 }
 
@@ -5252,30 +5429,6 @@ country_event = {
 		}
 		CBI = {
 			set_province_controller = 14289
-			division_template = {
-				name = "Sicilian Volunteers"
-				is_locked = yes
-				priority = 0
-				template_counter = 0
-				regiments = {
-					light_infantry = {
-						x = 0
-						y = 0
-					}
-					light_infantry = {
-						x = 0
-						y = 1
-					}
-					light_infantry = {
-						x = 0
-						y = 2
-					}
-					light_infantry = {
-						x = 1
-						y = 0
-					}
-				}
-			}
 			115 = {
 				create_unit = {
 					division = "name = \"Calatafimi Volunteers\" division_template = \"Sicilian Volunteers\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
@@ -5547,6 +5700,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.211.a
+		unlock_decision_tooltip = ITA_annecy_geneva_railway
 	}
 }
 
@@ -5596,7 +5750,11 @@ country_event = {
 				target = PIE
 				modifier = PIE_revoke_naval_access
 			}
+			country_event = {
+   				 id = usa_diplomacy.6
+			}
 		}
+		
 	}
 	option = {
 		name = sardinia.214.b
@@ -5608,6 +5766,9 @@ country_event = {
 			add_opinion_modifier = {
 				target = PIE
 				modifier = PIE_renew_naval_access
+			}
+			country_event = {
+   				 id = usa_diplomacy.7
 			}
 		}
 	}
@@ -5622,6 +5783,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = sardinia.215.a
+		unlock_decision_tooltip = ITA_National_Roads_Switzerland
 	}
 }
 
@@ -5794,20 +5956,162 @@ country_event = {
 	option = {
 		name = sardinia.224.a
 		add_tech_bonus = {
-			bonus = 0.75
+			bonus = 0.6
 			uses = 1
 			category = biochemistry_tech
 		}
 		add_tech_bonus = {
-			bonus = 0.75
+			bonus = 0.6
 			uses = 1
 			category = mechanical_engineering_tech
 		}
 		add_tech_bonus = {
-			bonus = 0.75
+			bonus = 0.6
 			uses = 1
 			category = process_engineering_tech
 		}
+	}
+}
+
+# French Romanian Deal
+country_event = {
+	id = sardinia.225
+	title = sardinia.225.t
+	desc = sardinia.225.d
+	picture = GFX_event_ITA_Generic_General_Meeting
+	is_triggered_only = yes
+	option = {
+		name = sardinia.225.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 10
+				is_historical_focus_on = yes
+			}
+		}
+		ROM = {
+			country_event = {
+				id = sardinia.226
+			}
+		}
+		MOL = {
+			country_event = {
+				id = sardinia.226
+			}
+		}
+	}
+	option = {
+		name = sardinia.225.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 2
+				is_historical_focus_on = no
+			}
+		}
+	}
+}
+
+# French Romanian Deal
+country_event = {
+	id = sardinia.226
+	title = sardinia.226.t
+	desc = sardinia.226.d
+	picture = GFX_event_ITA_Generic_General_Meeting
+	is_triggered_only = yes
+	option = {
+		name = sardinia.226.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 5
+				is_historical_focus_on = yes
+			}
+		}
+		FRA = {
+			country_event = {
+				id = sardinia.227
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = cavalry_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment_1
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_rifle_0
+			amount = 500
+		}
+		hidden_effect = {
+			set_country_flag = FRA_Romanian_Border_2IP
+		}
+	}
+	option = {
+		name = sardinia.226.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 3
+				is_historical_focus_on = no
+			}
+		}
+		FRA = {
+			country_event = {
+				id = sardinia.228
+			}
+		}
+	}
+}
+
+# French Romanian Deal
+country_event = {
+	id = sardinia.227
+	title = sardinia.227.t
+	desc = sardinia.227.d
+	picture = GFX_event_ITA_Generic_General_Meeting
+	is_triggered_only = yes
+	option = {
+		name = sardinia.227.a
+		add_equipment_to_stockpile = {
+			type = cavalry_equipment
+			amount = -500
+		}
+		add_equipment_to_stockpile = {
+			type = uniform_equipment_1
+			amount = -500
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_rifle_0
+			amount = -500
+		}
+	}
+}
+
+# French Romanian Deal
+country_event = {
+	id = sardinia.228
+	title = sardinia.228.t
+	desc = sardinia.228.d
+	picture = GFX_event_ITA_Generic_General_Meeting
+	is_triggered_only = yes
+	option = {
+		name = sardinia.228.a
+	}
+}
+
+# French Romanian Deal, Austrians informed 
+country_event = {
+	id = sardinia.229
+	title = sardinia.229.t
+	desc = sardinia.229.d
+	picture = GFX_event_ITA_Partinico_Massacre
+	is_triggered_only = yes
+	option = {
+		name = sardinia.229.a
+		unlock_decision_tooltip = ITA_decision_ROM_troops_2IP
 	}
 }
 
@@ -6389,6 +6693,9 @@ country_event = {
 		name = tuscany.15.a
 		trigger = {
 			has_completed_focus = TUS_de_moderate_liberalism
+			NOT = {
+				has_completed_focus = TUS_avoid_agitation
+			}
 		}
 		puppet = PRM
 	}
@@ -6531,7 +6838,7 @@ country_event = {
 	id = two_sicilies.1
 	title = two_sicilies.1.t
 	desc = two_sicilies.1.d
-	picture = GFX_event_ITA_swiss_regiments	#new gfx eventually
+	picture = GFX_event_ITA_swiss_regiments
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
@@ -6541,7 +6848,7 @@ country_event = {
 		}
 		delete_unit_template_and_units = {
 			division_template = "Fanteria Svizzera"
-			disband = no			#will not refund equipment and manpower
+			disband = no
 		}
 	}
 }
@@ -6574,6 +6881,94 @@ country_event = {
 		#hidden_effect = {
 		#    complete_national_focus = NSC_vic_Ferdinando_II_is_dead
 		#}
+	}
+}
+
+# Ponza Island Prisonbreak
+country_event = {
+	id = two_sicilies.3
+	title = two_sicilies.3.t
+	desc = two_sicilies.3.d
+	picture = GFX_event_ITA_ponza_island
+	#fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = two_sicilies.3.a
+		if = {
+			limit = {
+				tag = NSC
+			}
+			add_stability = -0.01
+		}
+		hidden_effect = {
+			country_event = {
+				id = two_sicilies.4
+				days = 4
+			}
+		}
+	}
+}
+
+# Pisacane Expedition
+country_event = {
+	id = two_sicilies.4
+	title = two_sicilies.4.t
+	desc = two_sicilies.4.d
+	picture = GFX_event_ITA_pisacane_expedition
+	#fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = two_sicilies.4.a
+		if = {
+			limit = {
+				tag = NSC
+			}
+			add_stability = -0.01
+		}
+		if = {
+			limit = {
+				tag = PIE
+			}
+			country_event = {
+				id = two_sicilies.5
+			}
+		}
+		if = {
+			limit = {
+				tag = TUS
+			}
+			country_event = {
+				id = two_sicilies.6
+			}
+		}
+	}
+}
+
+# Pisacane Expedition, Genoa Riot
+country_event = {
+	id = two_sicilies.5
+	title = two_sicilies.5.t
+	desc = two_sicilies.5.d
+	picture = GFX_event_ITA_pisacane_expedition
+	#fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = two_sicilies.5.a
+		add_stability = -0.025
+	}
+}
+
+# Pisacane Expedition, Livorno Riot
+country_event = {
+	id = two_sicilies.6
+	title = two_sicilies.6.t
+	desc = two_sicilies.6.d
+	picture = GFX_event_ITA_pisacane_expedition
+	#fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = two_sicilies.6.a
+		add_stability = -0.025
 	}
 }
 

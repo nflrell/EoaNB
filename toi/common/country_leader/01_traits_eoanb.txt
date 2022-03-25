@@ -1817,7 +1817,32 @@ leader_traits = {
 		naval_doctrine_cost_factor = -0.05
 		ai_will_do = { factor = 5 }
 	}
-	
+	FIN_trait_Sofia_Zweygberg = {
+		random = no
+		political_power_gain = 0.05
+		experience_gain_navy = 0.05
+		naval_doctrine_cost_factor = -0.05
+		ai_will_do = { factor = 5 }
+	}
+	FIN_trait_elias_lonnrot = {
+		random = no
+		political_power_gain = 0.10
+		weekly_manpower = 10
+		stability_weekly = 0.001
+		research_speed_factor = 0.01
+		ai_will_do = { factor = 5 }
+	}
+	FIN_trait_axel_olof_freudenthal = {
+		random = no
+		weekly_manpower = -50
+		stability_factor = -0.15
+		justify_war_goal_time = 0.1
+		political_power_factor = -0.02
+		consumer_goods_factor = -0.02
+		trade_opinion_factor = 0.1
+		ai_will_do = { factor = 5 }
+	}
+		
 	FIN_trait_Tamflet = {
 		random = no
 		production_speed_fabric_weavery_factor = 0.05
@@ -2241,6 +2266,30 @@ leader_traits = {
 		research_speed_factor = 0.01
 		
 		ai_will_do = { factor = 1 }
+	}
+
+	NOR_trait_monitor_specialist = {
+		experience_gain_navy_factor = 0.05
+	}
+
+	NOR_trait_face_of_nor_culture = {
+		stability_factor = 0.10
+		war_support_factor = 0.05
+	}
+
+	NOR_trait_et_dukkehjem = {
+		production_speed_buildings_factor = 0.05
+		consumer_goods_factor = -0.02
+	}
+
+	NOR_trait_hero_of_working_man = {
+		production_speed_buildings_factor = 0.15
+		consumer_goods_factor = 0.04
+	}
+
+	NOR_trait_hjemmets_dikter = {
+		political_power_factor = 0.15
+		monthly_population = -0.05
 	}
 
 	### UK Advisor Traits ###
@@ -2716,7 +2765,7 @@ leader_traits = {
 	trait_secretary_of_energy = {
 		random = no
 
-		production_speed_nuclear_coal_mine_factor = 0.02
+		production_speed_coal_mine_factor = 0.02
 		production_speed_synthetic_refinery_oil_factor = 0.02
 		production_speed_synthetic_refinery_rubber_factor = 0.02
 		production_speed_fuel_silo_industrial_factor = 0.02

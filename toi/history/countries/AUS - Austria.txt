@@ -15,7 +15,7 @@
 
 	set_research_slots = 4
 
-	add_to_variable = { prestige_score = 40 }
+	add_to_variable = { prestige_score = 60 }
 
 	create_import = {
 		resource = cotton
@@ -74,7 +74,7 @@
 		#NATIONAL SPIRITS
 		GER_general_idea_ger_confed
 		BAD_currency_reform
-		GEC_Polizeiverein_leader
+		GEC_idea_polizeiverein_leader
 		egy_vic_debt
 		AUS_hungarian_revolution
 		AUS_HUN_Separatism

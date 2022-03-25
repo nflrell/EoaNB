@@ -20,7 +20,7 @@ focus_tree = {
 	focus = {
 		id = FIN_the_porvoo_diet
 		icon = GFX_Focus_Continent_West_Europe
-		x = 4
+		x = 3
 		y = 0
 		cost = 50
 
@@ -55,7 +55,7 @@ focus_tree = {
 			focus = FIN_the_porvoo_diet
 		}
 		completion_reward = {
-
+			country_event = finlandfocus.13
 		}
 	}
 	
@@ -74,26 +74,31 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
+		
+		available = {
+			date > 1863.3.1
+		}
+		
 		prerequisite = {
 			focus = FIN_the_january_comitee
 		}
 		completion_reward = {
-
+			country_event = finlandfocus.16
 		}
 	}
 	
 	focus = {
 		id = FIN_flag_discussion
 		icon = GFX_focus_generic_get_rick_rolled_meme
-		relative_position_id = FIN_the_diet_of_1863
-		x = -3
+		relative_position_id = FIN_support_fennomans
+		x = 0
 		y = 1
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 30
 			modifier = {
-				factor = 0
+				factor = 40
 				is_historical_focus_on = yes
 			}
 		}
@@ -101,7 +106,7 @@ focus_tree = {
 			has_completed_focus = FIN_support_fennomans
 		}
 		prerequisite = {
-			focus = FIN_the_diet_of_1863
+			focus = FIN_support_fennomans
 		}
 		completion_reward = {
 
@@ -127,7 +132,8 @@ focus_tree = {
 			focus = FIN_flag_discussion
 		}
 		completion_reward = {
-
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+			country_event = finlandfocus.7
 		}
 	}
 		
@@ -140,9 +146,9 @@ focus_tree = {
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 30
 			modifier = {
-				factor = 0
+				factor = 40
 				is_historical_focus_on = yes
 			}
 		}
@@ -150,7 +156,7 @@ focus_tree = {
 			focus = FIN_the_diet_of_1863
 		}
 		completion_reward = {
-
+			country_event = finlandfocus.6
 		}
 	}
 		
@@ -163,9 +169,9 @@ focus_tree = {
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 30
 			modifier = {
-				factor = 0
+				factor = 40
 				is_historical_focus_on = yes
 			}
 		}
@@ -185,24 +191,24 @@ focus_tree = {
 		icon = GFX_Focus_Ideology_Support_Liberty
 		relative_position_id = FIN_support_fennomans
 		x = 0
-		y = 1
+		y = 3
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 30
 			modifier = {
-				factor = 0
+				factor = 40
 				is_historical_focus_on = yes
 			}
 		}
 		prerequisite = {
 			focus = FIN_fennomans_pol
 		}
-		prerequisite = {
-			focus = FIN_support_fennomans
-		}
 		completion_reward = {
-
+			add_political_power = 50
+			unlock_decision_tooltip = FIN_decision_promote_karelianism_helsinki_university
+			add_opinion_modifier = { target = SWE modifier = eoanb_fin_karelianism_triggered }
+            reverse_add_opinion_modifier = { target = SWE modifier = eoanb_fin_karelianism_triggered }
 		}
 	}
 		
@@ -215,10 +221,10 @@ focus_tree = {
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 40
 			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+				factor = 30
+				is_historical_focus_on = no
 			}
 		}
 		prerequisite = {
@@ -236,19 +242,19 @@ focus_tree = {
 		id = FIN_flag_svecomans
 		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_the_diet_of_1863
-		x = 3
-		y = 1
+		x = 1
+		y = 3
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 40
 			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+				factor = 30
+				is_historical_focus_on = no
 			}
 		}
 		prerequisite = {
-			focus = FIN_the_diet_of_1863
+			focus = FIN_support_svecomans
 		}
 		available = {
 			has_completed_focus = FIN_support_svecomans
@@ -267,43 +273,43 @@ focus_tree = {
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 40
 			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+				factor = 30
+				is_historical_focus_on = no
 			}
 		}
 		prerequisite = {
 			focus = FIN_flag_svecomans
 		}
 		completion_reward = {
-
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+			country_event = finlandfocus.8
 		}
 	}
 		
 	focus = {
 		id = FIN_swedish_heritage
 		icon = GFX_goal_SWE_traditionalism
-		relative_position_id = FIN_support_svecomans
+		relative_position_id = FIN_svecomans_pol
 		x = 0
 		y = 1
 		cost = 50
 
 		ai_will_do = {
-			factor = 0
+			factor = 40
 			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+				factor = 30
+				is_historical_focus_on = no
 			}
-		}
-		prerequisite = {
-			focus = FIN_support_svecomans
 		}
 		prerequisite = {
 			focus = FIN_svecomans_pol
 		}
 		completion_reward = {
-
+			
+			add_opinion_modifier = {target = SWE modifier = eoanb_fin_swedish_heritage_triggered }
+			reverse_add_opinion_modifier = {target = SWE modifier = eoanb_fin_swedish_heritage_triggered}
 		}
 	}
 		
@@ -326,12 +332,12 @@ focus_tree = {
 			focus = FIN_karelianism focus = FIN_swedish_heritage
 		}
 		completion_reward = {
-			retire_character = FIN_Fabian_Langenskiold
+			country_event = finlandfocus.19
 		}
 	}
 		
 	focus = {
-		id = FIN_lorem_ipsum_c
+		id = FIN_second_diet
 		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_finnishing_reforms
 		x = 0
@@ -349,30 +355,7 @@ focus_tree = {
 			focus = FIN_finnishing_reforms
 		}
 		completion_reward = {
-
-		}
-	}
-		
-	focus = {
-		id = FIN_second_diet
-		icon = GFX_focus_generic_get_rick_rolled_meme
-		relative_position_id = FIN_lorem_ipsum_c
-		x = 0
-		y = 1
-		cost = 50
-
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		prerequisite = {
-			focus = FIN_lorem_ipsum_c
-		}
-		completion_reward = {
-
+			country_event = finlandfocus.10
 		}
 	}
 		
@@ -467,7 +450,7 @@ focus_tree = {
 			focus = FIN_monetary_reforms
 		}
 		completion_reward = {
-			
+			country_event = finlandfocus.21
 		}
 	}
 		
@@ -495,7 +478,7 @@ focus_tree = {
 				limit = {
 					has_idea = sfund_private_ventures_only
 				}
-				#unlock_decision_tooltip = SAX_decision_found_saxon_bank_dresden
+				unlock_decision_tooltip = FIN_decision_bank_of_finland
 			}
 			else = {
 				add_political_power = 100
@@ -555,12 +538,12 @@ focus_tree = {
 	
 		
 	focus = {
-		id = FIN_lorem_ipsum_d
+		id = FIN_voting_rights
 		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_monetary_reforms
 		x = 2
 		y = 1
-		cost = 0
+		cost = 50
 
 		ai_will_do = {
 			factor = 0
@@ -573,17 +556,17 @@ focus_tree = {
 			focus = FIN_monetary_reforms
 		}
 		completion_reward = {
-			
+			country_event = finlandfocus.9
 		}
 	}
 		
 	focus = {
-		id = FIN_lorem_ipsum_e
+		id = FIN_new_knights_act
 		icon = GFX_focus_generic_get_rick_rolled_meme
-		relative_position_id = FIN_lorem_ipsum_d
+		relative_position_id = FIN_voting_rights
 		x = 0
 		y = 1
-		cost = 0
+		cost = 50
 
 		ai_will_do = {
 			factor = 0
@@ -593,20 +576,20 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = FIN_lorem_ipsum_d
+			focus = FIN_voting_rights
 		}
 		completion_reward = {
-
+			country_event = finlandfocus.12
 		}
 	}
 		
 	focus = {
-		id = FIN_lorem_ipsum_f
+		id = FIN_the_law_diet
 		icon = GFX_focus_generic_get_rick_rolled_meme
 		relative_position_id = FIN_hopeamarkka
 		x = 1
 		y = 1
-		cost = 0
+		cost = 50
 
 		ai_will_do = {
 			factor = 0
@@ -622,10 +605,10 @@ focus_tree = {
 			focus = FIN_hopeamarkka focus = FIN_kultamarkka
 		}
 		prerequisite = {
-			focus = FIN_lorem_ipsum_e
+			focus = FIN_new_knights_act
 		}
 		completion_reward = {
-
+			country_event = finlandfocus.20
 		}
 	}
 			
@@ -1621,7 +1604,7 @@ focus_tree = {
 		id = FIN_crimea_war_lesson
 		icon = GFX_Focus_leave_continent_alone
 
-		x = 31
+		x = 33
 		y = 0
 		cost = 50
 
@@ -2163,7 +2146,7 @@ focus_tree = {
 			focus = FIN_rotschild_loan
 		}
 		completion_reward = {
-
+			unlock_decision_tooltip = FIN_decision_famine_railways_infrastructure
 		}
 	}
 		
@@ -2187,7 +2170,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			unlock_decision_tooltip = FIN_decision_stockpile_food
-			country_event = finlandfamine.3
+			country_event = finlandfamine.4
 		}
 	}
 		
@@ -2213,7 +2196,7 @@ focus_tree = {
 			focus = FIN_famine_public_railway
 		}
 		completion_reward = {
-
+			country_event = finlandfamine.5
 		}
 	}
 		

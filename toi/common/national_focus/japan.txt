@@ -23,8 +23,105 @@ continuous_focus_position = { x = 4650 y = 1400 }
         }
 
         available = {
-			has_completed_focus = JAP_Osaka_conference_of_1875
-
+			has_completed_focus = JAP_imperalist_victory
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = has_annexed_daimyos_tt	
+					owns_state = 1053
+					owns_state = 1265
+					owns_state = 1210
+					owns_state = 1259
+					owns_state = 1257
+					owns_state = 1054
+					owns_state = 533
+					owns_state = 1268
+					owns_state = 536
+					owns_state = 1190
+				}
+				custom_trigger_tooltip = {
+					tooltip = has_not_annexed_daimyos_tt
+					533 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					536 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1053 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1054 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1190 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1210 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1257 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1259 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1265 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}
+					1268 = {
+						controller = {
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+					}					
+				}
+			}
         }
 
         bypass = {
@@ -67,11 +164,36 @@ continuous_focus_position = { x = 4650 y = 1400 }
 
 		completion_reward = {
 			add_political_power = -75
-			HOL = { country_event = japindustrialrevolution.3 }
-			PRS = { country_event = japindustrialrevolution.4 }
-			ENG = { country_event = japindustrialrevolution.5 }
-			FRA = { country_event = japindustrialrevolution.6 }
-			USA = { country_event = japindustrialrevolution.7 }
+			HOL = {
+				country_event = {
+					id = japindustrialrevolution.3
+					days = 20
+				}
+			}
+			PRS = {
+				country_event = {
+					id = japindustrialrevolution.4
+					days = 20
+				}
+			}
+			ENG = {
+				country_event = {
+					id = japindustrialrevolution.5
+					days = 20
+				}
+			}
+			FRA = {
+				country_event = {
+					id = japindustrialrevolution.6
+					days = 20
+				}
+			}
+			USA = {
+				country_event = {
+					id = japindustrialrevolution.7
+					days = 20
+				}
+			}
 		}
 	}
 	
@@ -203,7 +325,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		x = 0
 		y = 3
 		relative_position_id = JAP_formalize_plans
-		cost = 140
+		cost = 110
 		
 		ai_will_do = {
             factor = 100
@@ -479,8 +601,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = 25
-			add_stability = 0.05
+			add_ideas = JAP_privately_owned_idea
 			
 			add_days_mission_timeout = {
 				mission = JAP_industrialization_mission
@@ -516,7 +637,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = -25
+			add_ideas = JAP_imperial_owned_idea
 
 			add_days_mission_timeout = {
 				mission = JAP_industrialization_mission
@@ -3068,7 +3189,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		prerequisite = { focus = JAP_expand_nagasaki_shipyard }
 		prerequisite = { focus = JAP_nationalization_of_our_railways }
 		x = 0
-		y = 12
+		y = 11
 		relative_position_id = JAP_meiji_industrial_revolution
 		cost = 70
 		
@@ -3077,8 +3198,9 @@ continuous_focus_position = { x = 4650 y = 1400 }
         }
 
         available = {
-			hidden_trigger = {
-				NOT = {
+			custom_trigger_tooltip = {
+				tooltip = end_revolution
+				NOT = {	
 					has_idea = JAP_industrial_revolution_part4
 					has_idea = JAP_industrial_revolution_part4_2
 					has_idea = JAP_industrial_revolution_part4_3
@@ -3090,7 +3212,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 					has_idea = JAP_industrial_revolution_part4_9
 					has_idea = JAP_industrial_revolution_part4_10
 					has_idea = JAP_industrial_revolution_part4_11
-        		}
+				}	
 			}
 		}
 
@@ -3222,7 +3344,6 @@ continuous_focus_position = { x = 4650 y = 1400 }
 					}
 				increase_ps_by_one = yes
 				add_research_slot = 1
-				custom_effect_tooltip = end_revolution	
 			}	
 		}
 ### POLITICAL TREE ###
@@ -3290,7 +3411,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 
 	focus = {
 		id = JAP_question_han_system
-		icon = GFX_goal_unknown
+		icon = GFX_focus_JAP_spiritual_mobilization
 		prerequisite = { focus = JAP_five_charter_oath }
 		x = 0
 		y = 1
@@ -3353,7 +3474,10 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-
+			swap_ideas = {
+				remove_idea = TSH_spirit_vic_han_system
+				add_idea = JAP_reformed_han_system
+			}
 		}
 	}
 
@@ -3387,25 +3511,33 @@ continuous_focus_position = { x = 4650 y = 1400 }
 				idea = loyal_domains_rewarded
 				days = 100
 			}
-			custom_effect_tooltip = rewarded_loyal_domains
-			hidden_effect = {
-			add_opinion_modifier = { target = SHI modifier = large_increase }
-			reverse_add_opinion_modifier = { target = SHI modifier = large_increase }
-			add_opinion_modifier = { target = DTE modifier = large_increase }
-			reverse_add_opinion_modifier = { target = DTE modifier = large_increase }
-			add_opinion_modifier = { target = TSU modifier = large_increase }
-			reverse_add_opinion_modifier = { target = TSU modifier = large_increase }
-			add_opinion_modifier = { target = TOS modifier = large_increase }
-			reverse_add_opinion_modifier = { target = TOS modifier = large_increase }
-			add_opinion_modifier = { target = CHO modifier = large_increase }
-			reverse_add_opinion_modifier = { target = CHO modifier = large_increase }
-			add_opinion_modifier = { target = SAT modifier = large_increase }
-			reverse_add_opinion_modifier = { target = SAT modifier = large_increase }
-			add_opinion_modifier = { target = SAG modifier = large_increase }
-			reverse_add_opinion_modifier = { target = SAG modifier = large_increase }
-			add_opinion_modifier = { target = RYU modifier = large_increase }
-			reverse_add_opinion_modifier = { target = RYU modifier = large_increase }
-			}
+			#custom_effect_tooltip = rewarded_loyal_domains
+			#hidden_effect = {
+				every_other_country = {
+					limit = {
+						is_subject_of = ROOT
+					}
+					add_opinion_modifier = { target = ROOT modifier = large_increase }
+					reverse_add_opinion_modifier = { target = FROM modifier = large_increase }
+				}
+
+			# add_opinion_modifier = { target = SHI modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = SHI modifier = large_increase }
+			# add_opinion_modifier = { target = DTE modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = DTE modifier = large_increase }
+			# add_opinion_modifier = { target = TSU modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = TSU modifier = large_increase }
+			# add_opinion_modifier = { target = TOS modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = TOS modifier = large_increase }
+			# add_opinion_modifier = { target = CHO modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = CHO modifier = large_increase }
+			# add_opinion_modifier = { target = SAT modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = SAT modifier = large_increase }
+			# add_opinion_modifier = { target = SAG modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = SAG modifier = large_increase }
+			# add_opinion_modifier = { target = RYU modifier = large_increase }
+			# reverse_add_opinion_modifier = { target = RYU modifier = large_increase }
+			#}
 		}
 	}
 
@@ -3513,42 +3645,6 @@ continuous_focus_position = { x = 4650 y = 1400 }
 
 		completion_reward = { #### COME BACK TO THIS LATER
 			country_event = JAP_political.2
-			custom_effect_tooltip = JAP_han_tt_1
-				hidden_effect = {
-				annex_country = {
-					target = TSU
-				}
-				annex_country = {
-					target = TOS
-				}
-				annex_country = {
-					target = CHO
-				}
-				annex_country = {
-					target = SAG
-				}
-				annex_country = {
-					target = SAT
-				}
-				annex_country = { 
-					target = DTE
-				}
-				annex_country = {
-					target = SHI
-				}
-				annex_country = {
-					target = RYU
-				}
-					add_state_core = 526
-					add_state_core = 1268
-					add_state_core = 533
-					add_state_core = 1257
-					add_state_core = 1054
-					add_state_core = 1259
-					add_state_core = 1210
-					add_state_core = 1053
-					add_state_core = 1265
-			}	
 		}
 	}
 
@@ -3578,13 +3674,12 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			536 = { set_state_name = "Hokkaido" }
-			set_province_name = { id = 1182 name = "Tōkyō" }
+			country_event = JAP_political.9
 		}
 	}
 
 	focus = {
-		id = JAP_apoimt_daimyos_as_govenors
+		id = JAP_appoint_daimyos_as_govenors
 		icon = GFX_goal_unknown
 		prerequisite = { focus = JAP_abolish_the_han_system }
 		x = 1
@@ -3616,19 +3711,27 @@ continuous_focus_position = { x = 4650 y = 1400 }
 	focus = {
 		id = JAP_Osaka_conference_of_1875
 		icon = GFX_goal_unknown
-		prerequisite = { focus = JAP_allow_greater_autonomy focus = JAP_reorganize_the_prefectures }
-		prerequisite = { focus = JAP_reward_loyal_domain focus = JAP_apoimt_daimyos_as_govenors } 
-		x = 0
-		y = 3
-		relative_position_id = JAP_question_han_system
+		prerequisite = { focus = JAP_the_riots_of_rights }
 		cost = 70
-		
+		x = 0
+		y = 1
+		relative_position_id = JAP_the_riots_of_rights
 		ai_will_do = {
             factor = 80
         }
 
         available = {
-			date > 1875.1.1
+			date > 1874.7.1
+			AND = {
+				OR = {
+					has_completed_focus = JAP_reward_loyal_domain
+					has_completed_focus = JAP_reorganize_the_prefectures
+				}
+				OR = {
+					has_completed_focus = JAP_allow_greater_autonomy
+					has_completed_focus = JAP_appoint_daimyos_as_govenors
+				}
+			}
         }
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
@@ -3636,10 +3739,10 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = 20
+			add_political_power = 200
 			add_timed_idea = {
 				idea = JAP_osaka_conference_idea
-				days = 70
+				days = 140
 			}
 			country_event = JAP_political.7
 		}
@@ -3663,18 +3766,23 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_stability = 0.05
+			add_stability = 0.1
 			add_political_power = 25
+			remove_ideas = JAP_rights_riot_idea1
 		}
 	}
 
 	focus = {
 		id = JAP_the_riots_of_rights
 		icon = GFX_Focus_Worker_Strike_2
-		prerequisite = { focus = JAP_conference_of_prefectual_govenors }
+		
+		prerequisite = { focus = JAP_allow_greater_autonomy focus = JAP_reorganize_the_prefectures }
+		prerequisite = { focus = JAP_reward_loyal_domain focus = JAP_appoint_daimyos_as_govenors } 
 		x = 0
-		y = 1
-		relative_position_id = JAP_conference_of_prefectual_govenors
+		y = 3
+		relative_position_id = JAP_question_han_system
+		
+		
 		cost = 70
 		
 		ai_will_do = {
@@ -3682,7 +3790,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
         }
 
         available = {
-
+			always = false
         }
 
         bypass = {
@@ -3694,17 +3802,26 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-
+			if = {
+				limit = {
+					has_completed_focus = JAP_conscription_ordinance_of_1873
+				}
+				add_ideas = JAP_rights_riot_idea1
+				add_timed_idea = {
+					idea = JAP_rights_riot_idea2
+					days = 90
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = JAP_combat_the_movement
 		icon = GFX_Focus_maintain_the_status_quo
-		prerequisite = { focus = JAP_the_riots_of_rights }
-		x = 1
+		prerequisite = { focus = JAP_Osaka_conference_of_1875 }
+		x = 2
 		y = 1
-		relative_position_id = JAP_the_riots_of_rights
+		relative_position_id = JAP_Osaka_conference_of_1875
 		mutually_exclusive = { focus = JAP_give_in_to_their_demands }
 		cost = 70
 		
@@ -3733,10 +3850,10 @@ continuous_focus_position = { x = 4650 y = 1400 }
 	focus = {
 		id = JAP_give_in_to_their_demands
 		icon = GFX_Focus_Government_adminstrative_service
-		prerequisite = { focus = JAP_the_riots_of_rights }
-		x = -1
+		prerequisite = { focus = JAP_Osaka_conference_of_1875 }
+		x = -2
 		y = 1
-		relative_position_id = JAP_the_riots_of_rights
+		relative_position_id = JAP_Osaka_conference_of_1875
 		mutually_exclusive = { focus = JAP_combat_the_movement }
 		cost = 70
 		
@@ -3829,7 +3946,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		completion_reward = {
 			add_timed_idea = {
 				idea = gakusei_mission_1
-				days = 720
+				days = 547
 			}
 		}
 	}
@@ -4254,7 +4371,11 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			
+			swap_ideas = { remove_idea = imperial_universities add_idea = imperial_universities2 }
+			add_popularity = {
+				ideology = autocracy
+				popularity = 0.05
+			}
 		}
 	}
 
@@ -4272,7 +4393,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
         }
 
         available = {
-
+			has_completed_focus = JAP_goverment_owned_schools
         }
 
         bypass = {
@@ -4284,7 +4405,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-
+			swap_ideas = { remove_idea = imperial_universities2 add_idea = imperial_universities3 }
 		}
 	}
 
@@ -4316,7 +4437,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			swap_ideas = { add_idea = imperial_universities2 remove_idea = imperial_universities }
+			swap_ideas = { add_idea = imperial_universities4 remove_idea = imperial_universities3 }
 			unlock_decision_tooltip = JAP_construct_kyoto_university
 		}
 	}
@@ -4383,7 +4504,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			swap_ideas = { add_idea = imperial_universities3 remove_idea = imperial_universities2 }
+			swap_ideas = { add_idea = imperial_universities5 remove_idea = imperial_universities4 }
 			unlock_decision_tooltip = JAP_construct_tokyo_university
 		}
 	}
@@ -4420,7 +4541,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 
 	focus = {
 		id = JAP_adopt_the_gold_standard
-		icon = GFX_focus_great_gold_exodus
+		icon = GFX_Focus_Resource_Gold_2
 		prerequisite = { focus = JAP_bank_of_japan }
 		x = -2
 		y = 1
@@ -5138,7 +5259,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 	}
 
 	focus = {
-		id = JAP_conscription_ordiance_of_1873
+		id = JAP_conscription_ordinance_of_1873
 		icon = GFX_Goal_manpower_duplication
 		prerequisite = { focus = JAP_study_the_franoprussian_war }
 		x = 0
@@ -5151,7 +5272,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
         }
 
         available = {
-			date > 1873.1.1
+			date > 1871.7.1
 			has_war_support > 0.5
         }
 
@@ -5206,7 +5327,12 @@ continuous_focus_position = { x = 4650 y = 1400 }
 				}
 				swap_ideas = { remove_idea = all_adults_serve add_idea = scraping_the_barrel }
 			}
-			add_ideas = conscription_ordiance
+			add_war_support = -0.05
+			country_event = {
+				id = JAP_military.3
+				days = 90
+			}
+			add_ideas = conscription_ordinance 
 		}
 	}
 
@@ -5274,10 +5400,10 @@ continuous_focus_position = { x = 4650 y = 1400 }
 	focus = {
 		id = JAP_imperial_rescript_1882
 		icon = GFX_Focus_Army_Conscription
-		prerequisite = { focus = JAP_conscription_ordiance_of_1873 }
+		prerequisite = { focus = JAP_conscription_ordinance_of_1873 }
 		x = -1
 		y = 1
-		relative_position_id = JAP_conscription_ordiance_of_1873
+		relative_position_id = JAP_conscription_ordinance_of_1873
 		cost = 70
 		
 		ai_will_do = {
@@ -5307,7 +5433,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 		icon = GFX_Focus_Diplomatic_foreign_military
 		prerequisite = { focus = JAP_education_for_the_conscripts }
 		prerequisite = { focus = JAP_imperial_rescript_1882 }
-		prerequisite = { focus = JAP_conscription_ordiance_of_1873 }
+		prerequisite = { focus = JAP_conscription_ordinance_of_1873 }
 		prerequisite = { focus = JAP_refurbish_the_armys_ways }
 		x = 0
 		y = 4
@@ -6040,7 +6166,7 @@ continuous_focus_position = { x = 4650 y = 1400 }
 			custom_effect_tooltip = jap_end_tt
 		}
 	}
-
+}
 #	focus = {
 #		id = JAP_japanese_korean_amity
 #		icon = GFX_goal_unknown
@@ -6162,126 +6288,126 @@ continuous_focus_position = { x = 4650 y = 1400 }
 #
 #		}
 #	}
-
-	focus = {
-		id = JAP_construct_the_imperial_fleet
-		icon = GFX_focus_JAP_naval_modernization
-		prerequisite = { focus = JAP_imperial_japanese_navy_general_staff }
-		x = 8
-		y = 2
-		relative_position_id = JAP_the_war_and_naval_departments
-		cost = 70
-		
-		ai_will_do = {
-            factor = 80
-        }
-
-        available = {
-
-        }
-
-        bypass = {
-
-        }
-
-		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-		}
-	}
-
-	focus = {
-		id = JAP_study_western_ships
-		icon = GFX_goal_unknown
-		prerequisite = { focus = JAP_construct_the_imperial_fleet }
-		x = 0
-		y = 1
-		relative_position_id = JAP_construct_the_imperial_fleet
-		cost = 70
-		
-		ai_will_do = {
-            factor = 80
-        }
-
-        available = {
-
-        }
-
-        bypass = {
-
-        }
-
-		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-		}
-	}
-
-	focus = {
-		id = JAP_seek_british_shipbuilders
-		icon = GFX_focus_JAP_science_eng_navy
-		prerequisite = { focus = JAP_study_western_ships }
-		x = -1
-		y = 1
-		relative_position_id = JAP_study_western_ships
-		mutually_exclusive = { focus = JAP_seek_french_shipbuilders }
-		cost = 70
-		
-		ai_will_do = {
-            factor = 85
-        }
-
-        available = {
-
-        }
-
-        bypass = {
-
-        }
-
-		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY FOCUS_FILTER_HISTORICAL }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-		}
-	}
-
-	focus = {
-		id = JAP_seek_french_shipbuilders
-		icon = GFX_goal_unknown
-		prerequisite = { focus = JAP_study_western_ships }
-		x = 1
-		y = 1
-		relative_position_id = JAP_study_western_ships
-		mutually_exclusive = { focus = JAP_seek_british_shipbuilders }
-		cost = 70
-		
-		ai_will_do = {
-            factor = 80
-        }
-
-        available = {
-
-        }
-
-        bypass = {
-
-        }
-
-		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY FOCUS_FILTER_ALTHISTORY }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-		}
-	}
-}
+#
+#	focus = {
+#		id = JAP_construct_the_imperial_fleet
+#		icon = GFX_focus_JAP_naval_modernization
+#		prerequisite = { focus = JAP_imperial_japanese_navy_general_staff }
+#		x = 8
+#		y = 2
+#		relative_position_id = JAP_the_war_and_naval_departments
+#		cost = 70
+#		
+#		ai_will_do = {
+#            factor = 80
+#        }
+#
+#        available = {
+#
+#        }
+#
+#        bypass = {
+#
+#        }
+#
+#		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY }
+#		
+#		available_if_capitulated = yes
+#
+#		completion_reward = {
+#
+#		}
+#	}
+#
+#	focus = {
+#		id = JAP_study_western_ships
+#		icon = GFX_goal_unknown
+#		prerequisite = { focus = JAP_construct_the_imperial_fleet }
+#		x = 0
+#		y = 1
+#		relative_position_id = JAP_construct_the_imperial_fleet
+#		cost = 70
+#		
+#		ai_will_do = {
+#            factor = 80
+#        }
+#
+#        available = {
+#
+#        }
+#
+#        bypass = {
+#
+#        }
+#
+#		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY }
+#		
+#		available_if_capitulated = yes
+#
+#		completion_reward = {
+#
+#		}
+#	}
+#
+#	focus = {
+#		id = JAP_seek_british_shipbuilders
+#		icon = GFX_focus_JAP_science_eng_navy
+#		prerequisite = { focus = JAP_study_western_ships }
+#		x = -1
+#		y = 1
+#		relative_position_id = JAP_study_western_ships
+#		mutually_exclusive = { focus = JAP_seek_french_shipbuilders }
+#		cost = 70
+#		
+#		ai_will_do = {
+#           factor = 85
+#        }
+#
+#        available = {
+#
+#        }
+#
+#        bypass = {
+#
+#        }
+#
+#		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY FOCUS_FILTER_HISTORICAL }
+#		
+#		available_if_capitulated = yes
+#
+#		completion_reward = {
+#
+#		}
+#	}
+#
+#	focus = {
+#		id = JAP_seek_french_shipbuilders
+#		icon = GFX_goal_unknown
+#		prerequisite = { focus = JAP_study_western_ships }
+#		x = 1
+#		y = 1
+#		relative_position_id = JAP_study_western_ships
+#		mutually_exclusive = { focus = JAP_seek_british_shipbuilders }
+#		cost = 70
+#		
+#		ai_will_do = {
+#            factor = 80
+#        }
+#
+#        available = {
+#
+#        }
+#
+#        bypass = {
+#
+#        }
+#
+#		search_filters = {  FOCUS_FILTER_MILITARY FOCUS_FILTER_NAVY FOCUS_FILTER_ALTHISTORY }
+#		
+#		available_if_capitulated = yes
+#
+#		completion_reward = {
+#
+#		}
+#	}
+#}

@@ -49,11 +49,7 @@ ITA_Culture_category_decisions = {
 ITA_decisions_category_influence_monaco = {
 	ITA_decisions_category_influence_monaco_1 = {
 		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 2
-				is_historical_focus_on = yes
-			}
+			base = 10
 		}
 		icon = generic_political_actions
 		available = {
@@ -71,11 +67,7 @@ ITA_decisions_category_influence_monaco = {
 	}
 	ITA_decisions_category_influence_monaco_2 = {
 		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 2
-				is_historical_focus_on = yes
-			}
+			base = 10
 		}
 		icon = generic_political_actions
 		visible = {
@@ -95,11 +87,7 @@ ITA_decisions_category_influence_monaco = {
 	}
 	ITA_decisions_category_influence_monaco_3 = {
 		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 2
-				is_historical_focus_on = yes
-			}
+			base = 10
 		}
 		icon = generic_political_actions
 		visible = {
@@ -119,11 +107,7 @@ ITA_decisions_category_influence_monaco = {
 	}
 	ITA_decisions_category_influence_monaco_4 = {
 		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 2
-				is_historical_focus_on = yes
-			}
+			base = 10
 		}
 		icon = generic_political_actions
 		visible = {
@@ -151,7 +135,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	### Regular Decisions, not Missions
 	ITA_decision_2IP_Hunters_Alps = {
 		ai_will_do = {
-			base = 20
+			base = 35
 		}
 		fire_only_once = yes
 		allowed = {
@@ -224,7 +208,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_Organize_Perugian_Volunteers = {
 		ai_will_do = {
-			base = 20
+			base = 35
 		}
 		fire_only_once = yes
 		allowed = {
@@ -281,7 +265,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_call_on_the_national_guard = {
 		ai_will_do = {
-			base = 25
+			base = 35
 		}
 		fire_only_once = yes
 		allowed = {
@@ -346,7 +330,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_2IP_Sardinian_Banks = {
 		ai_will_do = {
-			base = 25
+			base = 35
 		}
 		fire_only_once = yes
 		allowed = {
@@ -375,7 +359,7 @@ ITA_decisions_category_wars_and_conflicts = {
 	}
 	ITA_decision_2IP_Troop_Training = {
 		ai_will_do = {
-			base = 10
+			base = 35
 		}
 		fire_only_once = yes
 		allowed = {
@@ -605,40 +589,6 @@ ITA_decisions_category_wars_and_conflicts = {
 					type = infantry_equipment
 					amount = 1000
 					producer = NSC
-				}
-				division_template = {
-					name = "Southern Army Artillery"
-					is_locked = yes
-					priority = 0
-					template_counter = 0
-					regiments = {
-						light_infantry = {
-							x = 0
-							y = 0
-						}
-						light_infantry = {
-							x = 0
-							y = 1
-						}
-						light_infantry = {
-							x = 0
-							y = 2
-						}
-						line_infantry = {
-							x = 1
-							y = 0
-						}
-						line_infantry = {
-							x = 1
-							y = 1
-						}
-					}
-					support = {
-						cannon_artillery_support = {
-							x = 0
-							y = 0
-						}
-					}
 				}
 				115 = {
 					create_unit = {
@@ -1588,7 +1538,7 @@ ITA_decisions_category_wars_and_conflicts = {
 		activation = {
 			always = no
 		}
-		is_good = yes
+		is_good = no
 		days_mission_timeout = 300
 		available = {
 			OR = {
@@ -1604,7 +1554,7 @@ ITA_decisions_category_wars_and_conflicts = {
 							is_controlled_by = CBI
 						}
 						NSC = {
-							surrender_progress > 0.8
+							surrender_progress > 0.7
 						}
 					}
 				}
@@ -1612,11 +1562,13 @@ ITA_decisions_category_wars_and_conflicts = {
 					tooltip = ITA_NSC_victory_conditions_NSC_tt2
 					# Victory Condition for Two Sicilies
 					tag = NSC
-					PIE = {
-						surrender_progress > 0.7
-					}
-					CBI = {
-						has_capitulated = yes
+					AND = {
+						PIE = {
+							surrender_progress > 0.7
+						}
+						CBI = {
+							has_capitulated = yes
+						}
 					}
 				}
 			}
@@ -1682,11 +1634,6 @@ ITA_decisions_category_wars_and_conflicts = {
 				}
 				PIE = {
 					white_peace = NSC
-					NSC = {
-						transfer_navy = {
-							target = PIE
-						}
-					}
 				}
 				CBI = {
 					white_peace = NSC
@@ -1704,7 +1651,7 @@ ITA_decisions_category_wars_and_conflicts = {
 		activation = {
 			always = no
 		}
-		is_good = yes
+		is_good = no
 		days_mission_timeout = 300
 		available = {
 			OR = {
@@ -1798,11 +1745,6 @@ ITA_decisions_category_wars_and_conflicts = {
 				}
 				TUS = {
 					white_peace = NSC
-					NSC = {
-						transfer_navy = {
-							target = TUS
-						}
-					}
 				}
 				CBI = {
 					white_peace = NSC
@@ -1994,6 +1936,36 @@ ITA_decisions_category_wars_and_conflicts = {
 					id = sardinia.180
 					days = 10
 				}
+				if = {
+					limit = {
+						OR = {
+							MOL = {
+								has_country_flag = FRA_Romanian_Border_2IP
+							}
+							ROM = {
+								has_country_flag = FRA_Romanian_Border_2IP
+							}
+						}
+					}
+					AUS = {
+						country_event = {
+							id = sardinia.229
+						}
+						activate_mission = ITA_decision_ROM_troops_2IP
+						hidden_effect = {
+							add_ai_strategy = {
+								type = prepare_for_war
+								id = ROM
+								value = 10
+							}
+							add_ai_strategy = {
+								type = prepare_for_war
+								id = MOL
+								value = 10
+							}
+						}
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -2059,18 +2031,19 @@ ITA_decisions_category_wars_and_conflicts = {
 			base = 50
 		}
 		war_with_on_timeout = PIE
+		war_with_on_timeout = PAP
 		days_mission_timeout = 150
 		available = {
 			OR = {
 				AND = {
 					divisions_in_state = {
 						type = infantry
-						size > 9
+						size > 5
 						state = 812
 					}
 					divisions_in_state = {
 						type = infantry
-						size > 9
+						size > 5
 						state = 117
 					}
 					NOT = {
@@ -2254,6 +2227,9 @@ ITA_decisions_category_artisan_industry = {
 		visible = {
 			has_completed_focus = PIE_Authorize_Culoz_Modane_Railway
 		}
+		ai_will_do = {
+			base = 15
+		}
 		icon = railway
 		fire_only_once = yes
 		cost = 80
@@ -2277,6 +2253,9 @@ ITA_decisions_category_artisan_industry = {
 		}
 		visible = {
 			has_completed_focus = PIE_Commence_Construction_Frejus_Rail_Tunnel
+		}
+		ai_will_do = {
+			base = 15
 		}
 		icon = railway
 		fire_only_once = yes
@@ -2318,8 +2297,8 @@ ITA_decisions_category_artisan_industry = {
 				build_railway = {
 					level = 1
 					path = {
-						778
 						9603
+						13124
 						6666
 					}
 				}
@@ -2767,10 +2746,81 @@ ITA_decisions_category_TUS_liberalizing_tuscany = {
 		ai_will_do = {
 			base = 10
 		}
+		days_remove = 100
 		complete_effect = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_rifle_0
-				amount = -250
+				amount = -500
+			}
+		}
+	}
+	ITA_TUS_call_civic_militias = {
+		allowed = {
+			tag = TUS
+		}
+		visible = {
+			has_completed_focus = TUS_convince_the_populace
+		}
+		available = {
+			has_decision = ITA_TUS_arm_civic_militias
+			has_decision = ITA_TUS_subverting_austrian_influence
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 35
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			division_template = {
+				name = "Civic Militias"
+				is_locked = yes
+				priority = 0
+				template_counter = 0
+				regiments = {
+					light_infantry = {
+						x = 0
+						y = 0
+					}
+					light_infantry = {
+						x = 0
+						y = 1
+					}
+					light_infantry = {
+						x = 0
+						y = 2
+					}
+					line_infantry = {
+						x = 1
+						y = 0
+					}
+					line_infantry = {
+						x = 1
+						y = 1
+					}
+				}
+			}
+			162 = {
+				create_unit = {
+					division = "name = \"1st Civic Militia Division\" division_template = \"Civic Militias\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+				create_unit = {
+					division = "name = \"2nd Civic Militia Division\" division_template = \"Civic Militias\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+				create_unit = {
+					division = "name = \"3rd Civic Militia Division\" division_template = \"Civic Militias\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+				create_unit = {
+					division = "name = \"4th Civic Militia Division\" division_template = \"Civic Militias\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
 			}
 		}
 	}
@@ -2783,7 +2833,7 @@ ITA_decisions_category_TUS_liberalizing_tuscany = {
 		}
 		available = {
 			has_decision = ITA_TUS_subverting_austrian_influence
-			has_completed_focus = TUS_revive_the_1848_goals
+			#has_completed_focus = TUS_revive_the_1848_goals
 		}
 		icon = generic_political_actions
 		fire_only_once = yes
@@ -2795,6 +2845,62 @@ ITA_decisions_category_TUS_liberalizing_tuscany = {
 		complete_effect = {
 			# event about smuggling goods
 			# unlocks decisions to smuggle arms and soldiers
+		}
+	}
+	ITA_TUS_form_volunteer_regiment = {
+		allowed = {
+			tag = TUS
+		}
+		visible = {
+			has_completed_focus = TUS_convince_the_populace
+		}
+		available = {
+			has_decision = ITA_TUS_subverting_austrian_influence
+			has_completed_focus = TUS_work_with_outside_forces
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 35
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			division_template = {
+				name = "Volunteer Regiment"
+				is_locked = yes
+				priority = 0
+				template_counter = 0
+				regiments = {
+					light_infantry = {
+						x = 0
+						y = 0
+					}
+					light_infantry = {
+						x = 0
+						y = 1
+					}
+					light_infantry = {
+						x = 0
+						y = 2
+					}
+					line_infantry = {
+						x = 1
+						y = 0
+					}
+				}
+			}
+			162 = {
+				create_unit = {
+					division = "name = \"1st Volunteer Regiment\" division_template = \"Volunteer Regiment\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+				create_unit = {
+					division = "name = \"2nd Volunteer Regiment\" division_template = \"Volunteer Regiment\" start_experience_factor = 0.5 start_equipment_factor = 0.85"
+					owner = TUS
+					prioritize_location = 9907
+				}
+			}
 		}
 	}
 	ITA_TUS_request_goods_from_piedmont = {
@@ -2819,6 +2925,42 @@ ITA_decisions_category_TUS_liberalizing_tuscany = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_rifle_0
 				amount = 500
+			}
+		}
+	}
+	ITA_TUS_request_piedmont_military_advisors = {
+		allowed = {
+			tag = TUS
+		}
+		visible = {
+			has_completed_focus = TUS_convince_the_populace
+		}
+		available = {
+			has_decision = ITA_TUS_subverting_austrian_influence
+			has_completed_focus = TUS_a_message_to_sardinia
+			#sardinia has said yes
+		}
+		icon = generic_political_actions
+		fire_only_once = yes
+		cost = 35
+		ai_will_do = {
+			base = 10
+		}
+		complete_effect = {
+			army_experience = 15
+			TUS_girolamo_calà_ulloa = {
+				add_corps_commander_role = {
+					traits = {
+						organizer
+						defensive_doctrine
+						thorough_planner
+					}
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 2
+				}
 			}
 		}
 	}
@@ -3015,7 +3157,7 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		cost = 50
 		days_remove = 500
 		ai_will_do = {
-			base = 10
+			base = 15
 		}
 		complete_effect = {
 			SWI = {
@@ -3043,7 +3185,7 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		fire_only_once = yes
 		cost = 25
 		ai_will_do = {
-			base = 10
+			base = 15
 		}
 		available = {
 			has_decision = ITA_SWI_Diplomacy_Begin
@@ -3074,7 +3216,7 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		fire_only_once = yes
 		cost = 45
 		ai_will_do = {
-			base = 10
+			base = 15
 		}
 		available = {
 			has_decision = ITA_SWI_Diplomacy_Begin
@@ -3103,7 +3245,7 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		fire_only_once = yes
 		cost = 50
 		ai_will_do = {
-			base = 10
+			base = 15
 		}
 		days_remove = 500
 		complete_effect = {
@@ -3135,7 +3277,7 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		fire_only_once = yes
 		cost = 50
 		ai_will_do = {
-			base = 10
+			base = 15
 		}
 		days_remove = 500
 		complete_effect = {
@@ -3158,7 +3300,7 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		fire_only_once = yes
 		cost = 50
 		ai_will_do = {
-			base = 10
+			base = 15
 		}
 		days_remove = 500
 		complete_effect = {
@@ -3195,7 +3337,7 @@ ITA_decisions_category_PIE_diplomatic_endeavors = {
 		fire_only_once = yes
 		cost = 50
 		ai_will_do = {
-			base = 10
+			base = 15
 		}
 		days_remove = 500
 		complete_effect = {

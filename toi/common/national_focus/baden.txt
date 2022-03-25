@@ -1020,7 +1020,7 @@ focus_tree = {
 
 	focus = {
 		id = BAD_focus_krupp_cooperation
-		icon = GFX_focus_prussian_guns
+		icon = GFX_goal_focus_prussian_guns
 		x = 21
 		y = 4
 		cost = 70
@@ -1293,8 +1293,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			set_country_flag = BAD_kabinett_stengel_flag
-			add_political_power = 10
+			BAD = {
+				country_event = {
+					id = badenevent.6
+				}
+			}
 		}
 	}
 
@@ -1340,6 +1343,7 @@ focus_tree = {
 			hidden_effect = {
 				add_stability = 0.05
 				BAD_decrease_kulturkampf_modifiers = yes
+				EOANBSYS_national_crisis_progress_add_five = yes
 			}
 		}
 	}
@@ -1351,6 +1355,9 @@ focus_tree = {
 		y = 3
 		cost = 70
 		available_if_capitulated = no
+		
+		available = { date > 1859.9.30 }
+		
 		prerequisite = { focus = BAD_focus_change_criminal_code }
 		prerequisite = { focus = BAD_focus_treaty_with_catholics }
 		ai_will_do = {
@@ -1362,6 +1369,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			BAD = {
+				country_event = {
+					id = badenevent.10
+				}
+			}
 		}
 	}
 
@@ -1383,8 +1395,28 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			clr_country_flag = BAD_kabinett_stengel_flag
-			decrease_ps_by_one = yes
+			if = {
+				limit = {
+					NOT = {
+						has_idea = BAD_advisor_franz_freiherr_von_roggenbach
+					}
+				}
+			BAD = {
+				country_event = {
+					id = badenevent.7
+					}
+				}
+			}
+			else_if = {
+				limit = {
+						has_idea = BAD_advisor_franz_freiherr_von_roggenbach
+				}
+				BAD = {
+					country_event = {
+						id = badenevent.8
+					}
+				}
+			}
 		}
 	}
 
@@ -1403,6 +1435,10 @@ focus_tree = {
 				factor = 100
 				is_historical_focus_on = yes
 			}
+		}
+		
+		available = { 
+			has_country_flag = BAD_dissolution_cabinet_liberals_flag
 		}
 
 		completion_reward = {
@@ -1670,9 +1706,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_stability = 0.03
-			add_political_power = 70
-			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+			BAD = {
+				country_event = {
+					id = badenevent.11
+				}
+			}
 			swap_ideas = {
 				remove_idea = BAD_court_reform
 				add_idea = BAD_court_reform1
@@ -1839,9 +1877,11 @@ focus_tree = {
 
 		completion_reward = {
 			increase_trade_law = yes
-			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
-			add_tech_bonus = { bonus = 0.25 uses = 1 category = economics_tech }
-			add_political_power = 50
+			BAD = {
+				country_event = {
+					id = badenevent.12
+				}
+			}
 		}
 	}
 
@@ -1943,7 +1983,9 @@ focus_tree = {
 				ideology = centrism
 				popularity = 0.05
 			}
-
+			
+			remove_ideas = BAD_court_reform1
+			
 			swap_ideas = {
 				remove_idea = BAD_liberal_grand_duchy1
 				add_idea = BAD_liberal_grand_duchy2
@@ -1966,6 +2008,10 @@ focus_tree = {
 				factor = 0
 				is_historical_focus_on = yes
 			}
+		}
+		
+		available = { 
+			has_country_flag = BAD_dissolution_cabinet_conservatives_flag
 		}
 
 		completion_reward = {
@@ -2527,6 +2573,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			unlock_decision_tooltip = BAD_decision_convention_with_prussia
 		}
 	}
 
@@ -2709,6 +2756,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			unlock_decision_tooltip = BAD_decision_convention_with_austria
 		}
 	}
 

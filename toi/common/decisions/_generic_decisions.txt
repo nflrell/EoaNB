@@ -1129,6 +1129,8 @@ eoanb_category_politics_internal = {
 			NOT = {
 				TAG = SPR
 				TAG = ETH
+				TAG = PIE
+				TAG = TUS
 			}
 		}
 
@@ -1416,8 +1418,8 @@ eoanb_category_politics_internal = {
 			if = {
 				limit = { 
 					OR = {
-						has_idea = GEC_Polizeiverein_leader
-						has_idea = GEC_Polizeiverein_member
+						has_idea = GEC_idea_polizeiverein_leader
+						has_idea = GEC_idea_polizeiverein_member
 					}
 				}
 				has_political_power > 50
@@ -1486,8 +1488,8 @@ eoanb_category_politics_internal = {
 			if = {
 				limit = { 
 					OR = {
-						has_idea = GEC_Polizeiverein_leader
-						has_idea = GEC_Polizeiverein_member
+						has_idea = GEC_idea_polizeiverein_leader
+						has_idea = GEC_idea_polizeiverein_member
 					}
 				}
 				has_political_power > 75

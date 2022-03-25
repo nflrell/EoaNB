@@ -1162,6 +1162,10 @@ spriteTypes = {
 			texturefile = "gfx/interface/ideas/GER/idea_GER_zollverein.png"
 		}
 		spriteType = {
+			name = "GFX_idea_landwehr"
+			texturefile = "gfx/interface/ideas/GER/idea_landwehr.png"
+		}
+		spriteType = {
 			name = "GFX_idea_wiener_munzvertrag"
 			texturefile = "gfx/interface/ideas/GER/wiener_munzvertrag.png"
 		}
@@ -1467,6 +1471,10 @@ spriteTypes = {
 			name = "GFX_idea_ITA_advisor_Luigi_Cibrario"
 			texturefile = "gfx/interface/ideas/ITA/ITA_advisor_Luigi_Cibrario.png"
 		}
+		spriteType = {
+			name = "GFX_ITA_advisor_Carlo_Corradino_Chigi"
+			texturefile = "gfx/interface/ideas/ITA/ITA_advisor_Carlo_Corradino_Chigi.png"
+		}
 		
 }
 spriteTypes = {
@@ -1649,7 +1657,7 @@ spriteTypes = {
 		}
 		spriteType = {
 			name = "GFX_idea_PIE_2IP"
-			texturefile = "gfx/interface/ideas/PIE/idea_PIE_2IP.dds"
+			texturefile = "gfx/interface/ideas/PIE/idea_PIE_2IP.png"
 		}
 		
 }
@@ -2648,6 +2656,14 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_idea_SWE_rich_economy"
 			texturefile = "gfx/interface/ideas/SWE/idea_SWE_rich_economy.dds"
+		}
+		spriteType = {
+			name = "GFX_idea_kungliga_jarnvagsstyrelsen"
+			texturefile = "gfx/interface/ideas/SWE/idea_kungliga_jarnvagsstyrelsen.png"
+		}
+		spriteType = {
+			name = "GFX_idea_skarpskytterorelsen"
+			texturefile = "gfx/interface/ideas/SWE/idea_skarpskytterorelsen.png"
 		}
 	# Advisors
 		spriteType = {

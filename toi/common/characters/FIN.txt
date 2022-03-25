@@ -76,6 +76,24 @@ characters={
 		}
 	}
 	
+	FIN_elias_lonnrot = {
+		name = "Elias Lönnrot"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FIN_vic_Zweyberg"
+			}
+		}
+	}
+	
+	FIN_axel_olof_freudenthal = {
+		name = "Axel Olof Freudenthal"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FIN_vic_mannerheim"
+			}
+		}
+	}
+	
 	FIN_Fabian_Langenskiold = {
 		name = "Carl Langenskiöld"
 		portraits = {
@@ -210,6 +228,50 @@ characters={
 			}
 			traits = {
 				FIN_trait_Carl_Robert_Mannerheim
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	
+	FIN_Edvard_Bergenheim = {
+		name = "Edvard Bergenheim"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FIN_vic_Carl_Robert_Mannerheim"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FIN_advisor_Edvard_Bergenheim
+			allowed = {
+				original_tag = FIN
+			}
+			traits = {
+				
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	
+	FIN_Carl_Creutz = {
+		name = "Carl Magnus Creutz"
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FIN_vic_Carl_Robert_Mannerheim"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FIN_advisor_Carl_Creutz
+			allowed = {
+				original_tag = FIN
+			}
+			traits = {
+				
 			}
 			ai_will_do = {
 				factor = 5
